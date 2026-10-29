@@ -10,9 +10,10 @@ import {
   type Opponent,
   type PartyMember,
 } from '../party'
-import { artworkUrl, BASE_POKEMON, BY_KEY, megaFormsOf, type Pokemon } from '../pokemon'
+import { BASE_POKEMON, BY_KEY, megaFormsOf, type Pokemon } from '../pokemon'
 import { PRESETS } from '../speed'
 import { useStoredState } from '../storage'
+import { PokemonImage } from './PokemonImage'
 import { PokemonSearch } from './PokemonSearch'
 
 type Row = { id: string; form: Pokemon; member: PartyMember }
@@ -106,7 +107,7 @@ export function Matchup({ party, onEditParty }: Props) {
             const p = BY_KEY.get(o.key)!
             return (
               <span key={o.key} className="chip">
-                <img src={artworkUrl(p.id)} alt="" width={24} height={24} />
+                <PokemonImage pokemon={p} size={24} />
                 {p.name}
                 <span className="chip-base">{p.speed}족</span>
                 <button
@@ -186,7 +187,7 @@ export function Matchup({ party, onEditParty }: Props) {
                     rowSpan={hasSubHeader && g.variants.length === 1 ? 2 : 1}
                     className={gi > 0 ? 'group-start' : undefined}
                   >
-                    <img src={artworkUrl(g.form.id)} alt="" width={32} height={32} />
+                    <PokemonImage pokemon={g.form} size={32} />
                     {g.form.name}
                     <span className="base-speed">{g.form.speed}족</span>
                   </th>
@@ -215,7 +216,7 @@ export function Matchup({ party, onEditParty }: Props) {
                   <tr key={r.id}>
                     <th scope="row" className="row-head">
                       <span className="row-head-inner">
-                        <img src={artworkUrl(r.form.id)} alt="" width={28} height={28} />
+                        <PokemonImage pokemon={r.form} size={28} />
                         <span className="row-name">{r.form.name}</span>
                         <span className="row-speed">
                           {speed} <span className="row-base">{r.form.speed}족</span>

@@ -1,4 +1,5 @@
-import { artworkUrl, TYPES, type Pokemon } from '../pokemon'
+import { TYPES, type Pokemon } from '../pokemon'
+import { PokemonImage } from './PokemonImage'
 
 export function TypeChips({ types }: { types: number[] }) {
   return (
@@ -15,14 +16,7 @@ export function TypeChips({ types }: { types: number[] }) {
 export function PokemonBadge({ pokemon, size = 40 }: { pokemon: Pokemon; size?: number }) {
   return (
     <span className="badge">
-      <img
-        src={artworkUrl(pokemon.id)}
-        alt=""
-        width={size}
-        height={size}
-        loading="lazy"
-        onError={(e) => (e.currentTarget.style.visibility = 'hidden')}
-      />
+      <PokemonImage pokemon={pokemon} size={size} />
       <span className="badge-text">
         <span className="badge-name">
           {pokemon.name}
