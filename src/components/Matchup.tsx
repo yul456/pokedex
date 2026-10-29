@@ -5,6 +5,8 @@ import {
   memberSpeed,
   OPPONENT_STORAGE,
   parseOpponents,
+  parseScarfUsers,
+  SCARF_STORAGE,
   type Opponent,
   type PartyMember,
 } from '../party'
@@ -34,7 +36,12 @@ export function Matchup({ party, onEditParty }: Props) {
   const [theirTailwind, setTheirTailwind] = useState(false)
   const [trickRoom, setTrickRoom] = useState(false)
   const [withMegas, setWithMegas] = useState(true)
-  const [withScarf, setWithScarf] = useState(true)
+  const [scarfUsers, setScarfUsers] = useStoredState<string[]>(
+    SCARF_STORAGE.key,
+    SCARF_STORAGE.version,
+    parseScarfUsers,
+    [],
+  )
   const [selected, setSelected] = useState<{ row: string; col: string } | null>(null)
 
   if (party.length === 0) {
@@ -52,6 +59,8 @@ export function Matchup({ party, onEditParty }: Props) {
   const addOpponent = (p: Pokemon) => {
     if (!full && !opponents.some((o) => o.key === p.key)) setOpponents([...opponents, { key: p.key }])
   }
+  const toggleScarfUser = (key: string) =>
+    setScarfUsers((users) => (users.includes(key) ? users.filter((k) => k !== key) : [...users, key]))
 
   // 내 파티: 메가진화하는 포켓몬은 메가진화한 모습만 보여 준다
   const rows: Row[] = party.map((member) => {
@@ -60,9 +69,9 @@ export function Matchup({ party, onEditParty }: Props) {
   })
 
   // 상대: 아이템은 미리 알 수 없으니 메가진화한 모습도 함께 비교하고,
-  // 메가가 아닌 모습은 구애스카프를 지닌 경우도 옆 칸에 함께 보여 준다 (메가스톤과 스카프는 같이 못 지님)
+  // 스카프를 쓴다고 표시해 둔 포켓몬은 스카프를 지닌 경우도 옆 칸에 함께 보여 준다 (메가스톤과 스카프는 같이 못 지님)
   const groups: Group[] = opponents.flatMap((o) => [
-    { form: BY_KEY.get(o.key)!, variants: withScarf ? [false, true] : [false] },
+    { form: BY_KEY.get(o.key)!, variants: scarfUsers.includes(o.key) ? [false, true] : [false] },
     ...(withMegas ? megaFormsOf(o.key) : []).map((form) => ({ form, variants: [false] })),
   ])
   const cols: Col[] = groups.flatMap((g, gi) =>
@@ -102,6 +111,14 @@ export function Matchup({ party, onEditParty }: Props) {
                 <span className="chip-base">{p.speed}족</span>
                 <button
                   type="button"
+                  className={scarfUsers.includes(o.key) ? 'chip-toggle active' : 'chip-toggle'}
+                  aria-pressed={scarfUsers.includes(o.key)}
+                  onClick={() => toggleScarfUser(o.key)}
+                >
+                  스카프
+                </button>
+                <button
+                  type="button"
                   className="chip-remove"
                   aria-label={`${p.name} 빼기`}
                   onClick={() => setOpponents(opponents.filter((x) => x.key !== o.key))}
@@ -115,6 +132,11 @@ export function Matchup({ party, onEditParty }: Props) {
             모두 지우기
           </button>
         </div>
+      )}
+      {opponents.length > 0 && (
+        <p className="hint">
+          스카프를 켠 포켓몬은 기본/스카프 두 칸으로 비교해요. 포켓몬별로 기억해 두니 다음 대전에서도 그대로 적용돼요.
+        </p>
       )}
 
       <div className="toggles matchup-options">
@@ -133,10 +155,6 @@ export function Matchup({ party, onEditParty }: Props) {
         <label>
           <input type="checkbox" checked={withMegas} onChange={(e) => setWithMegas(e.target.checked)} />
           상대 메가 포함
-        </label>
-        <label>
-          <input type="checkbox" checked={withScarf} onChange={(e) => setWithScarf(e.target.checked)} />
-          상대 스카프 포함
         </label>
       </div>
 

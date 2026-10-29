@@ -6,6 +6,7 @@ export const MAX_PARTY = 6
 // 저장 형식을 바꾸면 version 을 올리고 parse 함수에서 옛 형식을 변환한다
 export const PARTY_STORAGE = { key: 'champions-speed/party', version: 1 }
 export const OPPONENT_STORAGE = { key: 'champions-speed/opponents', version: 2 }
+export const SCARF_STORAGE = { key: 'champions-speed/scarf-users', version: 1 }
 
 // 포켓몬은 숫자 id 가 아니라 식별자(key)로 저장한다 (PokéAPI 번호가 바뀌어도 그대로 쓸 수 있도록)
 export type PartyMember = {
@@ -54,6 +55,13 @@ export function parseOpponents(data: unknown, version: number): Opponent[] | nul
       return base ? [{ key: base.key }] : []
     })
     .slice(0, MAX_PARTY)
+}
+
+// 상대로 만나면 구애스카프를 지녔을 수 있다고 표시해 둔 포켓몬 (진화 전 모습 식별자 목록)
+// 상대 목록과 따로 저장해서 다음 대전에서 다시 만나도 그대로 쓴다
+export function parseScarfUsers(data: unknown, version: number): string[] | null {
+  if (version !== SCARF_STORAGE.version || !Array.isArray(data)) return null
+  return [...new Set(data.flatMap((key) => basePokemon(key)?.key ?? []))]
 }
 
 // 내 포켓몬의 실제 스피드 (메가진화한 모습은 스카프를 못 지닌다)

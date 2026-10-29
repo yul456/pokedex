@@ -474,6 +474,22 @@ select {
   object-fit: contain;
 }
 
+.chip-toggle {
+  padding: 0 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+
+.chip-toggle.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
 .chip-remove {
   padding: 0 6px;
   border: 0;
