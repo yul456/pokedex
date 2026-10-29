@@ -1,0 +1,339 @@
+.app {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+header h1 {
+  margin: 8px 0 12px;
+  font-size: 1.4rem;
+}
+
+footer {
+  margin: 32px 0 8px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* 탭 */
+.tabs {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 8px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.tabs button.active {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* 공통 입력 */
+input[type='search'],
+input[list],
+select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+}
+
+.toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  font-size: 0.9rem;
+}
+
+.toggles label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.hint {
+  margin: 8px 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.empty {
+  padding: 24px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* 포켓몬 표시 */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.badge img {
+  flex: none;
+  object-fit: contain;
+}
+
+.badge-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.badge-name {
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.mega {
+  margin-left: 4px;
+  padding: 0 4px;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  vertical-align: 2px;
+  background: linear-gradient(135deg, #f0a, #70f);
+  color: #fff;
+}
+
+.types {
+  display: flex;
+  gap: 3px;
+}
+
+.type {
+  padding: 0 6px;
+  border-radius: 4px;
+  font-size: 0.68rem;
+  color: #fff;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+}
+
+/* 순위표 */
+/* overflow: clip 은 스크롤 컨테이너를 만들지 않아서 표 머리글의 sticky 가 페이지 스크롤 기준으로 동작한다 */
+.table-wrap {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: clip;
+}
+
+.speed-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.speed-table th,
+.speed-table td {
+  padding: 6px 8px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.speed-table th {
+  position: sticky;
+  top: 0;
+  background: var(--card);
+  font-size: 0.78rem;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.speed-table tbody tr:nth-child(even) {
+  background: var(--row-alt);
+}
+
+.speed-table .col-name {
+  text-align: left;
+  white-space: normal;
+  word-break: keep-all;
+}
+
+.speed-table .base {
+  color: var(--muted);
+}
+
+.speed-table .fastest {
+  font-weight: 700;
+}
+
+/* 1:1 비교 — 아래쪽 설정을 바꾸는 동안에도 결과가 보이도록 위에 고정 */
+.verdict {
+  position: sticky;
+  top: 8px;
+  z-index: 1;
+  padding: 16px;
+  border-radius: 12px;
+  border: 2px solid var(--border);
+  background: var(--card);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.verdict.win {
+  border-color: var(--win);
+}
+
+.verdict.lose {
+  border-color: var(--lose);
+}
+
+.verdict.tie {
+  border-color: var(--tie);
+}
+
+.verdict .numbers {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 16px;
+  font-size: 2rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.verdict .vs {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.verdict p {
+  margin: 4px 0 8px;
+  font-weight: 600;
+}
+
+.verdict.win p {
+  color: var(--win);
+}
+
+.verdict.lose p {
+  color: var(--lose);
+}
+
+.verdict.tie p {
+  color: var(--tie);
+}
+
+.trick-room {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.sides {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  padding: 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.side h3 {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.base-line {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.85rem;
+}
+
+.field.inline {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.field.inline select {
+  width: auto;
+}
+
+.segmented {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.segmented button {
+  flex: 1;
+  padding: 6px 0;
+  border: 0;
+  background: transparent;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.segmented button + button {
+  border-left: 1px solid var(--border);
+}
+
+.segmented button.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .sides {
+    grid-template-columns: 1fr;
+  }
+
+  .speed-table th,
+  .speed-table td {
+    padding: 6px 4px;
+    font-size: 0.82rem;
+  }
+
+  .speed-table .badge img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .speed-table .badge-name {
+    font-size: 0.82rem;
+  }
+}

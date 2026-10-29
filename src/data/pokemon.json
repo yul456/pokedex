@@ -1,0 +1,3995 @@
+[
+ {
+  "id": 10037,
+  "key": "alakazam-mega",
+  "dex": 65,
+  "name": "메가후딘",
+  "nameEn": "Mega Alakazam",
+  "types": [
+   14
+  ],
+  "speed": 150,
+  "mega": true
+ },
+ {
+  "id": 10042,
+  "key": "aerodactyl-mega",
+  "dex": 142,
+  "name": "메가프테라",
+  "nameEn": "Mega Aerodactyl",
+  "types": [
+   6,
+   3
+  ],
+  "speed": 150,
+  "mega": true
+ },
+ {
+  "id": 10090,
+  "key": "beedrill-mega",
+  "dex": 15,
+  "name": "메가독침붕",
+  "nameEn": "Mega Beedrill",
+  "types": [
+   7,
+   4
+  ],
+  "speed": 145,
+  "mega": true
+ },
+ {
+  "id": 10065,
+  "key": "sceptile-mega",
+  "dex": 254,
+  "name": "메가나무킹",
+  "nameEn": "Mega Sceptile",
+  "types": [
+   12,
+   16
+  ],
+  "speed": 145,
+  "mega": true
+ },
+ {
+  "id": 10294,
+  "key": "greninja-mega",
+  "dex": 658,
+  "name": "메가개굴닌자",
+  "nameEn": "Mega Greninja",
+  "types": [
+   11,
+   17
+  ],
+  "speed": 142,
+  "mega": true
+ },
+ {
+  "id": 887,
+  "key": "dragapult",
+  "dex": 887,
+  "name": "드래펄트",
+  "nameEn": "Dragapult",
+  "types": [
+   16,
+   8
+  ],
+  "speed": 142,
+  "mega": false
+ },
+ {
+  "id": 10055,
+  "key": "manectric-mega",
+  "dex": 310,
+  "name": "메가썬더볼트",
+  "nameEn": "Mega Manectric",
+  "types": [
+   13
+  ],
+  "speed": 135,
+  "mega": true
+ },
+ {
+  "id": 10088,
+  "key": "lopunny-mega",
+  "dex": 428,
+  "name": "메가이어롭",
+  "nameEn": "Mega Lopunny",
+  "types": [
+   1,
+   2
+  ],
+  "speed": 135,
+  "mega": true
+ },
+ {
+  "id": 10293,
+  "key": "delphox-mega",
+  "dex": 655,
+  "name": "메가마폭시",
+  "nameEn": "Mega Delphox",
+  "types": [
+   10,
+   14
+  ],
+  "speed": 134,
+  "mega": true
+ },
+ {
+  "id": 10305,
+  "key": "raichu-mega-y",
+  "dex": 26,
+  "name": "메가라이츄 Y",
+  "nameEn": "Mega Raichu Y",
+  "types": [
+   13
+  ],
+  "speed": 130,
+  "mega": true
+ },
+ {
+  "id": 10038,
+  "key": "gengar-mega",
+  "dex": 94,
+  "name": "메가팬텀",
+  "nameEn": "Mega Gengar",
+  "types": [
+   8,
+   4
+  ],
+  "speed": 130,
+  "mega": true
+ },
+ {
+  "id": 135,
+  "key": "jolteon",
+  "dex": 135,
+  "name": "쥬피썬더",
+  "nameEn": "Jolteon",
+  "types": [
+   13
+  ],
+  "speed": 130,
+  "mega": false
+ },
+ {
+  "id": 142,
+  "key": "aerodactyl",
+  "dex": 142,
+  "name": "프테라",
+  "nameEn": "Aerodactyl",
+  "types": [
+   6,
+   3
+  ],
+  "speed": 130,
+  "mega": false
+ },
+ {
+  "id": 663,
+  "key": "talonflame",
+  "dex": 663,
+  "name": "파이어로",
+  "nameEn": "Talonflame",
+  "types": [
+   10,
+   3
+  ],
+  "speed": 126,
+  "mega": false
+ },
+ {
+  "id": 10295,
+  "key": "pyroar-mega",
+  "dex": 668,
+  "name": "메가화염레오",
+  "nameEn": "Mega Pyroar",
+  "types": [
+   10,
+   1
+  ],
+  "speed": 126,
+  "mega": true
+ },
+ {
+  "id": 461,
+  "key": "weavile",
+  "dex": 461,
+  "name": "포푸니라",
+  "nameEn": "Weavile",
+  "types": [
+   17,
+   15
+  ],
+  "speed": 125,
+  "mega": false
+ },
+ {
+  "id": 10314,
+  "key": "meowstic-male-mega",
+  "dex": 678,
+  "name": "메가냐오닉스 (수컷)",
+  "nameEn": "Mega Meowstic (Male)",
+  "types": [
+   14
+  ],
+  "speed": 124,
+  "mega": true
+ },
+ {
+  "id": 10326,
+  "key": "meowstic-female-mega",
+  "dex": 678,
+  "name": "메가냐오닉스 (암컷)",
+  "nameEn": "Mega Meowstic (Female)",
+  "types": [
+   14
+  ],
+  "speed": 124,
+  "mega": true
+ },
+ {
+  "id": 715,
+  "key": "noivern",
+  "dex": 715,
+  "name": "음번",
+  "nameEn": "Noivern",
+  "types": [
+   3,
+   16
+  ],
+  "speed": 123,
+  "mega": false
+ },
+ {
+  "id": 908,
+  "key": "meowscarada",
+  "dex": 908,
+  "name": "마스카나",
+  "nameEn": "Meowscarada",
+  "types": [
+   12,
+   17
+  ],
+  "speed": 123,
+  "mega": false
+ },
+ {
+  "id": 658,
+  "key": "greninja",
+  "dex": 658,
+  "name": "개굴닌자",
+  "nameEn": "Greninja",
+  "types": [
+   11,
+   17
+  ],
+  "speed": 122,
+  "mega": false
+ },
+ {
+  "id": 10073,
+  "key": "pidgeot-mega",
+  "dex": 18,
+  "name": "메가피죤투",
+  "nameEn": "Mega Pidgeot",
+  "types": [
+   1,
+   3
+  ],
+  "speed": 121,
+  "mega": true
+ },
+ {
+  "id": 65,
+  "key": "alakazam",
+  "dex": 65,
+  "name": "후딘",
+  "nameEn": "Alakazam",
+  "types": [
+   14
+  ],
+  "speed": 120,
+  "mega": false
+ },
+ {
+  "id": 10280,
+  "key": "starmie-mega",
+  "dex": 121,
+  "name": "메가아쿠스타",
+  "nameEn": "Mega Starmie",
+  "types": [
+   11,
+   14
+  ],
+  "speed": 120,
+  "mega": true
+ },
+ {
+  "id": 254,
+  "key": "sceptile",
+  "dex": 254,
+  "name": "나무킹",
+  "nameEn": "Sceptile",
+  "types": [
+   12
+  ],
+  "speed": 120,
+  "mega": false
+ },
+ {
+  "id": 10285,
+  "key": "froslass-mega",
+  "dex": 478,
+  "name": "메가눈여아",
+  "nameEn": "Mega Froslass",
+  "types": [
+   15,
+   8
+  ],
+  "speed": 120,
+  "mega": true
+ },
+ {
+  "id": 903,
+  "key": "sneasler",
+  "dex": 903,
+  "name": "포푸니크",
+  "nameEn": "Sneasler",
+  "types": [
+   2,
+   4
+  ],
+  "speed": 120,
+  "mega": false
+ },
+ {
+  "id": 701,
+  "key": "hawlucha",
+  "dex": 701,
+  "name": "루차불",
+  "nameEn": "Hawlucha",
+  "types": [
+   2,
+   3
+  ],
+  "speed": 118,
+  "mega": false
+ },
+ {
+  "id": 10300,
+  "key": "hawlucha-mega",
+  "dex": 701,
+  "name": "메가루차불",
+  "nameEn": "Mega Hawlucha",
+  "types": [
+   2,
+   3
+  ],
+  "speed": 118,
+  "mega": true
+ },
+ {
+  "id": 758,
+  "key": "salazzle",
+  "dex": 758,
+  "name": "염뉴트",
+  "nameEn": "Salazzle",
+  "types": [
+   4,
+   10
+  ],
+  "speed": 117,
+  "mega": false
+ },
+ {
+  "id": 547,
+  "key": "whimsicott",
+  "dex": 547,
+  "name": "엘풍",
+  "nameEn": "Whimsicott",
+  "types": [
+   12,
+   18
+  ],
+  "speed": 116,
+  "mega": false
+ },
+ {
+  "id": 121,
+  "key": "starmie",
+  "dex": 121,
+  "name": "아쿠스타",
+  "nameEn": "Starmie",
+  "types": [
+   11,
+   14
+  ],
+  "speed": 115,
+  "mega": false
+ },
+ {
+  "id": 10048,
+  "key": "houndoom-mega",
+  "dex": 229,
+  "name": "메가헬가",
+  "nameEn": "Mega Houndoom",
+  "types": [
+   17,
+   10
+  ],
+  "speed": 115,
+  "mega": true
+ },
+ {
+  "id": 10057,
+  "key": "absol-mega",
+  "dex": 359,
+  "name": "메가앱솔",
+  "nameEn": "Mega Absol",
+  "types": [
+   17
+  ],
+  "speed": 115,
+  "mega": true
+ },
+ {
+  "id": 497,
+  "key": "serperior",
+  "dex": 497,
+  "name": "샤로다",
+  "nameEn": "Serperior",
+  "types": [
+   12
+  ],
+  "speed": 113,
+  "mega": false
+ },
+ {
+  "id": 10059,
+  "key": "lucario-mega",
+  "dex": 448,
+  "name": "메가루카리오",
+  "nameEn": "Mega Lucario",
+  "types": [
+   2,
+   9
+  ],
+  "speed": 112,
+  "mega": true
+ },
+ {
+  "id": 545,
+  "key": "scolipede",
+  "dex": 545,
+  "name": "펜드라",
+  "nameEn": "Scolipede",
+  "types": [
+   7,
+   4
+  ],
+  "speed": 112,
+  "mega": false
+ },
+ {
+  "id": 745,
+  "key": "lycanroc-midday",
+  "dex": 745,
+  "name": "루가루암 (한낮의 모습)",
+  "nameEn": "Midday Lycanroc",
+  "types": [
+   6
+  ],
+  "speed": 112,
+  "mega": false
+ },
+ {
+  "id": 925,
+  "key": "maushold-family-of-four",
+  "dex": 925,
+  "name": "파밀리쥐 (네 식구)",
+  "nameEn": "Maushold (Family of Four)",
+  "types": [
+   1
+  ],
+  "speed": 111,
+  "mega": false
+ },
+ {
+  "id": 10257,
+  "key": "maushold-family-of-three",
+  "dex": 925,
+  "name": "파밀리쥐 (세 식구)",
+  "nameEn": "Maushold (Family of Three)",
+  "types": [
+   1
+  ],
+  "speed": 111,
+  "mega": false
+ },
+ {
+  "id": 26,
+  "key": "raichu",
+  "dex": 26,
+  "name": "라이츄",
+  "nameEn": "Raichu",
+  "types": [
+   13
+  ],
+  "speed": 110,
+  "mega": false
+ },
+ {
+  "id": 10100,
+  "key": "raichu-alola",
+  "dex": 26,
+  "name": "라이츄 (알로라)",
+  "nameEn": "Alolan Raichu",
+  "types": [
+   13,
+   14
+  ],
+  "speed": 110,
+  "mega": false
+ },
+ {
+  "id": 10304,
+  "key": "raichu-mega-x",
+  "dex": 26,
+  "name": "메가라이츄 X",
+  "nameEn": "Mega Raichu X",
+  "types": [
+   13
+  ],
+  "speed": 110,
+  "mega": true
+ },
+ {
+  "id": 94,
+  "key": "gengar",
+  "dex": 94,
+  "name": "팬텀",
+  "nameEn": "Gengar",
+  "types": [
+   8,
+   4
+  ],
+  "speed": 110,
+  "mega": false
+ },
+ {
+  "id": 128,
+  "key": "tauros",
+  "dex": 128,
+  "name": "켄타로스",
+  "nameEn": "Tauros",
+  "types": [
+   1
+  ],
+  "speed": 110,
+  "mega": false
+ },
+ {
+  "id": 196,
+  "key": "espeon",
+  "dex": 196,
+  "name": "에브이",
+  "nameEn": "Espeon",
+  "types": [
+   14
+  ],
+  "speed": 110,
+  "mega": false
+ },
+ {
+  "id": 10284,
+  "key": "skarmory-mega",
+  "dex": 227,
+  "name": "메가무장조",
+  "nameEn": "Mega Skarmory",
+  "types": [
+   9,
+   3
+  ],
+  "speed": 110,
+  "mega": true
+ },
+ {
+  "id": 10076,
+  "key": "metagross-mega",
+  "dex": 376,
+  "name": "메가메타그로스",
+  "nameEn": "Mega Metagross",
+  "types": [
+   9,
+   14
+  ],
+  "speed": 110,
+  "mega": true
+ },
+ {
+  "id": 10308,
+  "key": "staraptor-mega",
+  "dex": 398,
+  "name": "메가찌르호크",
+  "nameEn": "Mega Staraptor",
+  "types": [
+   2,
+   3
+  ],
+  "speed": 110,
+  "mega": true
+ },
+ {
+  "id": 10068,
+  "key": "gallade-mega",
+  "dex": 475,
+  "name": "메가엘레이드",
+  "nameEn": "Mega Gallade",
+  "types": [
+   14,
+   2
+  ],
+  "speed": 110,
+  "mega": true
+ },
+ {
+  "id": 478,
+  "key": "froslass",
+  "dex": 478,
+  "name": "눈여아",
+  "nameEn": "Froslass",
+  "types": [
+   15,
+   8
+  ],
+  "speed": 110,
+  "mega": false
+ },
+ {
+  "id": 10239,
+  "key": "zoroark-hisui",
+  "dex": 571,
+  "name": "조로아크 (히스이)",
+  "nameEn": "Hisuian Zoroark",
+  "types": [
+   1,
+   8
+  ],
+  "speed": 110,
+  "mega": false
+ },
+ {
+  "id": 10152,
+  "key": "lycanroc-dusk",
+  "dex": 745,
+  "name": "루가루암 (황혼의 모습)",
+  "nameEn": "Dusk Lycanroc",
+  "types": [
+   6
+  ],
+  "speed": 110,
+  "mega": false
+ },
+ {
+  "id": 10104,
+  "key": "ninetales-alola",
+  "dex": 38,
+  "name": "나인테일 (알로라)",
+  "nameEn": "Alolan Ninetales",
+  "types": [
+   15,
+   18
+  ],
+  "speed": 109,
+  "mega": false
+ },
+ {
+  "id": 695,
+  "key": "heliolisk",
+  "dex": 695,
+  "name": "일레도리자드",
+  "nameEn": "Heliolisk",
+  "types": [
+   13,
+   1
+  ],
+  "speed": 109,
+  "mega": false
+ },
+ {
+  "id": 392,
+  "key": "infernape",
+  "dex": 392,
+  "name": "초염몽",
+  "nameEn": "Infernape",
+  "types": [
+   10,
+   2
+  ],
+  "speed": 108,
+  "mega": false
+ },
+ {
+  "id": 510,
+  "key": "liepard",
+  "dex": 510,
+  "name": "레파르다스",
+  "nameEn": "Liepard",
+  "types": [
+   17
+  ],
+  "speed": 106,
+  "mega": false
+ },
+ {
+  "id": 668,
+  "key": "pyroar-male",
+  "dex": 668,
+  "name": "화염레오",
+  "nameEn": "Male Pyroar",
+  "types": [
+   10,
+   1
+  ],
+  "speed": 106,
+  "mega": false
+ },
+ {
+  "id": 10040,
+  "key": "pinsir-mega",
+  "dex": 127,
+  "name": "메가쁘사이저",
+  "nameEn": "Mega Pinsir",
+  "types": [
+   7,
+   3
+  ],
+  "speed": 105,
+  "mega": true
+ },
+ {
+  "id": 310,
+  "key": "manectric",
+  "dex": 310,
+  "name": "썬더볼트",
+  "nameEn": "Manectric",
+  "types": [
+   13
+  ],
+  "speed": 105,
+  "mega": false
+ },
+ {
+  "id": 10070,
+  "key": "sharpedo-mega",
+  "dex": 319,
+  "name": "메가샤크니아",
+  "nameEn": "Mega Sharpedo",
+  "types": [
+   11,
+   17
+  ],
+  "speed": 105,
+  "mega": true
+ },
+ {
+  "id": 428,
+  "key": "lopunny",
+  "dex": 428,
+  "name": "이어롭",
+  "nameEn": "Lopunny",
+  "types": [
+   1
+  ],
+  "speed": 105,
+  "mega": false
+ },
+ {
+  "id": 571,
+  "key": "zoroark",
+  "dex": 571,
+  "name": "조로아크",
+  "nameEn": "Zoroark",
+  "types": [
+   17
+  ],
+  "speed": 105,
+  "mega": false
+ },
+ {
+  "id": 956,
+  "key": "espathra",
+  "dex": 956,
+  "name": "클레스퍼트라",
+  "nameEn": "Espathra",
+  "types": [
+   14
+  ],
+  "speed": 105,
+  "mega": false
+ },
+ {
+  "id": 655,
+  "key": "delphox",
+  "dex": 655,
+  "name": "마폭시",
+  "nameEn": "Delphox",
+  "types": [
+   10,
+   14
+  ],
+  "speed": 104,
+  "mega": false
+ },
+ {
+  "id": 678,
+  "key": "meowstic-male",
+  "dex": 678,
+  "name": "냐오닉스 (수컷의 모습)",
+  "nameEn": "Male Meowstic",
+  "types": [
+   14
+  ],
+  "speed": 104,
+  "mega": false
+ },
+ {
+  "id": 10025,
+  "key": "meowstic-female",
+  "dex": 678,
+  "name": "냐오닉스 (암컷의 모습)",
+  "nameEn": "Female Meowstic",
+  "types": [
+   14
+  ],
+  "speed": 104,
+  "mega": false
+ },
+ {
+  "id": 10287,
+  "key": "excadrill-mega",
+  "dex": 530,
+  "name": "메가몰드류",
+  "nameEn": "Mega Excadrill",
+  "types": [
+   5,
+   9
+  ],
+  "speed": 103,
+  "mega": true
+ },
+ {
+  "id": 587,
+  "key": "emolga",
+  "dex": 587,
+  "name": "에몽가",
+  "nameEn": "Emolga",
+  "types": [
+   13,
+   3
+  ],
+  "speed": 103,
+  "mega": false
+ },
+ {
+  "id": 445,
+  "key": "garchomp",
+  "dex": 445,
+  "name": "한카리아스",
+  "nameEn": "Garchomp",
+  "types": [
+   16,
+   5
+  ],
+  "speed": 102,
+  "mega": false
+ },
+ {
+  "id": 10296,
+  "key": "floette-mega",
+  "dex": 670,
+  "name": "메가플라엣테",
+  "nameEn": "Mega Floette",
+  "types": [
+   18
+  ],
+  "speed": 102,
+  "mega": true
+ },
+ {
+  "id": 676,
+  "key": "furfrou",
+  "dex": 676,
+  "name": "트리미앙",
+  "nameEn": "Natural Furfrou",
+  "types": [
+   1
+  ],
+  "speed": 102,
+  "mega": false
+ },
+ {
+  "id": 18,
+  "key": "pidgeot",
+  "dex": 18,
+  "name": "피죤투",
+  "nameEn": "Pidgeot",
+  "types": [
+   1,
+   3
+  ],
+  "speed": 101,
+  "mega": false
+ },
+ {
+  "id": 512,
+  "key": "simisage",
+  "dex": 512,
+  "name": "야나키",
+  "nameEn": "Simisage",
+  "types": [
+   12
+  ],
+  "speed": 101,
+  "mega": false
+ },
+ {
+  "id": 514,
+  "key": "simisear",
+  "dex": 514,
+  "name": "바오키",
+  "nameEn": "Simisear",
+  "types": [
+   10
+  ],
+  "speed": 101,
+  "mega": false
+ },
+ {
+  "id": 516,
+  "key": "simipour",
+  "dex": 516,
+  "name": "앗차키",
+  "nameEn": "Simipour",
+  "types": [
+   11
+  ],
+  "speed": 101,
+  "mega": false
+ },
+ {
+  "id": 702,
+  "key": "dedenne",
+  "dex": 702,
+  "name": "데덴네",
+  "nameEn": "Dedenne",
+  "types": [
+   13,
+   18
+  ],
+  "speed": 101,
+  "mega": false
+ },
+ {
+  "id": 10321,
+  "key": "glimmora-mega",
+  "dex": 970,
+  "name": "메가킬라플로르",
+  "nameEn": "Mega Glimmora",
+  "types": [
+   6,
+   4
+  ],
+  "speed": 101,
+  "mega": true
+ },
+ {
+  "id": 6,
+  "key": "charizard",
+  "dex": 6,
+  "name": "리자몽",
+  "nameEn": "Charizard",
+  "types": [
+   10,
+   3
+  ],
+  "speed": 100,
+  "mega": false
+ },
+ {
+  "id": 10034,
+  "key": "charizard-mega-x",
+  "dex": 6,
+  "name": "메가리자몽 X",
+  "nameEn": "Mega Charizard X",
+  "types": [
+   10,
+   16
+  ],
+  "speed": 100,
+  "mega": true
+ },
+ {
+  "id": 10035,
+  "key": "charizard-mega-y",
+  "dex": 6,
+  "name": "메가리자몽 Y",
+  "nameEn": "Mega Charizard Y",
+  "types": [
+   10,
+   3
+  ],
+  "speed": 100,
+  "mega": true
+ },
+ {
+  "id": 38,
+  "key": "ninetales",
+  "dex": 38,
+  "name": "나인테일",
+  "nameEn": "Ninetales",
+  "types": [
+   10
+  ],
+  "speed": 100,
+  "mega": false
+ },
+ {
+  "id": 10039,
+  "key": "kangaskhan-mega",
+  "dex": 115,
+  "name": "메가캥카",
+  "nameEn": "Mega Kangaskhan",
+  "types": [
+   1
+  ],
+  "speed": 100,
+  "mega": true
+ },
+ {
+  "id": 10250,
+  "key": "tauros-paldea-combat-breed",
+  "dex": 128,
+  "name": "켄타로스 (팔데아 컴뱃종)",
+  "nameEn": "Paldean Tauros (Combat Breed)",
+  "types": [
+   2
+  ],
+  "speed": 100,
+  "mega": false
+ },
+ {
+  "id": 10251,
+  "key": "tauros-paldea-blaze-breed",
+  "dex": 128,
+  "name": "켄타로스 (팔데아 블레이즈종)",
+  "nameEn": "Paldean Tauros (Blaze Breed)",
+  "types": [
+   2,
+   10
+  ],
+  "speed": 100,
+  "mega": false
+ },
+ {
+  "id": 10252,
+  "key": "tauros-paldea-aqua-breed",
+  "dex": 128,
+  "name": "켄타로스 (팔데아 워터종)",
+  "nameEn": "Paldean Tauros (Aqua Breed)",
+  "types": [
+   2,
+   11
+  ],
+  "speed": 100,
+  "mega": false
+ },
+ {
+  "id": 10281,
+  "key": "dragonite-mega",
+  "dex": 149,
+  "name": "메가망나뇽",
+  "nameEn": "Mega Dragonite",
+  "types": [
+   16,
+   3
+  ],
+  "speed": 100,
+  "mega": true
+ },
+ {
+  "id": 157,
+  "key": "typhlosion",
+  "dex": 157,
+  "name": "블레이범",
+  "nameEn": "Typhlosion",
+  "types": [
+   10
+  ],
+  "speed": 100,
+  "mega": false
+ },
+ {
+  "id": 10050,
+  "key": "blaziken-mega",
+  "dex": 257,
+  "name": "메가번치코",
+  "nameEn": "Mega Blaziken",
+  "types": [
+   10,
+   2
+  ],
+  "speed": 100,
+  "mega": true
+ },
+ {
+  "id": 10051,
+  "key": "gardevoir-mega",
+  "dex": 282,
+  "name": "메가가디안",
+  "nameEn": "Mega Gardevoir",
+  "types": [
+   14,
+   18
+  ],
+  "speed": 100,
+  "mega": true
+ },
+ {
+  "id": 10054,
+  "key": "medicham-mega",
+  "dex": 308,
+  "name": "메가요가램",
+  "nameEn": "Mega Medicham",
+  "types": [
+   2,
+   14
+  ],
+  "speed": 100,
+  "mega": true
+ },
+ {
+  "id": 10074,
+  "key": "glalie-mega",
+  "dex": 362,
+  "name": "메가얼음귀신",
+  "nameEn": "Mega Glalie",
+  "types": [
+   15
+  ],
+  "speed": 100,
+  "mega": true
+ },
+ {
+  "id": 398,
+  "key": "staraptor",
+  "dex": 398,
+  "name": "찌르호크",
+  "nameEn": "Staraptor",
+  "types": [
+   1,
+   3
+  ],
+  "speed": 100,
+  "mega": false
+ },
+ {
+  "id": 637,
+  "key": "volcarona",
+  "dex": 637,
+  "name": "불카모스",
+  "nameEn": "Volcarona",
+  "types": [
+   7,
+   10
+  ],
+  "speed": 100,
+  "mega": false
+ },
+ {
+  "id": 10303,
+  "key": "falinks-mega",
+  "dex": 870,
+  "name": "메가대여르",
+  "nameEn": "Mega Falinks",
+  "types": [
+   2
+  ],
+  "speed": 100,
+  "mega": true
+ },
+ {
+  "id": 964,
+  "key": "palafin-zero",
+  "dex": 964,
+  "name": "돌핀맨 (나이브폼)",
+  "nameEn": "Zero Form Palafin",
+  "types": [
+   11
+  ],
+  "speed": 100,
+  "mega": false
+ },
+ {
+  "id": 10256,
+  "key": "palafin-hero",
+  "dex": 964,
+  "name": "돌핀맨 (마이티폼)",
+  "nameEn": "Hero Form Palafin",
+  "types": [
+   11
+  ],
+  "speed": 100,
+  "mega": false
+ },
+ {
+  "id": 10030,
+  "key": "gourgeist-small",
+  "dex": 711,
+  "name": "펌킨인 (작은 사이즈)",
+  "nameEn": "Small Gourgeist",
+  "types": [
+   8,
+   12
+  ],
+  "speed": 99,
+  "mega": false
+ },
+ {
+  "id": 635,
+  "key": "hydreigon",
+  "dex": 635,
+  "name": "삼삼드래",
+  "nameEn": "Hydreigon",
+  "types": [
+   17,
+   16
+  ],
+  "speed": 98,
+  "mega": false
+ },
+ {
+  "id": 877,
+  "key": "morpeko-full-belly",
+  "dex": 877,
+  "name": "모르페코 (배부른 모양)",
+  "nameEn": "Full Belly Morpeko",
+  "types": [
+   13,
+   17
+  ],
+  "speed": 97,
+  "mega": false
+ },
+ {
+  "id": 10187,
+  "key": "morpeko-hangry",
+  "dex": 877,
+  "name": "모르페코 (배고픈 모양)",
+  "nameEn": "Hangry Morpeko",
+  "types": [
+   13,
+   17
+  ],
+  "speed": 97,
+  "mega": false
+ },
+ {
+  "id": 778,
+  "key": "mimikyu-disguised",
+  "dex": 778,
+  "name": "따라큐",
+  "nameEn": "Disguised Mimikyu",
+  "types": [
+   8,
+   18
+  ],
+  "speed": 96,
+  "mega": false
+ },
+ {
+  "id": 59,
+  "key": "arcanine",
+  "dex": 59,
+  "name": "윈디",
+  "nameEn": "Arcanine",
+  "types": [
+   10
+  ],
+  "speed": 95,
+  "mega": false
+ },
+ {
+  "id": 10233,
+  "key": "typhlosion-hisui",
+  "dex": 157,
+  "name": "블레이범 (히스이)",
+  "nameEn": "Hisuian Typhlosion",
+  "types": [
+   10,
+   8
+  ],
+  "speed": 95,
+  "mega": false
+ },
+ {
+  "id": 229,
+  "key": "houndoom",
+  "dex": 229,
+  "name": "헬가",
+  "nameEn": "Houndoom",
+  "types": [
+   17,
+   10
+  ],
+  "speed": 95,
+  "mega": false
+ },
+ {
+  "id": 319,
+  "key": "sharpedo",
+  "dex": 319,
+  "name": "샤크니아",
+  "nameEn": "Sharpedo",
+  "types": [
+   11,
+   17
+  ],
+  "speed": 95,
+  "mega": false
+ },
+ {
+  "id": 470,
+  "key": "leafeon",
+  "dex": 470,
+  "name": "리피아",
+  "nameEn": "Leafeon",
+  "types": [
+   12
+  ],
+  "speed": 95,
+  "mega": false
+ },
+ {
+  "id": 472,
+  "key": "gliscor",
+  "dex": 472,
+  "name": "글라이온",
+  "nameEn": "Gliscor",
+  "types": [
+   5,
+   3
+  ],
+  "speed": 95,
+  "mega": false
+ },
+ {
+  "id": 959,
+  "key": "tinkaton",
+  "dex": 959,
+  "name": "두드리짱",
+  "nameEn": "Tinkaton",
+  "types": [
+   18,
+   9
+  ],
+  "speed": 94,
+  "mega": false
+ },
+ {
+  "id": 10058,
+  "key": "garchomp-mega",
+  "dex": 445,
+  "name": "메가한카리아스",
+  "nameEn": "Mega Garchomp",
+  "types": [
+   16,
+   5
+  ],
+  "speed": 92,
+  "mega": true
+ },
+ {
+  "id": 553,
+  "key": "krookodile",
+  "dex": 553,
+  "name": "악비아르",
+  "nameEn": "Krookodile",
+  "types": [
+   5,
+   17
+  ],
+  "speed": 92,
+  "mega": false
+ },
+ {
+  "id": 10061,
+  "key": "floette-eternal",
+  "dex": 670,
+  "name": "플라엣테 (영원의 꽃)",
+  "nameEn": "Eternal Floette",
+  "types": [
+   18
+  ],
+  "speed": 92,
+  "mega": false
+ },
+ {
+  "id": 479,
+  "key": "rotom",
+  "dex": 479,
+  "name": "로토무",
+  "nameEn": "Rotom",
+  "types": [
+   13,
+   8
+  ],
+  "speed": 91,
+  "mega": false
+ },
+ {
+  "id": 25,
+  "key": "pikachu",
+  "dex": 25,
+  "name": "피카츄",
+  "nameEn": "Pikachu",
+  "types": [
+   13
+  ],
+  "speed": 90,
+  "mega": false
+ },
+ {
+  "id": 10230,
+  "key": "arcanine-hisui",
+  "dex": 59,
+  "name": "윈디 (히스이)",
+  "nameEn": "Hisuian Arcanine",
+  "types": [
+   10,
+   6
+  ],
+  "speed": 90,
+  "mega": false
+ },
+ {
+  "id": 115,
+  "key": "kangaskhan",
+  "dex": 115,
+  "name": "캥카",
+  "nameEn": "Kangaskhan",
+  "types": [
+   1
+  ],
+  "speed": 90,
+  "mega": false
+ },
+ {
+  "id": 407,
+  "key": "roserade",
+  "dex": 407,
+  "name": "로즈레이드",
+  "nameEn": "Roserade",
+  "types": [
+   12,
+   4
+  ],
+  "speed": 90,
+  "mega": false
+ },
+ {
+  "id": 448,
+  "key": "lucario",
+  "dex": 448,
+  "name": "루카리오",
+  "nameEn": "Lucario",
+  "types": [
+   2,
+   9
+  ],
+  "speed": 90,
+  "mega": false
+ },
+ {
+  "id": 10291,
+  "key": "chandelure-mega",
+  "dex": 609,
+  "name": "메가샹델라",
+  "nameEn": "Mega Chandelure",
+  "types": [
+   8,
+   10
+  ],
+  "speed": 90,
+  "mega": true
+ },
+ {
+  "id": 979,
+  "key": "annihilape",
+  "dex": 979,
+  "name": "저승갓숭",
+  "nameEn": "Annihilape",
+  "types": [
+   2,
+   8
+  ],
+  "speed": 90,
+  "mega": false
+ },
+ {
+  "id": 666,
+  "key": "vivillon",
+  "dex": 666,
+  "name": "비비용",
+  "nameEn": "Meadow Vivillon",
+  "types": [
+   7,
+   3
+  ],
+  "speed": 89,
+  "mega": false
+ },
+ {
+  "id": 530,
+  "key": "excadrill",
+  "dex": 530,
+  "name": "몰드류",
+  "nameEn": "Excadrill",
+  "types": [
+   5,
+   9
+  ],
+  "speed": 88,
+  "mega": false
+ },
+ {
+  "id": 10297,
+  "key": "malamar-mega",
+  "dex": 687,
+  "name": "메가칼라마네로",
+  "nameEn": "Mega Malamar",
+  "types": [
+   17,
+   14
+  ],
+  "speed": 88,
+  "mega": true
+ },
+ {
+  "id": 10298,
+  "key": "barbaracle-mega",
+  "dex": 689,
+  "name": "메가거북손데스",
+  "nameEn": "Mega Barbaracle",
+  "types": [
+   6,
+   2
+  ],
+  "speed": 88,
+  "mega": true
+ },
+ {
+  "id": 10008,
+  "key": "rotom-heat",
+  "dex": 479,
+  "name": "히트로토무",
+  "nameEn": "Heat Rotom",
+  "types": [
+   13,
+   10
+  ],
+  "speed": 86,
+  "mega": false
+ },
+ {
+  "id": 10009,
+  "key": "rotom-wash",
+  "dex": 479,
+  "name": "워시로토무",
+  "nameEn": "Wash Rotom",
+  "types": [
+   13,
+   11
+  ],
+  "speed": 86,
+  "mega": false
+ },
+ {
+  "id": 10010,
+  "key": "rotom-frost",
+  "dex": 479,
+  "name": "프로스트로토무",
+  "nameEn": "Frost Rotom",
+  "types": [
+   13,
+   15
+  ],
+  "speed": 86,
+  "mega": false
+ },
+ {
+  "id": 10011,
+  "key": "rotom-fan",
+  "dex": 479,
+  "name": "스핀로토무",
+  "nameEn": "Fan Rotom",
+  "types": [
+   13,
+   3
+  ],
+  "speed": 86,
+  "mega": false
+ },
+ {
+  "id": 10012,
+  "key": "rotom-mow",
+  "dex": 479,
+  "name": "커트로토무",
+  "nameEn": "Mow Rotom",
+  "types": [
+   13,
+   12
+  ],
+  "speed": 86,
+  "mega": false
+ },
+ {
+  "id": 970,
+  "key": "glimmora",
+  "dex": 970,
+  "name": "킬라플로르",
+  "nameEn": "Glimmora",
+  "types": [
+   6,
+   4
+  ],
+  "speed": 86,
+  "mega": false
+ },
+ {
+  "id": 127,
+  "key": "pinsir",
+  "dex": 127,
+  "name": "쁘사이저",
+  "nameEn": "Pinsir",
+  "types": [
+   7
+  ],
+  "speed": 85,
+  "mega": false
+ },
+ {
+  "id": 211,
+  "key": "qwilfish",
+  "dex": 211,
+  "name": "침바루",
+  "nameEn": "Qwilfish",
+  "types": [
+   11,
+   4
+  ],
+  "speed": 85,
+  "mega": false
+ },
+ {
+  "id": 214,
+  "key": "heracross",
+  "dex": 214,
+  "name": "헤라크로스",
+  "nameEn": "Heracross",
+  "types": [
+   7,
+   2
+  ],
+  "speed": 85,
+  "mega": false
+ },
+ {
+  "id": 454,
+  "key": "toxicroak",
+  "dex": 454,
+  "name": "독개굴",
+  "nameEn": "Toxicroak",
+  "types": [
+   4,
+   2
+  ],
+  "speed": 85,
+  "mega": false
+ },
+ {
+  "id": 10236,
+  "key": "samurott-hisui",
+  "dex": 503,
+  "name": "대검귀 (히스이)",
+  "nameEn": "Hisuian Samurott",
+  "types": [
+   11,
+   17
+  ],
+  "speed": 85,
+  "mega": false
+ },
+ {
+  "id": 784,
+  "key": "kommo-o",
+  "dex": 784,
+  "name": "짜랑고우거",
+  "nameEn": "Kommo-o",
+  "types": [
+   16,
+   2
+  ],
+  "speed": 85,
+  "mega": false
+ },
+ {
+  "id": 900,
+  "key": "kleavor",
+  "dex": 900,
+  "name": "사마자르",
+  "nameEn": "Kleavor",
+  "types": [
+   7,
+   6
+  ],
+  "speed": 85,
+  "mega": false
+ },
+ {
+  "id": 904,
+  "key": "overqwil",
+  "dex": 904,
+  "name": "장침바루",
+  "nameEn": "Overqwil",
+  "types": [
+   17,
+   4
+  ],
+  "speed": 85,
+  "mega": false
+ },
+ {
+  "id": 914,
+  "key": "quaquaval",
+  "dex": 914,
+  "name": "웨이니발",
+  "nameEn": "Quaquaval",
+  "types": [
+   11,
+   2
+  ],
+  "speed": 85,
+  "mega": false
+ },
+ {
+  "id": 937,
+  "key": "ceruledge",
+  "dex": 937,
+  "name": "파라블레이즈",
+  "nameEn": "Ceruledge",
+  "types": [
+   10,
+   8
+  ],
+  "speed": 85,
+  "mega": false
+ },
+ {
+  "id": 1018,
+  "key": "archaludon",
+  "dex": 1018,
+  "name": "브리두라스",
+  "nameEn": "Archaludon",
+  "types": [
+   9,
+   16
+  ],
+  "speed": 85,
+  "mega": false
+ },
+ {
+  "id": 711,
+  "key": "gourgeist-average",
+  "dex": 711,
+  "name": "펌킨인 (보통 사이즈)",
+  "nameEn": "Average Gourgeist",
+  "types": [
+   8,
+   12
+  ],
+  "speed": 84,
+  "mega": false
+ },
+ {
+  "id": 1000,
+  "key": "gholdengo",
+  "dex": 1000,
+  "name": "타부자고",
+  "nameEn": "Gholdengo",
+  "types": [
+   9,
+   8
+  ],
+  "speed": 84,
+  "mega": false
+ },
+ {
+  "id": 10126,
+  "key": "lycanroc-midnight",
+  "dex": 745,
+  "name": "루가루암 (한밤중의 모습)",
+  "nameEn": "Midnight Lycanroc",
+  "types": [
+   6
+  ],
+  "speed": 82,
+  "mega": false
+ },
+ {
+  "id": 130,
+  "key": "gyarados",
+  "dex": 130,
+  "name": "갸라도스",
+  "nameEn": "Gyarados",
+  "types": [
+   11,
+   3
+  ],
+  "speed": 81,
+  "mega": false
+ },
+ {
+  "id": 10041,
+  "key": "gyarados-mega",
+  "dex": 130,
+  "name": "메가갸라도스",
+  "nameEn": "Mega Gyarados",
+  "types": [
+   11,
+   17
+  ],
+  "speed": 81,
+  "mega": true
+ },
+ {
+  "id": 350,
+  "key": "milotic",
+  "dex": 350,
+  "name": "밀로틱",
+  "nameEn": "Milotic",
+  "types": [
+   11
+  ],
+  "speed": 81,
+  "mega": false
+ },
+ {
+  "id": 3,
+  "key": "venusaur",
+  "dex": 3,
+  "name": "이상해꽃",
+  "nameEn": "Venusaur",
+  "types": [
+   12,
+   4
+  ],
+  "speed": 80,
+  "mega": false
+ },
+ {
+  "id": 10033,
+  "key": "venusaur-mega",
+  "dex": 3,
+  "name": "메가이상해꽃",
+  "nameEn": "Mega Venusaur",
+  "types": [
+   12,
+   4
+  ],
+  "speed": 80,
+  "mega": true
+ },
+ {
+  "id": 24,
+  "key": "arbok",
+  "dex": 24,
+  "name": "아보크",
+  "nameEn": "Arbok",
+  "types": [
+   4
+  ],
+  "speed": 80,
+  "mega": false
+ },
+ {
+  "id": 149,
+  "key": "dragonite",
+  "dex": 149,
+  "name": "망나뇽",
+  "nameEn": "Dragonite",
+  "types": [
+   16,
+   3
+  ],
+  "speed": 80,
+  "mega": false
+ },
+ {
+  "id": 154,
+  "key": "meganium",
+  "dex": 154,
+  "name": "메가니움",
+  "nameEn": "Meganium",
+  "types": [
+   12
+  ],
+  "speed": 80,
+  "mega": false
+ },
+ {
+  "id": 10282,
+  "key": "meganium-mega",
+  "dex": 154,
+  "name": "메가메가니움",
+  "nameEn": "Mega Meganium",
+  "types": [
+   12,
+   18
+  ],
+  "speed": 80,
+  "mega": true
+ },
+ {
+  "id": 257,
+  "key": "blaziken",
+  "dex": 257,
+  "name": "번치코",
+  "nameEn": "Blaziken",
+  "types": [
+   10,
+   2
+  ],
+  "speed": 80,
+  "mega": false
+ },
+ {
+  "id": 282,
+  "key": "gardevoir",
+  "dex": 282,
+  "name": "가디안",
+  "nameEn": "Gardevoir",
+  "types": [
+   14,
+   18
+  ],
+  "speed": 80,
+  "mega": false
+ },
+ {
+  "id": 308,
+  "key": "medicham",
+  "dex": 308,
+  "name": "요가램",
+  "nameEn": "Medicham",
+  "types": [
+   2,
+   14
+  ],
+  "speed": 80,
+  "mega": false
+ },
+ {
+  "id": 334,
+  "key": "altaria",
+  "dex": 334,
+  "name": "파비코리",
+  "nameEn": "Altaria",
+  "types": [
+   16,
+   3
+  ],
+  "speed": 80,
+  "mega": false
+ },
+ {
+  "id": 10067,
+  "key": "altaria-mega",
+  "dex": 334,
+  "name": "메가파비코리",
+  "nameEn": "Mega Altaria",
+  "types": [
+   16,
+   18
+  ],
+  "speed": 80,
+  "mega": true
+ },
+ {
+  "id": 362,
+  "key": "glalie",
+  "dex": 362,
+  "name": "얼음귀신",
+  "nameEn": "Glalie",
+  "types": [
+   15
+  ],
+  "speed": 80,
+  "mega": false
+ },
+ {
+  "id": 473,
+  "key": "mamoswine",
+  "dex": 473,
+  "name": "맘모꾸리",
+  "nameEn": "Mamoswine",
+  "types": [
+   15,
+   5
+  ],
+  "speed": 80,
+  "mega": false
+ },
+ {
+  "id": 475,
+  "key": "gallade",
+  "dex": 475,
+  "name": "엘레이드",
+  "nameEn": "Gallade",
+  "types": [
+   14,
+   2
+  ],
+  "speed": 80,
+  "mega": false
+ },
+ {
+  "id": 10290,
+  "key": "eelektross-mega",
+  "dex": 604,
+  "name": "메가저리더프",
+  "nameEn": "Mega Eelektross",
+  "types": [
+   13
+  ],
+  "speed": 80,
+  "mega": true
+ },
+ {
+  "id": 609,
+  "key": "chandelure",
+  "dex": 609,
+  "name": "샹델라",
+  "nameEn": "Chandelure",
+  "types": [
+   8,
+   10
+  ],
+  "speed": 80,
+  "mega": false
+ },
+ {
+  "id": 706,
+  "key": "goodra",
+  "dex": 706,
+  "name": "미끄래곤",
+  "nameEn": "Goodra",
+  "types": [
+   16
+  ],
+  "speed": 80,
+  "mega": false
+ },
+ {
+  "id": 766,
+  "key": "passimian",
+  "dex": 766,
+  "name": "내던숭이",
+  "nameEn": "Passimian",
+  "types": [
+   2
+  ],
+  "speed": 80,
+  "mega": false
+ },
+ {
+  "id": 584,
+  "key": "vanilluxe",
+  "dex": 584,
+  "name": "배바닐라",
+  "nameEn": "Vanilluxe",
+  "types": [
+   15
+  ],
+  "speed": 79,
+  "mega": false
+ },
+ {
+  "id": 9,
+  "key": "blastoise",
+  "dex": 9,
+  "name": "거북왕",
+  "nameEn": "Blastoise",
+  "types": [
+   11
+  ],
+  "speed": 78,
+  "mega": false
+ },
+ {
+  "id": 10036,
+  "key": "blastoise-mega",
+  "dex": 9,
+  "name": "메가거북왕",
+  "nameEn": "Mega Blastoise",
+  "types": [
+   11
+  ],
+  "speed": 78,
+  "mega": true
+ },
+ {
+  "id": 160,
+  "key": "feraligatr",
+  "dex": 160,
+  "name": "장크로다일",
+  "nameEn": "Feraligatr",
+  "types": [
+   11
+  ],
+  "speed": 78,
+  "mega": false
+ },
+ {
+  "id": 10283,
+  "key": "feraligatr-mega",
+  "dex": 160,
+  "name": "메가장크로다일",
+  "nameEn": "Mega Feraligatr",
+  "types": [
+   11,
+   16
+  ],
+  "speed": 78,
+  "mega": true
+ },
+ {
+  "id": 660,
+  "key": "diggersby",
+  "dex": 660,
+  "name": "파르토",
+  "nameEn": "Diggersby",
+  "types": [
+   1,
+   5
+  ],
+  "speed": 78,
+  "mega": false
+ },
+ {
+  "id": 902,
+  "key": "basculegion-male",
+  "dex": 902,
+  "name": "대쓰여너 (수컷)",
+  "nameEn": "Male Basculegion",
+  "types": [
+   11,
+   8
+  ],
+  "speed": 78,
+  "mega": false
+ },
+ {
+  "id": 10248,
+  "key": "basculegion-female",
+  "dex": 902,
+  "name": "대쓰여너 (암컷)",
+  "nameEn": "Female Basculegion",
+  "types": [
+   11,
+   8
+  ],
+  "speed": 78,
+  "mega": false
+ },
+ {
+  "id": 505,
+  "key": "watchog",
+  "dex": 505,
+  "name": "보르그",
+  "nameEn": "Watchog",
+  "types": [
+   1
+  ],
+  "speed": 77,
+  "mega": false
+ },
+ {
+  "id": 15,
+  "key": "beedrill",
+  "dex": 15,
+  "name": "독침붕",
+  "nameEn": "Beedrill",
+  "types": [
+   7,
+   4
+  ],
+  "speed": 75,
+  "mega": false
+ },
+ {
+  "id": 10046,
+  "key": "scizor-mega",
+  "dex": 212,
+  "name": "메가핫삼",
+  "nameEn": "Mega Scizor",
+  "types": [
+   7,
+   9
+  ],
+  "speed": 75,
+  "mega": true
+ },
+ {
+  "id": 10047,
+  "key": "heracross-mega",
+  "dex": 214,
+  "name": "메가헤라크로스",
+  "nameEn": "Mega Heracross",
+  "types": [
+   7,
+   2
+  ],
+  "speed": 75,
+  "mega": true
+ },
+ {
+  "id": 10056,
+  "key": "banette-mega",
+  "dex": 354,
+  "name": "메가다크펫",
+  "nameEn": "Mega Banette",
+  "types": [
+   8
+  ],
+  "speed": 75,
+  "mega": true
+ },
+ {
+  "id": 359,
+  "key": "absol",
+  "dex": 359,
+  "name": "앱솔",
+  "nameEn": "Absol",
+  "types": [
+   17
+  ],
+  "speed": 75,
+  "mega": false
+ },
+ {
+  "id": 10286,
+  "key": "emboar-mega",
+  "dex": 500,
+  "name": "메가염무왕",
+  "nameEn": "Mega Emboar",
+  "types": [
+   10,
+   2
+  ],
+  "speed": 75,
+  "mega": true
+ },
+ {
+  "id": 569,
+  "key": "garbodor",
+  "dex": 569,
+  "name": "더스트나",
+  "nameEn": "Garbodor",
+  "types": [
+   4
+  ],
+  "speed": 75,
+  "mega": false
+ },
+ {
+  "id": 671,
+  "key": "florges",
+  "dex": 671,
+  "name": "플라제스",
+  "nameEn": "Red Florges",
+  "types": [
+   18
+  ],
+  "speed": 75,
+  "mega": false
+ },
+ {
+  "id": 707,
+  "key": "klefki",
+  "dex": 707,
+  "name": "클레피",
+  "nameEn": "Klefki",
+  "types": [
+   9,
+   18
+  ],
+  "speed": 75,
+  "mega": false
+ },
+ {
+  "id": 870,
+  "key": "falinks",
+  "dex": 870,
+  "name": "대여르",
+  "nameEn": "Falinks",
+  "types": [
+   2
+  ],
+  "speed": 75,
+  "mega": false
+ },
+ {
+  "id": 936,
+  "key": "armarouge",
+  "dex": 936,
+  "name": "카디나르마",
+  "nameEn": "Armarouge",
+  "types": [
+   10,
+   14
+  ],
+  "speed": 75,
+  "mega": false
+ },
+ {
+  "id": 952,
+  "key": "scovillain",
+  "dex": 952,
+  "name": "스코빌런",
+  "nameEn": "Scovillain",
+  "types": [
+   12,
+   10
+  ],
+  "speed": 75,
+  "mega": false
+ },
+ {
+  "id": 10320,
+  "key": "scovillain-mega",
+  "dex": 952,
+  "name": "메가스코빌런",
+  "nameEn": "Mega Scovillain",
+  "types": [
+   12,
+   10
+  ],
+  "speed": 75,
+  "mega": true
+ },
+ {
+  "id": 687,
+  "key": "malamar",
+  "dex": 687,
+  "name": "칼라마네로",
+  "nameEn": "Malamar",
+  "types": [
+   17,
+   14
+  ],
+  "speed": 73,
+  "mega": false
+ },
+ {
+  "id": 685,
+  "key": "slurpuff",
+  "dex": 685,
+  "name": "나루림",
+  "nameEn": "Slurpuff",
+  "types": [
+   18
+  ],
+  "speed": 72,
+  "mega": false
+ },
+ {
+  "id": 763,
+  "key": "tsareena",
+  "dex": 763,
+  "name": "달코퀸",
+  "nameEn": "Tsareena",
+  "types": [
+   12
+  ],
+  "speed": 72,
+  "mega": false
+ },
+ {
+  "id": 10049,
+  "key": "tyranitar-mega",
+  "dex": 248,
+  "name": "메가마기라스",
+  "nameEn": "Mega Tyranitar",
+  "types": [
+   6,
+   17
+  ],
+  "speed": 71,
+  "mega": true
+ },
+ {
+  "id": 697,
+  "key": "tyrantrum",
+  "dex": 697,
+  "name": "견고라스",
+  "nameEn": "Tyrantrum",
+  "types": [
+   6,
+   16
+  ],
+  "speed": 71,
+  "mega": false
+ },
+ {
+  "id": 844,
+  "key": "sandaconda",
+  "dex": 844,
+  "name": "사다이사",
+  "nameEn": "Sandaconda",
+  "types": [
+   5
+  ],
+  "speed": 71,
+  "mega": false
+ },
+ {
+  "id": 10278,
+  "key": "clefable-mega",
+  "dex": 36,
+  "name": "메가픽시",
+  "nameEn": "Mega Clefable",
+  "types": [
+   18,
+   3
+  ],
+  "speed": 70,
+  "mega": true
+ },
+ {
+  "id": 71,
+  "key": "victreebel",
+  "dex": 71,
+  "name": "우츠보트",
+  "nameEn": "Victreebel",
+  "types": [
+   12,
+   4
+  ],
+  "speed": 70,
+  "mega": false
+ },
+ {
+  "id": 10279,
+  "key": "victreebel-mega",
+  "dex": 71,
+  "name": "메가우츠보트",
+  "nameEn": "Mega Victreebel",
+  "types": [
+   12,
+   4
+  ],
+  "speed": 70,
+  "mega": true
+ },
+ {
+  "id": 186,
+  "key": "politoed",
+  "dex": 186,
+  "name": "왕구리",
+  "nameEn": "Politoed",
+  "types": [
+   11
+  ],
+  "speed": 70,
+  "mega": false
+ },
+ {
+  "id": 227,
+  "key": "skarmory",
+  "dex": 227,
+  "name": "무장조",
+  "nameEn": "Skarmory",
+  "types": [
+   9,
+   3
+  ],
+  "speed": 70,
+  "mega": false
+ },
+ {
+  "id": 10064,
+  "key": "swampert-mega",
+  "dex": 260,
+  "name": "메가대짱이",
+  "nameEn": "Mega Swampert",
+  "types": [
+   11,
+   5
+  ],
+  "speed": 70,
+  "mega": true
+ },
+ {
+  "id": 351,
+  "key": "castform",
+  "dex": 351,
+  "name": "캐스퐁",
+  "nameEn": "Castform",
+  "types": [
+   1
+  ],
+  "speed": 70,
+  "mega": false
+ },
+ {
+  "id": 376,
+  "key": "metagross",
+  "dex": 376,
+  "name": "메타그로스",
+  "nameEn": "Metagross",
+  "types": [
+   9,
+   14
+  ],
+  "speed": 70,
+  "mega": false
+ },
+ {
+  "id": 405,
+  "key": "luxray",
+  "dex": 405,
+  "name": "렌트라",
+  "nameEn": "Luxray",
+  "types": [
+   13
+  ],
+  "speed": 70,
+  "mega": false
+ },
+ {
+  "id": 503,
+  "key": "samurott",
+  "dex": 503,
+  "name": "대검귀",
+  "nameEn": "Samurott",
+  "types": [
+   11
+  ],
+  "speed": 70,
+  "mega": false
+ },
+ {
+  "id": 724,
+  "key": "decidueye",
+  "dex": 724,
+  "name": "모크나이퍼",
+  "nameEn": "Decidueye",
+  "types": [
+   12,
+   8
+  ],
+  "speed": 70,
+  "mega": false
+ },
+ {
+  "id": 841,
+  "key": "flapple",
+  "dex": 841,
+  "name": "애프룡",
+  "nameEn": "Flapple",
+  "types": [
+   12,
+   16
+  ],
+  "speed": 70,
+  "mega": false
+ },
+ {
+  "id": 855,
+  "key": "polteageist",
+  "dex": 855,
+  "name": "포트데스",
+  "nameEn": "Phony Polteageist",
+  "types": [
+   8
+  ],
+  "speed": 70,
+  "mega": false
+ },
+ {
+  "id": 866,
+  "key": "mr-rime",
+  "dex": 866,
+  "name": "마임꽁꽁",
+  "nameEn": "Mr. Rime",
+  "types": [
+   15,
+   14
+  ],
+  "speed": 70,
+  "mega": false
+ },
+ {
+  "id": 1013,
+  "key": "sinistcha",
+  "dex": 1013,
+  "name": "그우린차",
+  "nameEn": "Unremarkable Form Sinistcha",
+  "types": [
+   12,
+   8
+  ],
+  "speed": 70,
+  "mega": false
+ },
+ {
+  "id": 10031,
+  "key": "gourgeist-large",
+  "dex": 711,
+  "name": "펌킨인 (큰 사이즈)",
+  "nameEn": "Large Gourgeist",
+  "types": [
+   8,
+   12
+  ],
+  "speed": 69,
+  "mega": false
+ },
+ {
+  "id": 10289,
+  "key": "scrafty-mega",
+  "dex": 560,
+  "name": "메가곤율거니",
+  "nameEn": "Mega Scrafty",
+  "types": [
+   17,
+   2
+  ],
+  "speed": 68,
+  "mega": true
+ },
+ {
+  "id": 689,
+  "key": "barbaracle",
+  "dex": 689,
+  "name": "거북손데스",
+  "nameEn": "Barbaracle",
+  "types": [
+   6,
+   11
+  ],
+  "speed": 68,
+  "mega": false
+ },
+ {
+  "id": 972,
+  "key": "houndstone",
+  "dex": 972,
+  "name": "묘두기",
+  "nameEn": "Houndstone",
+  "types": [
+   8
+  ],
+  "speed": 68,
+  "mega": false
+ },
+ {
+  "id": 823,
+  "key": "corviknight",
+  "dex": 823,
+  "name": "아머까오",
+  "nameEn": "Corviknight",
+  "types": [
+   3,
+   9
+  ],
+  "speed": 67,
+  "mega": false
+ },
+ {
+  "id": 911,
+  "key": "skeledirge",
+  "dex": 911,
+  "name": "라우드본",
+  "nameEn": "Skeledirge",
+  "types": [
+   10,
+   8
+  ],
+  "speed": 66,
+  "mega": false
+ },
+ {
+  "id": 134,
+  "key": "vaporeon",
+  "dex": 134,
+  "name": "샤미드",
+  "nameEn": "Vaporeon",
+  "types": [
+   11
+  ],
+  "speed": 65,
+  "mega": false
+ },
+ {
+  "id": 136,
+  "key": "flareon",
+  "dex": 136,
+  "name": "부스터",
+  "nameEn": "Flareon",
+  "types": [
+   10
+  ],
+  "speed": 65,
+  "mega": false
+ },
+ {
+  "id": 197,
+  "key": "umbreon",
+  "dex": 197,
+  "name": "블래키",
+  "nameEn": "Umbreon",
+  "types": [
+   17
+  ],
+  "speed": 65,
+  "mega": false
+ },
+ {
+  "id": 212,
+  "key": "scizor",
+  "dex": 212,
+  "name": "핫삼",
+  "nameEn": "Scizor",
+  "types": [
+   7,
+   9
+  ],
+  "speed": 65,
+  "mega": false
+ },
+ {
+  "id": 279,
+  "key": "pelipper",
+  "dex": 279,
+  "name": "패리퍼",
+  "nameEn": "Pelipper",
+  "types": [
+   11,
+   3
+  ],
+  "speed": 65,
+  "mega": false
+ },
+ {
+  "id": 354,
+  "key": "banette",
+  "dex": 354,
+  "name": "다크펫",
+  "nameEn": "Banette",
+  "types": [
+   8
+  ],
+  "speed": 65,
+  "mega": false
+ },
+ {
+  "id": 358,
+  "key": "chimecho",
+  "dex": 358,
+  "name": "치렁",
+  "nameEn": "Chimecho",
+  "types": [
+   14
+  ],
+  "speed": 65,
+  "mega": false
+ },
+ {
+  "id": 10306,
+  "key": "chimecho-mega",
+  "dex": 358,
+  "name": "메가치렁",
+  "nameEn": "Mega Chimecho",
+  "types": [
+   14,
+   9
+  ],
+  "speed": 65,
+  "mega": true
+ },
+ {
+  "id": 471,
+  "key": "glaceon",
+  "dex": 471,
+  "name": "글레이시아",
+  "nameEn": "Glaceon",
+  "types": [
+   15
+  ],
+  "speed": 65,
+  "mega": false
+ },
+ {
+  "id": 500,
+  "key": "emboar",
+  "dex": 500,
+  "name": "염무왕",
+  "nameEn": "Emboar",
+  "types": [
+   10,
+   2
+  ],
+  "speed": 65,
+  "mega": false
+ },
+ {
+  "id": 899,
+  "key": "wyrdeer",
+  "dex": 899,
+  "name": "신비록",
+  "nameEn": "Wyrdeer",
+  "types": [
+   1,
+   14
+  ],
+  "speed": 65,
+  "mega": false
+ },
+ {
+  "id": 968,
+  "key": "orthworm",
+  "dex": 968,
+  "name": "꿈트렁",
+  "nameEn": "Orthworm",
+  "types": [
+   9
+  ],
+  "speed": 65,
+  "mega": false
+ },
+ {
+  "id": 652,
+  "key": "chesnaught",
+  "dex": 652,
+  "name": "브리가론",
+  "nameEn": "Chesnaught",
+  "types": [
+   12,
+   2
+  ],
+  "speed": 64,
+  "mega": false
+ },
+ {
+  "id": 869,
+  "key": "alcremie",
+  "dex": 869,
+  "name": "마휘핑",
+  "nameEn": "Vanilla Cream Strawberry Sweet Alcremie",
+  "types": [
+   18
+  ],
+  "speed": 64,
+  "mega": false
+ },
+ {
+  "id": 10288,
+  "key": "scolipede-mega",
+  "dex": 545,
+  "name": "메가펜드라",
+  "nameEn": "Mega Scolipede",
+  "types": [
+   7,
+   4
+  ],
+  "speed": 62,
+  "mega": true
+ },
+ {
+  "id": 248,
+  "key": "tyranitar",
+  "dex": 248,
+  "name": "마기라스",
+  "nameEn": "Tyranitar",
+  "types": [
+   6,
+   17
+  ],
+  "speed": 61,
+  "mega": false
+ },
+ {
+  "id": 36,
+  "key": "clefable",
+  "dex": 36,
+  "name": "픽시",
+  "nameEn": "Clefable",
+  "types": [
+   18
+  ],
+  "speed": 60,
+  "mega": false
+ },
+ {
+  "id": 260,
+  "key": "swampert",
+  "dex": 260,
+  "name": "대짱이",
+  "nameEn": "Swampert",
+  "types": [
+   11,
+   5
+  ],
+  "speed": 60,
+  "mega": false
+ },
+ {
+  "id": 395,
+  "key": "empoleon",
+  "dex": 395,
+  "name": "엠페르트",
+  "nameEn": "Empoleon",
+  "types": [
+   11,
+   9
+  ],
+  "speed": 60,
+  "mega": false
+ },
+ {
+  "id": 460,
+  "key": "abomasnow",
+  "dex": 460,
+  "name": "눈설왕",
+  "nameEn": "Abomasnow",
+  "types": [
+   12,
+   15
+  ],
+  "speed": 60,
+  "mega": false
+ },
+ {
+  "id": 681,
+  "key": "aegislash-shield",
+  "dex": 681,
+  "name": "킬가르도 (실드폼)",
+  "nameEn": "Shield Aegislash",
+  "types": [
+   9,
+   8
+  ],
+  "speed": 60,
+  "mega": false
+ },
+ {
+  "id": 10026,
+  "key": "aegislash-blade",
+  "dex": 681,
+  "name": "킬가르도 (블레이드폼)",
+  "nameEn": "Blade Aegislash",
+  "types": [
+   9,
+   8
+  ],
+  "speed": 60,
+  "mega": false
+ },
+ {
+  "id": 700,
+  "key": "sylveon",
+  "dex": 700,
+  "name": "님피아",
+  "nameEn": "Sylveon",
+  "types": [
+   18
+  ],
+  "speed": 60,
+  "mega": false
+ },
+ {
+  "id": 10242,
+  "key": "goodra-hisui",
+  "dex": 706,
+  "name": "미끄래곤 (히스이)",
+  "nameEn": "Hisuian Goodra",
+  "types": [
+   9,
+   16
+  ],
+  "speed": 60,
+  "mega": false
+ },
+ {
+  "id": 10244,
+  "key": "decidueye-hisui",
+  "dex": 724,
+  "name": "모크나이퍼 (히스이)",
+  "nameEn": "Hisuian Decidueye",
+  "types": [
+   12,
+   2
+  ],
+  "speed": 60,
+  "mega": false
+ },
+ {
+  "id": 727,
+  "key": "incineroar",
+  "dex": 727,
+  "name": "어흥염",
+  "nameEn": "Incineroar",
+  "types": [
+   10,
+   17
+  ],
+  "speed": 60,
+  "mega": false
+ },
+ {
+  "id": 730,
+  "key": "primarina",
+  "dex": 730,
+  "name": "누리레느",
+  "nameEn": "Primarina",
+  "types": [
+   11,
+   18
+  ],
+  "speed": 60,
+  "mega": false
+ },
+ {
+  "id": 733,
+  "key": "toucannon",
+  "dex": 733,
+  "name": "왕큰부리",
+  "nameEn": "Toucannon",
+  "types": [
+   1,
+   3
+  ],
+  "speed": 60,
+  "mega": false
+ },
+ {
+  "id": 765,
+  "key": "oranguru",
+  "dex": 765,
+  "name": "하랑우탄",
+  "nameEn": "Oranguru",
+  "types": [
+   1,
+   14
+  ],
+  "speed": 60,
+  "mega": false
+ },
+ {
+  "id": 861,
+  "key": "grimmsnarl",
+  "dex": 861,
+  "name": "오롱털",
+  "nameEn": "Grimmsnarl",
+  "types": [
+   17,
+   18
+  ],
+  "speed": 60,
+  "mega": false
+ },
+ {
+  "id": 981,
+  "key": "farigiraf",
+  "dex": 981,
+  "name": "키키링",
+  "nameEn": "Farigiraf",
+  "types": [
+   1,
+   14
+  ],
+  "speed": 60,
+  "mega": false
+ },
+ {
+  "id": 693,
+  "key": "clawitzer",
+  "dex": 693,
+  "name": "블로스터",
+  "nameEn": "Clawitzer",
+  "types": [
+   11
+  ],
+  "speed": 59,
+  "mega": false
+ },
+ {
+  "id": 409,
+  "key": "rampardos",
+  "dex": 409,
+  "name": "램펄드",
+  "nameEn": "Rampardos",
+  "types": [
+   6
+  ],
+  "speed": 58,
+  "mega": false
+ },
+ {
+  "id": 560,
+  "key": "scrafty",
+  "dex": 560,
+  "name": "곤율거니",
+  "nameEn": "Scrafty",
+  "types": [
+   17,
+   2
+  ],
+  "speed": 58,
+  "mega": false
+ },
+ {
+  "id": 675,
+  "key": "pangoro",
+  "dex": 675,
+  "name": "부란다",
+  "nameEn": "Pangoro",
+  "types": [
+   2,
+   17
+  ],
+  "speed": 58,
+  "mega": false
+ },
+ {
+  "id": 699,
+  "key": "aurorus",
+  "dex": 699,
+  "name": "아마루르가",
+  "nameEn": "Aurorus",
+  "types": [
+   6,
+   15
+  ],
+  "speed": 58,
+  "mega": false
+ },
+ {
+  "id": 389,
+  "key": "torterra",
+  "dex": 389,
+  "name": "토대부기",
+  "nameEn": "Torterra",
+  "types": [
+   12,
+   5
+  ],
+  "speed": 56,
+  "mega": false
+ },
+ {
+  "id": 709,
+  "key": "trevenant",
+  "dex": 709,
+  "name": "대로트",
+  "nameEn": "Trevenant",
+  "types": [
+   8,
+   12
+  ],
+  "speed": 56,
+  "mega": false
+ },
+ {
+  "id": 68,
+  "key": "machamp",
+  "dex": 68,
+  "name": "괴력몬",
+  "nameEn": "Machamp",
+  "types": [
+   2
+  ],
+  "speed": 55,
+  "mega": false
+ },
+ {
+  "id": 181,
+  "key": "ampharos",
+  "dex": 181,
+  "name": "전룡",
+  "nameEn": "Ampharos",
+  "types": [
+   13
+  ],
+  "speed": 55,
+  "mega": false
+ },
+ {
+  "id": 623,
+  "key": "golurk",
+  "dex": 623,
+  "name": "골루그",
+  "nameEn": "Golurk",
+  "types": [
+   5,
+   8
+  ],
+  "speed": 55,
+  "mega": false
+ },
+ {
+  "id": 10313,
+  "key": "golurk-mega",
+  "dex": 623,
+  "name": "메가골루그",
+  "nameEn": "Mega Golurk",
+  "types": [
+   5,
+   8
+  ],
+  "speed": 55,
+  "mega": true
+ },
+ {
+  "id": 10032,
+  "key": "gourgeist-super",
+  "dex": 711,
+  "name": "펌킨인 (특대 사이즈)",
+  "nameEn": "Super Gourgeist",
+  "types": [
+   8,
+   12
+  ],
+  "speed": 54,
+  "mega": false
+ },
+ {
+  "id": 45,
+  "key": "vileplume",
+  "dex": 45,
+  "name": "라플레시아",
+  "nameEn": "Vileplume",
+  "types": [
+   12,
+   4
+  ],
+  "speed": 50,
+  "mega": false
+ },
+ {
+  "id": 184,
+  "key": "azumarill",
+  "dex": 184,
+  "name": "마릴리",
+  "nameEn": "Azumarill",
+  "types": [
+   11,
+   18
+  ],
+  "speed": 50,
+  "mega": false
+ },
+ {
+  "id": 302,
+  "key": "sableye",
+  "dex": 302,
+  "name": "깜까미",
+  "nameEn": "Sableye",
+  "types": [
+   17,
+   8
+  ],
+  "speed": 50,
+  "mega": false
+ },
+ {
+  "id": 303,
+  "key": "mawile",
+  "dex": 303,
+  "name": "입치트",
+  "nameEn": "Mawile",
+  "types": [
+   9,
+   18
+  ],
+  "speed": 50,
+  "mega": false
+ },
+ {
+  "id": 10052,
+  "key": "mawile-mega",
+  "dex": 303,
+  "name": "메가입치트",
+  "nameEn": "Mega Mawile",
+  "types": [
+   9,
+   18
+  ],
+  "speed": 50,
+  "mega": true
+ },
+ {
+  "id": 306,
+  "key": "aggron",
+  "dex": 306,
+  "name": "보스로라",
+  "nameEn": "Aggron",
+  "types": [
+   9,
+   6
+  ],
+  "speed": 50,
+  "mega": false
+ },
+ {
+  "id": 10053,
+  "key": "aggron-mega",
+  "dex": 306,
+  "name": "메가보스로라",
+  "nameEn": "Mega Aggron",
+  "types": [
+   9
+  ],
+  "speed": 50,
+  "mega": true
+ },
+ {
+  "id": 531,
+  "key": "audino",
+  "dex": 531,
+  "name": "다부니",
+  "nameEn": "Audino",
+  "types": [
+   1
+  ],
+  "speed": 50,
+  "mega": false
+ },
+ {
+  "id": 10069,
+  "key": "audino-mega",
+  "dex": 531,
+  "name": "메가다부니",
+  "nameEn": "Mega Audino",
+  "types": [
+   1,
+   18
+  ],
+  "speed": 50,
+  "mega": true
+ },
+ {
+  "id": 604,
+  "key": "eelektross",
+  "dex": 604,
+  "name": "저리더프",
+  "nameEn": "Eelektross",
+  "types": [
+   13
+  ],
+  "speed": 50,
+  "mega": false
+ },
+ {
+  "id": 614,
+  "key": "beartic",
+  "dex": 614,
+  "name": "툰베어",
+  "nameEn": "Beartic",
+  "types": [
+   15
+  ],
+  "speed": 50,
+  "mega": false
+ },
+ {
+  "id": 983,
+  "key": "kingambit",
+  "dex": 983,
+  "name": "대도각참",
+  "nameEn": "Kingambit",
+  "types": [
+   17,
+   9
+  ],
+  "speed": 50,
+  "mega": false
+ },
+ {
+  "id": 132,
+  "key": "ditto",
+  "dex": 132,
+  "name": "메타몽",
+  "nameEn": "Ditto",
+  "types": [
+   1
+  ],
+  "speed": 48,
+  "mega": false
+ },
+ {
+  "id": 450,
+  "key": "hippowdon",
+  "dex": 450,
+  "name": "하마돈",
+  "nameEn": "Hippowdon",
+  "types": [
+   5
+  ],
+  "speed": 47,
+  "mega": false
+ },
+ {
+  "id": 10045,
+  "key": "ampharos-mega",
+  "dex": 181,
+  "name": "메가전룡",
+  "nameEn": "Mega Ampharos",
+  "types": [
+   13,
+   16
+  ],
+  "speed": 45,
+  "mega": true
+ },
+ {
+  "id": 534,
+  "key": "conkeldurr",
+  "dex": 534,
+  "name": "노보청",
+  "nameEn": "Conkeldurr",
+  "types": [
+   2
+  ],
+  "speed": 45,
+  "mega": false
+ },
+ {
+  "id": 939,
+  "key": "bellibolt",
+  "dex": 939,
+  "name": "찌리배리",
+  "nameEn": "Bellibolt",
+  "types": [
+   13
+  ],
+  "speed": 45,
+  "mega": false
+ },
+ {
+  "id": 10292,
+  "key": "chesnaught-mega",
+  "dex": 652,
+  "name": "메가브리가론",
+  "nameEn": "Mega Chesnaught",
+  "types": [
+   12,
+   2
+  ],
+  "speed": 44,
+  "mega": true
+ },
+ {
+  "id": 691,
+  "key": "dragalge",
+  "dex": 691,
+  "name": "드래캄",
+  "nameEn": "Dragalge",
+  "types": [
+   4,
+   16
+  ],
+  "speed": 44,
+  "mega": false
+ },
+ {
+  "id": 10299,
+  "key": "dragalge-mega",
+  "dex": 691,
+  "name": "메가드래캄",
+  "nameEn": "Mega Dragalge",
+  "types": [
+   4,
+   16
+  ],
+  "speed": 44,
+  "mega": true
+ },
+ {
+  "id": 1019,
+  "key": "hydrapple",
+  "dex": 1019,
+  "name": "과미드라",
+  "nameEn": "Hydrapple",
+  "types": [
+   12,
+   16
+  ],
+  "speed": 44,
+  "mega": false
+ },
+ {
+  "id": 740,
+  "key": "crabominable",
+  "dex": 740,
+  "name": "모단단게",
+  "nameEn": "Crabominable",
+  "types": [
+   2,
+   15
+  ],
+  "speed": 43,
+  "mega": false
+ },
+ {
+  "id": 752,
+  "key": "araquanid",
+  "dex": 752,
+  "name": "깨비물거미",
+  "nameEn": "Araquanid",
+  "types": [
+   11,
+   7
+  ],
+  "speed": 42,
+  "mega": false
+ },
+ {
+  "id": 168,
+  "key": "ariados",
+  "dex": 168,
+  "name": "아리아도스",
+  "nameEn": "Ariados",
+  "types": [
+   7,
+   4
+  ],
+  "speed": 40,
+  "mega": false
+ },
+ {
+  "id": 205,
+  "key": "forretress",
+  "dex": 205,
+  "name": "쏘콘",
+  "nameEn": "Forretress",
+  "types": [
+   7,
+   9
+  ],
+  "speed": 40,
+  "mega": false
+ },
+ {
+  "id": 323,
+  "key": "camerupt",
+  "dex": 323,
+  "name": "폭타",
+  "nameEn": "Camerupt",
+  "types": [
+   10,
+   5
+  ],
+  "speed": 40,
+  "mega": false
+ },
+ {
+  "id": 464,
+  "key": "rhyperior",
+  "dex": 464,
+  "name": "거대코뿌리",
+  "nameEn": "Rhyperior",
+  "types": [
+   5,
+   6
+  ],
+  "speed": 40,
+  "mega": false
+ },
+ {
+  "id": 10243,
+  "key": "avalugg-hisui",
+  "dex": 713,
+  "name": "크레베이스 (히스이)",
+  "nameEn": "Hisuian Avalugg",
+  "types": [
+   15,
+   6
+  ],
+  "speed": 38,
+  "mega": false
+ },
+ {
+  "id": 780,
+  "key": "drampa",
+  "dex": 780,
+  "name": "할비롱",
+  "nameEn": "Drampa",
+  "types": [
+   1,
+   16
+  ],
+  "speed": 36,
+  "mega": false
+ },
+ {
+  "id": 10302,
+  "key": "drampa-mega",
+  "dex": 780,
+  "name": "메가할비롱",
+  "nameEn": "Mega Drampa",
+  "types": [
+   1,
+   16
+  ],
+  "speed": 36,
+  "mega": true
+ },
+ {
+  "id": 442,
+  "key": "spiritomb",
+  "dex": 442,
+  "name": "화강돌",
+  "nameEn": "Spiritomb",
+  "types": [
+   8,
+   17
+  ],
+  "speed": 35,
+  "mega": false
+ },
+ {
+  "id": 748,
+  "key": "toxapex",
+  "dex": 748,
+  "name": "더시마사리",
+  "nameEn": "Toxapex",
+  "types": [
+   4,
+   11
+  ],
+  "speed": 35,
+  "mega": false
+ },
+ {
+  "id": 750,
+  "key": "mudsdale",
+  "dex": 750,
+  "name": "만마드",
+  "nameEn": "Mudsdale",
+  "types": [
+   5
+  ],
+  "speed": 35,
+  "mega": false
+ },
+ {
+  "id": 934,
+  "key": "garganacl",
+  "dex": 934,
+  "name": "콜로솔트",
+  "nameEn": "Garganacl",
+  "types": [
+   6
+  ],
+  "speed": 35,
+  "mega": false
+ },
+ {
+  "id": 10315,
+  "key": "crabominable-mega",
+  "dex": 740,
+  "name": "메가모단단게",
+  "nameEn": "Mega Crabominable",
+  "types": [
+   2,
+   15
+  ],
+  "speed": 33,
+  "mega": true
+ },
+ {
+  "id": 618,
+  "key": "stunfisk",
+  "dex": 618,
+  "name": "메더",
+  "nameEn": "Stunfisk",
+  "types": [
+   5,
+   13
+  ],
+  "speed": 32,
+  "mega": false
+ },
+ {
+  "id": 10180,
+  "key": "stunfisk-galar",
+  "dex": 618,
+  "name": "메더 (가라르)",
+  "nameEn": "Galarian Stunfisk",
+  "types": [
+   5,
+   9
+  ],
+  "speed": 32,
+  "mega": false
+ },
+ {
+  "id": 80,
+  "key": "slowbro",
+  "dex": 80,
+  "name": "야도란",
+  "nameEn": "Slowbro",
+  "types": [
+   11,
+   14
+  ],
+  "speed": 30,
+  "mega": false
+ },
+ {
+  "id": 10071,
+  "key": "slowbro-mega",
+  "dex": 80,
+  "name": "메가야도란",
+  "nameEn": "Mega Slowbro",
+  "types": [
+   11,
+   14
+  ],
+  "speed": 30,
+  "mega": true
+ },
+ {
+  "id": 10165,
+  "key": "slowbro-galar",
+  "dex": 80,
+  "name": "야도란 (가라르)",
+  "nameEn": "Galarian Slowbro",
+  "types": [
+   4,
+   14
+  ],
+  "speed": 30,
+  "mega": false
+ },
+ {
+  "id": 143,
+  "key": "snorlax",
+  "dex": 143,
+  "name": "잠만보",
+  "nameEn": "Snorlax",
+  "types": [
+   1
+  ],
+  "speed": 30,
+  "mega": false
+ },
+ {
+  "id": 199,
+  "key": "slowking",
+  "dex": 199,
+  "name": "야도킹",
+  "nameEn": "Slowking",
+  "types": [
+   11,
+   14
+  ],
+  "speed": 30,
+  "mega": false
+ },
+ {
+  "id": 10172,
+  "key": "slowking-galar",
+  "dex": 199,
+  "name": "야도킹 (가라르)",
+  "nameEn": "Galarian Slowking",
+  "types": [
+   4,
+   14
+  ],
+  "speed": 30,
+  "mega": false
+ },
+ {
+  "id": 208,
+  "key": "steelix",
+  "dex": 208,
+  "name": "강철톤",
+  "nameEn": "Steelix",
+  "types": [
+   9,
+   5
+  ],
+  "speed": 30,
+  "mega": false
+ },
+ {
+  "id": 10072,
+  "key": "steelix-mega",
+  "dex": 208,
+  "name": "메가강철톤",
+  "nameEn": "Mega Steelix",
+  "types": [
+   9,
+   5
+  ],
+  "speed": 30,
+  "mega": true
+ },
+ {
+  "id": 411,
+  "key": "bastiodon",
+  "dex": 411,
+  "name": "바리톱스",
+  "nameEn": "Bastiodon",
+  "types": [
+   6,
+   9
+  ],
+  "speed": 30,
+  "mega": false
+ },
+ {
+  "id": 10060,
+  "key": "abomasnow-mega",
+  "dex": 460,
+  "name": "메가눈설왕",
+  "nameEn": "Mega Abomasnow",
+  "types": [
+   12,
+   15
+  ],
+  "speed": 30,
+  "mega": true
+ },
+ {
+  "id": 563,
+  "key": "cofagrigus",
+  "dex": 563,
+  "name": "데스니칸",
+  "nameEn": "Cofagrigus",
+  "types": [
+   8
+  ],
+  "speed": 30,
+  "mega": false
+ },
+ {
+  "id": 579,
+  "key": "reuniclus",
+  "dex": 579,
+  "name": "란쿨루스",
+  "nameEn": "Reuniclus",
+  "types": [
+   14
+  ],
+  "speed": 30,
+  "mega": false
+ },
+ {
+  "id": 842,
+  "key": "appletun",
+  "dex": 842,
+  "name": "단지래플",
+  "nameEn": "Appletun",
+  "types": [
+   12,
+   16
+  ],
+  "speed": 30,
+  "mega": false
+ },
+ {
+  "id": 867,
+  "key": "runerigus",
+  "dex": 867,
+  "name": "데스판",
+  "nameEn": "Runerigus",
+  "types": [
+   5,
+   8
+  ],
+  "speed": 30,
+  "mega": false
+ },
+ {
+  "id": 518,
+  "key": "musharna",
+  "dex": 518,
+  "name": "몽얌나",
+  "nameEn": "Musharna",
+  "types": [
+   14
+  ],
+  "speed": 29,
+  "mega": false
+ },
+ {
+  "id": 683,
+  "key": "aromatisse",
+  "dex": 683,
+  "name": "프레프티르",
+  "nameEn": "Aromatisse",
+  "types": [
+   18
+  ],
+  "speed": 29,
+  "mega": false
+ },
+ {
+  "id": 858,
+  "key": "hatterene",
+  "dex": 858,
+  "name": "브리무음",
+  "nameEn": "Hatterene",
+  "types": [
+   14,
+   18
+  ],
+  "speed": 29,
+  "mega": false
+ },
+ {
+  "id": 713,
+  "key": "avalugg",
+  "dex": 713,
+  "name": "크레베이스",
+  "nameEn": "Avalugg",
+  "types": [
+   15
+  ],
+  "speed": 28,
+  "mega": false
+ },
+ {
+  "id": 10066,
+  "key": "sableye-mega",
+  "dex": 302,
+  "name": "메가깜까미",
+  "nameEn": "Mega Sableye",
+  "types": [
+   17,
+   8
+  ],
+  "speed": 20,
+  "mega": true
+ },
+ {
+  "id": 10087,
+  "key": "camerupt-mega",
+  "dex": 323,
+  "name": "메가폭타",
+  "nameEn": "Mega Camerupt",
+  "types": [
+   10,
+   5
+  ],
+  "speed": 20,
+  "mega": true
+ },
+ {
+  "id": 324,
+  "key": "torkoal",
+  "dex": 324,
+  "name": "코터스",
+  "nameEn": "Torkoal",
+  "types": [
+   10
+  ],
+  "speed": 20,
+  "mega": false
+ }
+]
