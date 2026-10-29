@@ -81,7 +81,8 @@ function MemberCard({ member, onChange, onRemove }: MemberCardProps) {
       </div>
 
       <p className="member-speed">
-        실수치 <b>{speedStat(base.speed, member.sp, member.nature)}</b>
+        실수치 <b>{speedStat(base.speed, member.sp, member.nature)}</b>{' '}
+        <span className="muted">(종족값 {base.speed})</span>
         {member.scarf && (
           <>
             {' '}
@@ -91,7 +92,7 @@ function MemberCard({ member, onChange, onRemove }: MemberCardProps) {
         {mega && (
           <>
             {' '}
-            · 메가 후 <b>{memberSpeed(member, mega)}</b>
+            · 메가 후 <b>{memberSpeed(member, mega)}</b> <span className="muted">(종족값 {mega.speed})</span>
           </>
         )}
       </p>
@@ -130,7 +131,7 @@ function MemberCard({ member, onChange, onRemove }: MemberCardProps) {
             <option value="">안 함</option>
             {megas.map((f) => (
               <option key={f.key} value={f.key}>
-                {f.name}
+                {f.name} (종족값 {f.speed})
               </option>
             ))}
           </select>

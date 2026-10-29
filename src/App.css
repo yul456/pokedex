@@ -581,6 +581,20 @@ select {
   color: var(--accent);
 }
 
+/* 종족값 (예: 142족) */
+.matrix thead .base-speed {
+  display: block;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.row-base,
+.chip-base {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
 .matrix .corner,
 .matrix .row-head {
   position: sticky;

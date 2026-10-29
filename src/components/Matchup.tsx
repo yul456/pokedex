@@ -88,6 +88,7 @@ export function Matchup({ party, onEditParty }: Props) {
               <span key={o.key} className="chip">
                 <img src={artworkUrl(p.id)} alt="" width={24} height={24} />
                 {p.name}
+                <span className="chip-base">{p.speed}족</span>
                 <button
                   type="button"
                   className={o.scarf ? 'chip-toggle active' : 'chip-toggle'}
@@ -154,6 +155,7 @@ export function Matchup({ party, onEditParty }: Props) {
                   <th key={c.id} scope="col">
                     <img src={artworkUrl(c.form.id)} alt="" width={32} height={32} />
                     {c.form.name}
+                    <span className="base-speed">{c.form.speed}족</span>
                     {c.opponent.scarf && !c.form.mega && <span className="scarf-mark">스카프</span>}
                   </th>
                 ))}
@@ -168,7 +170,9 @@ export function Matchup({ party, onEditParty }: Props) {
                       <span className="row-head-inner">
                         <img src={artworkUrl(r.form.id)} alt="" width={28} height={28} />
                         <span className="row-name">{r.form.name}</span>
-                        <span className="row-speed">{speed}</span>
+                        <span className="row-speed">
+                          {speed} <span className="row-base">{r.form.speed}족</span>
+                        </span>
                       </span>
                     </th>
                     {cols.map((c) => {
@@ -214,8 +218,9 @@ function Detail({ row, col, mine, theirs, trickRoom }: DetailProps) {
   return (
     <div className="detail">
       <p>
-        내 <b>{row.form.name}</b> {mine} vs 상대 <b>{col.form.name}</b>
-        {col.opponent.scarf && !col.form.mega && ' (스카프)'}
+        내 <b>{row.form.name}</b> {mine} <span className="muted">(종족값 {row.form.speed})</span> vs 상대{' '}
+        <b>{col.form.name}</b> <span className="muted">(종족값 {col.form.speed})</span>
+        {col.opponent.scarf && !col.form.mega && ' · 스카프'}
         {trickRoom && ' · 트릭룸'}
       </p>
       <ul>
