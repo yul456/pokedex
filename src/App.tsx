@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Matchup } from './components/Matchup'
 import { PartyEditor } from './components/PartyEditor'
 import { SpeedCompare } from './components/SpeedCompare'
 import { SpeedTable } from './components/SpeedTable'
@@ -10,6 +11,7 @@ const TABS = [
   { id: 'table', label: '순위표' },
   { id: 'compare', label: '1:1 비교' },
   { id: 'party', label: '내 파티' },
+  { id: 'matchup', label: '매치업' },
 ] as const
 
 type TabId = (typeof TABS)[number]['id']
@@ -45,6 +47,7 @@ function App() {
         {tab === 'table' && <SpeedTable />}
         {tab === 'compare' && <SpeedCompare />}
         {tab === 'party' && <PartyEditor party={party} onChange={setParty} />}
+        {tab === 'matchup' && <Matchup party={party} onEditParty={() => setTab('party')} />}
       </main>
 
       <footer>

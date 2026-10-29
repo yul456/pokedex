@@ -9,6 +9,9 @@
   --win: #1a7f37;
   --lose: #cf222e;
   --tie: #9a6700;
+  --win-bg: #dafbe1;
+  --lose-bg: #ffebe9;
+  --tie-bg: #fff8c5;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,6 +26,9 @@
     --win: #3fb950;
     --lose: #f85149;
     --tie: #d29922;
+    --win-bg: #12361f;
+    --lose-bg: #42181a;
+    --tie-bg: #3b2f0b;
   }
 }
 

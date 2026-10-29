@@ -434,6 +434,248 @@ select {
   font-variant-numeric: tabular-nums;
 }
 
+/* 매치업 */
+.empty-state {
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.primary-button {
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 2px 2px 6px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.chip img {
+  object-fit: contain;
+}
+
+.chip-toggle {
+  padding: 0 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+
+.chip-toggle.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.chip-remove {
+  padding: 0 6px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.text-button {
+  padding: 4px;
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.matchup-options {
+  margin-top: 10px;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+}
+
+.legend-item {
+  padding: 0 6px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.legend-item.first,
+.cell.first {
+  background: var(--win-bg);
+  color: var(--win);
+}
+
+.legend-item.last,
+.cell.last {
+  background: var(--lose-bg);
+  color: var(--lose);
+}
+
+.legend-item.mixed,
+.cell.mixed {
+  background: var(--tie-bg);
+  color: var(--tie);
+}
+
+/* 표가 넓으면 가로로 스크롤하고, 첫 열(내 포켓몬)은 고정 */
+.matrix-wrap {
+  overflow-x: auto;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.matrix {
+  border-collapse: separate;
+  border-spacing: 3px;
+  font-variant-numeric: tabular-nums;
+}
+
+.matrix thead th {
+  min-width: 56px;
+  max-width: 76px;
+  padding: 4px 2px;
+  font-size: 0.68rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--muted);
+  text-align: center;
+  vertical-align: bottom;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.matrix thead img {
+  display: block;
+  margin: 0 auto 2px;
+  object-fit: contain;
+}
+
+.scarf-mark {
+  display: block;
+  color: var(--accent);
+}
+
+.matrix .corner,
+.matrix .row-head {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--card);
+  text-align: left;
+}
+
+.matrix .corner {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--muted);
+  vertical-align: bottom;
+}
+
+.matrix .row-head {
+  min-width: 96px;
+  padding: 2px 6px 2px 2px;
+  font-weight: 500;
+}
+
+.row-head-inner {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  column-gap: 4px;
+  align-items: center;
+}
+
+.row-head-inner img {
+  grid-row: span 2;
+  object-fit: contain;
+}
+
+.row-name {
+  font-size: 0.72rem;
+  line-height: 1.2;
+  word-break: keep-all;
+}
+
+.row-speed {
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.cell {
+  width: 100%;
+  min-height: 40px;
+  padding: 2px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.cell.selected {
+  border-color: var(--text);
+}
+
+.detail {
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 0.88rem;
+}
+
+.detail p {
+  margin: 0;
+}
+
+.detail ul {
+  display: grid;
+  gap: 2px;
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+  font-variant-numeric: tabular-nums;
+}
+
+.detail li.first {
+  color: var(--win);
+}
+
+.detail li.last {
+  color: var(--lose);
+}
+
+.detail li.tie {
+  color: var(--tie);
+}
+
 @media (max-width: 600px) {
   .tabs button {
     padding: 8px 2px;
