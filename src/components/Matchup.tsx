@@ -139,7 +139,7 @@ export function Matchup({ party, onEditParty }: Props) {
         {trickRoom
           ? '"무투자부터" = 상대가 무투자 이상이면 내가 먼저'
           : '"준속까지" = 상대가 준속 이하면 내가 먼저'}{' '}
-        · ± 동속 있음 · 칸을 누르면 자세히
+        · "최속 동속" = 상대가 최속이면 동속(50%) · 칸을 누르면 자세히
       </p>
 
       {cols.length === 0 ? (
@@ -182,7 +182,6 @@ export function Matchup({ party, onEditParty }: Props) {
                             onClick={() => setSelected(isSelected ? null : { row: r.id, col: c.id })}
                           >
                             {result.label}
-                            {result.tie && '±'}
                           </button>
                         </td>
                       )

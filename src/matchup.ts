@@ -16,20 +16,24 @@ export type Judgement = {
   outcome: 'first' | 'last' | 'mixed'
   label: string
   wins: boolean[] // 상대 투자별로 내가 먼저 움직이는지
-  tie: boolean // 어떤 투자와 동속인지
 }
 
 // 트릭룸이면 느린 쪽이 먼저 움직인다
 export function judge(mine: number, theirs: number[], trickRoom: boolean): Judgement {
   const wins = theirs.map((s) => (trickRoom ? mine < s : mine > s))
-  const tie = theirs.includes(mine)
+
+  // 동속이면 어느 투자와 동속인지 보여 준다 (예: 미러전에서 서로 최속이면 "최속 동속")
+  // 그 투자보다 빠른 상대에게는 지고 느린 상대에게는 이기니(트릭룸은 반대) 이것만 알면 나머지도 알 수 있다
+  const tieIndex = theirs.indexOf(mine)
+  if (tieIndex >= 0) return { outcome: 'mixed', label: `${PRESETS[tieIndex].short} 동속`, wins }
+
   const count = wins.filter(Boolean).length
-  if (count === wins.length) return { outcome: 'first', label: '먼저', wins, tie }
-  if (count === 0) return { outcome: 'last', label: '나중', wins, tie }
+  if (count === wins.length) return { outcome: 'first', label: '먼저', wins }
+  if (count === 0) return { outcome: 'last', label: '나중', wins }
 
   // 상대 스피드가 빠른 투자부터 정렬돼 있어서 내가 이기는 투자는 한쪽 끝에 몰려 있다
   // 예) 평소: 준속·무투자·최저속을 이기면 "준속까지", 트릭룸: 최속·준속을 이기면 "준속부터"
   const edge = PRESETS[trickRoom ? wins.lastIndexOf(true) : wins.indexOf(true)].short
   const label = count === 1 ? `${edge}만` : trickRoom ? `${edge}부터` : `${edge}까지`
-  return { outcome: 'mixed', label, wins, tie }
+  return { outcome: 'mixed', label, wins }
 }
