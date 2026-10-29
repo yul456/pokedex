@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { ABILITIES } from '../abilities'
 import type { Pokemon } from '../pokemon'
 import { defensiveMatchups } from '../typeChart'
 import { MultiplierList } from './MultiplierList'
@@ -53,7 +54,29 @@ export function PokemonInfoDialog({ pokemon, onClose }: Props) {
             <MultiplierList groups={defensiveMatchups(pokemon.types)} axis="defend" />
           </div>
 
-          <p className="hint">타입만으로 계산해요. 특성(예: 부유 → 땅 무효)은 반영되지 않아요.</p>
+          <div>
+            <p className="info-section">특성</p>
+            <ul className="ability-list">
+              {pokemon.abilities.map(({ id, hidden }) => {
+                const ability = ABILITIES[id]
+                return (
+                  <li key={id}>
+                    <b>{ability.name}</b>
+                    {hidden && <span className="ability-tag">숨겨진 특성</span>}
+                    {(ability.englishName || ability.englishDescription) && (
+                      <span className="ability-tag">한글 정보 없음</span>
+                    )}
+                    <p className="ability-desc">{ability.description}</p>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+
+          <p className="hint">
+            방어 상성은 타입만으로 계산해요. 특성(예: 부유 → 땅 무효)은 반영되지 않으니 위 설명을 함께 보세요. 특성은
+            PokéAPI 기준이라 챔피언스에서 바뀐 특성은 다를 수 있어요.
+          </p>
         </div>
       )}
     </dialog>

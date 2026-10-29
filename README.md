@@ -16,7 +16,10 @@ npm run dev    # http://localhost:5173/
 ## 데이터
 
 - `data/roster.txt`: 챔피언스 참전 목록 (PokéAPI identifier). 참전 포켓몬이 바뀌면 여기를 고친다.
-- `npm run data`: PokéAPI CSV 에서 참전 포켓몬의 이름·타입·스피드 종족값을 받아 `src/data/pokemon.json` 을 다시 만든다.
+- `npm run data`: PokéAPI CSV 에서 다시 만든다.
+  - `src/data/pokemon.json`: 참전 포켓몬의 이름·타입·스피드 종족값·특성
+  - `src/data/abilities.json`: 특성 이름·게임 안 설명 (한글이 없으면 영어)
+  - `src/data/type-chart.json`: 18×18 타입 상성표
 
 스피드 실수치 = `floor((종족값 + 20 + 스탯포인트) × 성격 보정)` (스탯포인트 0~32, 성격 ±10%)
 

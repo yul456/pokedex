@@ -213,6 +213,33 @@ select {
   font-size: 0.78rem;
 }
 
+.ability-list {
+  display: grid;
+  gap: 8px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9rem;
+}
+
+.ability-tag {
+  margin-left: 6px;
+  padding: 0 6px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--row-alt);
+  color: var(--muted);
+  font-size: 0.7rem;
+  vertical-align: 1px;
+}
+
+.ability-desc {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
 .badge-text {
   display: flex;
   flex-direction: column;

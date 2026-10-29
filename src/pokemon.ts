@@ -9,6 +9,7 @@ export type Pokemon = {
   types: number[]
   speed: number
   mega: boolean
+  abilities: { id: string; hidden: boolean }[] // id 는 src/data/abilities.json 의 키
 }
 
 // 스피드 종족값 내림차순으로 정렬된 챔피언스 참전 포켓몬 (scripts/build-data.mjs 가 생성)

@@ -96,7 +96,20 @@ const roster = (await readFile(new URL('../data/roster.txt', import.meta.url), '
   .map((line) => line.trim())
   .filter((line) => line && !line.startsWith('#'))
 
-const [pokemon, stats, speciesNames, forms, formNames, pokemonTypes, typeEfficacy] = await Promise.all(
+const [
+  pokemon,
+  stats,
+  speciesNames,
+  forms,
+  formNames,
+  pokemonTypes,
+  typeEfficacy,
+  pokemonAbilities,
+  abilities,
+  abilityNames,
+  abilityFlavorTexts,
+  abilityProse,
+] = await Promise.all(
   [
     'pokemon',
     'pokemon_stats',
@@ -105,6 +118,11 @@ const [pokemon, stats, speciesNames, forms, formNames, pokemonTypes, typeEfficac
     'pokemon_form_names',
     'pokemon_types',
     'type_efficacy',
+    'pokemon_abilities',
+    'abilities',
+    'ability_names',
+    'ability_flavor_text',
+    'ability_prose',
   ].map(loadCsv),
 )
 
@@ -120,6 +138,11 @@ const formName = new Map(formNames.map((n) => [`${n.pokemon_form_id}:${n.local_l
 const typesById = new Map()
 for (const t of [...pokemonTypes].sort((a, b) => Number(a.slot) - Number(b.slot))) {
   typesById.set(t.pokemon_id, [...(typesById.get(t.pokemon_id) ?? []), Number(t.type_id)])
+}
+const abilityIdentifier = new Map(abilities.map((a) => [a.id, a.identifier]))
+const abilitiesById = new Map()
+for (const a of [...pokemonAbilities].sort((x, y) => Number(x.slot) - Number(y.slot))) {
+  abilitiesById.set(a.pokemon_id, [...(abilitiesById.get(a.pokemon_id) ?? []), a])
 }
 
 const missing = roster.filter((id) => !byIdentifier.has(id))
@@ -149,6 +172,10 @@ const result = roster.map((identifier) => {
     types: typesById.get(p.id) ?? [],
     speed: speedById.get(p.id),
     mega: identifier.includes('-mega'),
+    abilities: (abilitiesById.get(p.id) ?? []).map((a) => ({
+      id: abilityIdentifier.get(a.ability_id),
+      hidden: a.is_hidden === '1',
+    })),
   }
 })
 
@@ -170,3 +197,45 @@ await writeFile(
   `[\n${chart.map((row) => `  ${JSON.stringify(row)}`).join(',\n')}\n]\n`,
 )
 console.log('src/data/type-chart.json: 18 × 18')
+
+// 특성 사전: 참전 포켓몬이 쓰는 특성만, 식별자 → 이름·설명
+// 설명은 게임 안 문구(가장 최근 버전)를 쓰고, 한글이 없으면 영어 문구 → 영어 효과 요약 순으로 대신 쓴다
+const abilityName = new Map(abilityNames.map((n) => [`${n.ability_id}:${n.local_language_id}`, n.name]))
+const latestFlavorText = new Map()
+for (const f of abilityFlavorTexts) {
+  const key = `${f.ability_id}:${f.language_id}`
+  const prev = latestFlavorText.get(key)
+  if (!prev || Number(f.version_group_id) > Number(prev.version_group_id)) latestFlavorText.set(key, f)
+}
+const shortEffectEn = new Map(
+  abilityProse.filter((p) => p.local_language_id === LANG_EN).map((p) => [p.ability_id, p.short_effect]),
+)
+// 줄바꿈 정리, 효과 요약의 [표시글]{mechanic:이름} 링크 표기를 글자만 남긴다
+const cleanText = (text) =>
+  text
+    .replace(/\[([^\]]*)\]\{[^:}]*:([^}]*)\}/g, (_, label, target) => label || target.replace(/-/g, ' '))
+    .replace(/\s+/g, ' ')
+    .trim()
+
+const abilityByIdentifier = new Map(abilities.map((a) => [a.identifier, a.id]))
+const usedAbilities = [...new Set(result.flatMap((p) => p.abilities.map((a) => a.id)))].sort()
+const abilityDict = Object.fromEntries(
+  usedAbilities.map((identifier) => {
+    const id = abilityByIdentifier.get(identifier)
+    const nameKo = abilityName.get(`${id}:${LANG_KO}`)
+    const textKo = latestFlavorText.get(`${id}:${LANG_KO}`)?.flavor_text
+    const textEn = latestFlavorText.get(`${id}:${LANG_EN}`)?.flavor_text ?? shortEffectEn.get(id)
+    return [
+      identifier,
+      {
+        name: nameKo ?? abilityName.get(`${id}:${LANG_EN}`) ?? identifier,
+        description: cleanText(textKo ?? textEn ?? ''),
+        ...(nameKo ? {} : { englishName: true }),
+        ...(textKo || !textEn ? {} : { englishDescription: true }),
+      },
+    ]
+  }),
+)
+await writeFile(new URL('../src/data/abilities.json', import.meta.url), JSON.stringify(abilityDict, null, 1) + '\n')
+const englishOnly = Object.values(abilityDict).filter((a) => a.englishName || a.englishDescription).length
+console.log(`src/data/abilities.json: ${usedAbilities.length}개 (영문으로 대신한 것 ${englishOnly}개)`)
