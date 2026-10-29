@@ -14,6 +14,30 @@ export type Pokemon = {
 // 스피드 종족값 내림차순으로 정렬된 챔피언스 참전 포켓몬 (scripts/build-data.mjs 가 생성)
 export const POKEMON: Pokemon[] = data
 
+export const BY_KEY = new Map(POKEMON.map((p) => [p.key, p]))
+
+// 파티·상대는 진화 전 모습으로 고르고, 메가진화는 따로 선택한다
+export const BASE_POKEMON = POKEMON.filter((p) => !p.mega)
+
+// 메가진화 → 진화 전 모습 (예: meowstic-male-mega → meowstic-male, raichu-mega-x → raichu)
+// 이름 규칙이 안 맞으면(floette-mega → floette-eternal 등) 같은 종의 메가 아닌 모습
+function megaBaseKey(mega: Pokemon) {
+  const key = mega.key.replace(/-mega(-[a-z]+)?$/, '')
+  return BY_KEY.has(key) ? key : BASE_POKEMON.find((p) => p.dex === mega.dex)?.key
+}
+
+const MEGA_FORMS = new Map<string, Pokemon[]>()
+for (const p of POKEMON) {
+  const base = p.mega ? megaBaseKey(p) : undefined
+  if (base) MEGA_FORMS.set(base, [...(MEGA_FORMS.get(base) ?? []), p])
+}
+// 메가 → 메가 X → 메가 Y → 메가 Z 순서로
+for (const forms of MEGA_FORMS.values()) forms.sort((a, b) => a.key.localeCompare(b.key))
+
+export function megaFormsOf(key: string) {
+  return MEGA_FORMS.get(key) ?? []
+}
+
 export const TYPES: Record<number, { name: string; color: string }> = {
   1: { name: '노말', color: '#9fa19f' },
   2: { name: '격투', color: '#ff8000' },
@@ -46,4 +70,15 @@ export function matches(p: Pokemon, query: string) {
   const q = normalize(query)
   if (!q) return true
   return normalize(p.name).includes(q) || normalize(p.nameEn).includes(q)
+}
+
+// 이름이 검색어로 시작하는 포켓몬을 앞에 보여 준다
+export function searchPokemon(options: Pokemon[], query: string, limit = 8) {
+  const q = normalize(query)
+  if (!q) return []
+  const startsWith = (p: Pokemon) => normalize(p.name).startsWith(q) || normalize(p.nameEn).startsWith(q)
+  return options
+    .filter((p) => matches(p, query))
+    .sort((a, b) => Number(startsWith(b)) - Number(startsWith(a)) || a.dex - b.dex)
+    .slice(0, limit)
 }

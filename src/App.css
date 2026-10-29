@@ -317,7 +317,129 @@ select {
   color: #fff;
 }
 
+/* 포켓몬 검색 (입력하면 아래에 후보 목록) */
+.search {
+  width: 100%;
+}
+
+.search-list {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 4px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.search-list button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  padding: 4px 8px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.search-list button:hover,
+.search-list button:focus-visible {
+  background: var(--row-alt);
+}
+
+.search-speed {
+  flex: none;
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.notice {
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+  color: var(--lose);
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.icon-button {
+  flex: none;
+  padding: 4px 8px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.icon-button:hover {
+  background: var(--row-alt);
+  color: var(--text);
+}
+
+.check {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.check.disabled {
+  color: var(--muted);
+  cursor: default;
+}
+
+/* 내 파티 */
+.party-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .party-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.member {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  padding: 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.member-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.member-speed {
+  margin: 0;
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+
 @media (max-width: 600px) {
+  .tabs button {
+    padding: 8px 2px;
+    font-size: 0.85rem;
+  }
+
   .sides {
     grid-template-columns: 1fr;
   }

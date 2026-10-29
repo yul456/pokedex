@@ -1,6 +1,14 @@
 import { useState } from 'react'
 import { POKEMON, type Pokemon } from '../pokemon'
-import { effectiveSpeed, MAX_SP, NO_MODIFIERS, speedStat, type Modifiers, type Nature } from '../speed'
+import {
+  effectiveSpeed,
+  MAX_SP,
+  NATURE_OPTIONS,
+  NO_MODIFIERS,
+  speedStat,
+  type Modifiers,
+  type Nature,
+} from '../speed'
 import { PokemonBadge } from './PokemonBadge'
 
 type Side = {
@@ -9,12 +17,6 @@ type Side = {
   nature: Nature
   mods: Modifiers
 }
-
-const NATURES: { value: Nature; label: string }[] = [
-  { value: 1, label: '성격↑' },
-  { value: 0, label: '무보정' },
-  { value: -1, label: '성격↓' },
-]
 
 const STAGES = [-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6]
 
@@ -71,7 +73,7 @@ function SidePanel({ title, side, onChange }: { title: string; side: Side; onCha
       </label>
 
       <div className="segmented">
-        {NATURES.map((n) => (
+        {NATURE_OPTIONS.map((n) => (
           <button
             key={n.value}
             type="button"

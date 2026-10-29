@@ -6,6 +6,12 @@ export type Nature = 1 | 0 | -1
 
 export const MAX_SP = 32
 
+export const NATURE_OPTIONS: { value: Nature; label: string }[] = [
+  { value: 1, label: '성격↑' },
+  { value: 0, label: '무보정' },
+  { value: -1, label: '성격↓' },
+]
+
 export function speedStat(base: number, sp: number, nature: Nature) {
   return Math.floor(((base + 20 + sp) * (10 + nature)) / 10)
 }
