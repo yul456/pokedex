@@ -1,5 +1,43 @@
 [
  {
+  "id": 10307,
+  "key": "absol-mega-z",
+  "dex": 359,
+  "name": "메가앱솔 Z",
+  "nameEn": "Mega Absol Z",
+  "types": [
+   17,
+   8
+  ],
+  "speed": 151,
+  "mega": true
+ },
+ {
+  "id": 10309,
+  "key": "garchomp-mega-z",
+  "dex": 445,
+  "name": "메가한카리아스 Z",
+  "nameEn": "Mega Garchomp Z",
+  "types": [
+   16
+  ],
+  "speed": 151,
+  "mega": true
+ },
+ {
+  "id": 10310,
+  "key": "lucario-mega-z",
+  "dex": 448,
+  "name": "메가루카리오 Z",
+  "nameEn": "Mega Lucario Z",
+  "types": [
+   2,
+   9
+  ],
+  "speed": 151,
+  "mega": true
+ },
+ {
   "id": 10037,
   "key": "alakazam-mega",
   "dex": 65,
@@ -317,6 +355,19 @@
   "mega": false
  },
  {
+  "id": 10089,
+  "key": "salamence-mega",
+  "dex": 373,
+  "name": "메가보만다",
+  "nameEn": "Mega Salamence",
+  "types": [
+   16,
+   3
+  ],
+  "speed": 120,
+  "mega": true
+ },
+ {
   "id": 10285,
   "key": "froslass-mega",
   "dex": 478,
@@ -330,6 +381,18 @@
   "mega": true
  },
  {
+  "id": 818,
+  "key": "inteleon",
+  "dex": 818,
+  "name": "인텔리레온",
+  "nameEn": "Inteleon",
+  "types": [
+   11
+  ],
+  "speed": 120,
+  "mega": false
+ },
+ {
   "id": 903,
   "key": "sneasler",
   "dex": 903,
@@ -340,6 +403,18 @@
    4
   ],
   "speed": 120,
+  "mega": false
+ },
+ {
+  "id": 815,
+  "key": "cinderace",
+  "dex": 815,
+  "name": "에이스번",
+  "nameEn": "Cinderace",
+  "types": [
+   10
+  ],
+  "speed": 119,
   "mega": false
  },
  {
@@ -392,6 +467,30 @@
    18
   ],
   "speed": 116,
+  "mega": false
+ },
+ {
+  "id": 53,
+  "key": "persian",
+  "dex": 53,
+  "name": "페르시온",
+  "nameEn": "Persian",
+  "types": [
+   1
+  ],
+  "speed": 115,
+  "mega": false
+ },
+ {
+  "id": 10108,
+  "key": "persian-alola",
+  "dex": 53,
+  "name": "페르시온 (알로라)",
+  "nameEn": "Alolan Persian",
+  "types": [
+   17
+  ],
+  "speed": 115,
   "mega": false
  },
  {
@@ -797,6 +896,19 @@
   "mega": false
  },
  {
+  "id": 923,
+  "key": "pawmot",
+  "dex": 923,
+  "name": "빠르모트",
+  "nameEn": "Pawmot",
+  "types": [
+   13,
+   2
+  ],
+  "speed": 105,
+  "mega": false
+ },
+ {
   "id": 956,
   "key": "espathra",
   "dex": 956,
@@ -1161,6 +1273,19 @@
   "mega": true
  },
  {
+  "id": 373,
+  "key": "salamence",
+  "dex": 373,
+  "name": "보만다",
+  "nameEn": "Salamence",
+  "types": [
+   16,
+   3
+  ],
+  "speed": 100,
+  "mega": false
+ },
+ {
   "id": 398,
   "key": "staraptor",
   "dex": 398,
@@ -1364,6 +1489,19 @@
   "mega": false
  },
  {
+  "id": 876,
+  "key": "indeedee-male",
+  "dex": 876,
+  "name": "에써르 (수컷의 모습)",
+  "nameEn": "Male Indeedee",
+  "types": [
+   14,
+   1
+  ],
+  "speed": 95,
+  "mega": false
+ },
+ {
   "id": 959,
   "key": "tinkaton",
   "dex": 959,
@@ -1410,6 +1548,19 @@
   "nameEn": "Eternal Floette",
   "types": [
    18
+  ],
+  "speed": 92,
+  "mega": false
+ },
+ {
+  "id": 931,
+  "key": "squawkabilly-green-plumage",
+  "dex": 931,
+  "name": "시비꼬",
+  "nameEn": "Green Plumage Squawkabilly",
+  "types": [
+   1,
+   3
   ],
   "speed": 92,
   "mega": false
@@ -1465,6 +1616,19 @@
   "mega": false
  },
  {
+  "id": 122,
+  "key": "mr-mime",
+  "dex": 122,
+  "name": "마임맨",
+  "nameEn": "Mr. Mime",
+  "types": [
+   14,
+   18
+  ],
+  "speed": 90,
+  "mega": false
+ },
+ {
   "id": 407,
   "key": "roserade",
   "dex": 407,
@@ -1502,6 +1666,18 @@
   ],
   "speed": 90,
   "mega": true
+ },
+ {
+  "id": 828,
+  "key": "thievul",
+  "dex": 828,
+  "name": "폭슬라이",
+  "nameEn": "Thievul",
+  "types": [
+   17
+  ],
+  "speed": 90,
+  "mega": false
  },
  {
   "id": 979,
@@ -1566,6 +1742,32 @@
    2
   ],
   "speed": 88,
+  "mega": true
+ },
+ {
+  "id": 998,
+  "key": "baxcalibur",
+  "dex": 998,
+  "name": "드닐레이브",
+  "nameEn": "Baxcalibur",
+  "types": [
+   16,
+   15
+  ],
+  "speed": 87,
+  "mega": false
+ },
+ {
+  "id": 10325,
+  "key": "baxcalibur-mega",
+  "dex": 998,
+  "name": "메가드닐레이브",
+  "nameEn": "Mega Baxcalibur",
+  "types": [
+   16,
+   15
+  ],
+  "speed": 87,
   "mega": true
  },
  {
@@ -1724,6 +1926,31 @@
   "mega": false
  },
  {
+  "id": 812,
+  "key": "rillaboom",
+  "dex": 812,
+  "name": "고릴타",
+  "nameEn": "Rillaboom",
+  "types": [
+   12
+  ],
+  "speed": 85,
+  "mega": false
+ },
+ {
+  "id": 10186,
+  "key": "indeedee-female",
+  "dex": 876,
+  "name": "에써르 (암컷의 모습)",
+  "nameEn": "Female Indeedee",
+  "types": [
+   14,
+   1
+  ],
+  "speed": 85,
+  "mega": false
+ },
+ {
   "id": 900,
   "key": "kleavor",
   "dex": 900,
@@ -1771,6 +1998,18 @@
   "types": [
    10,
    8
+  ],
+  "speed": 85,
+  "mega": false
+ },
+ {
+  "id": 943,
+  "key": "mabosstiff",
+  "dex": 943,
+  "name": "마피티프",
+  "nameEn": "Mabosstiff",
+  "types": [
+   17
   ],
   "speed": 85,
   "mega": false
@@ -2318,6 +2557,32 @@
   "mega": false
  },
  {
+  "id": 849,
+  "key": "toxtricity-amped",
+  "dex": 849,
+  "name": "스트린더 (하이한 모습)",
+  "nameEn": "Amped Toxtricity",
+  "types": [
+   13,
+   4
+  ],
+  "speed": 75,
+  "mega": false
+ },
+ {
+  "id": 10184,
+  "key": "toxtricity-low-key",
+  "dex": 849,
+  "name": "스트린더 (로우한 모습)",
+  "nameEn": "Low Key Toxtricity",
+  "types": [
+   13,
+   4
+  ],
+  "speed": 75,
+  "mega": false
+ },
+ {
   "id": 870,
   "key": "falinks",
   "dex": 870,
@@ -2660,6 +2925,18 @@
   "mega": true
  },
  {
+  "id": 673,
+  "key": "gogoat",
+  "dex": 673,
+  "name": "고고트",
+  "nameEn": "Gogoat",
+  "types": [
+   12
+  ],
+  "speed": 68,
+  "mega": false
+ },
+ {
   "id": 689,
   "key": "barbaracle",
   "dex": 689,
@@ -2835,6 +3112,18 @@
   "mega": false
  },
  {
+  "id": 865,
+  "key": "sirfetchd",
+  "dex": 865,
+  "name": "창파나이트",
+  "nameEn": "Sirfetch’d",
+  "types": [
+   2
+  ],
+  "speed": 65,
+  "mega": false
+ },
+ {
   "id": 899,
   "key": "wyrdeer",
   "dex": 899,
@@ -2918,6 +3207,19 @@
   "nameEn": "Clefable",
   "types": [
    18
+  ],
+  "speed": 60,
+  "mega": false
+ },
+ {
+  "id": 83,
+  "key": "farfetchd",
+  "dex": 83,
+  "name": "파오리",
+  "nameEn": "Farfetch’d",
+  "types": [
+   1,
+   3
   ],
   "speed": 60,
   "mega": false
@@ -3217,6 +3519,18 @@
   "mega": false
  },
  {
+  "id": 317,
+  "key": "swalot",
+  "dex": 317,
+  "name": "꿀꺽몬",
+  "nameEn": "Swalot",
+  "types": [
+   4
+  ],
+  "speed": 55,
+  "mega": false
+ },
+ {
   "id": 623,
   "key": "golurk",
   "dex": 623,
@@ -3395,6 +3709,18 @@
   "mega": false
  },
  {
+  "id": 863,
+  "key": "perrserker",
+  "dex": 863,
+  "name": "나이킹",
+  "nameEn": "Perrserker",
+  "types": [
+   9
+  ],
+  "speed": 50,
+  "mega": false
+ },
+ {
   "id": 983,
   "key": "kingambit",
   "dex": 983,
@@ -3429,6 +3755,19 @@
    5
   ],
   "speed": 47,
+  "mega": false
+ },
+ {
+  "id": 40,
+  "key": "wigglytuff",
+  "dex": 40,
+  "name": "푸크린",
+  "nameEn": "Wigglytuff",
+  "types": [
+   1,
+   18
+  ],
+  "speed": 45,
   "mega": false
  },
  {
@@ -3547,6 +3886,18 @@
   "mega": false
  },
  {
+  "id": 853,
+  "key": "grapploct",
+  "dex": 853,
+  "name": "케오퍼스",
+  "nameEn": "Grapploct",
+  "types": [
+   2
+  ],
+  "speed": 42,
+  "mega": false
+ },
+ {
   "id": 168,
   "key": "ariados",
   "dex": 168,
@@ -3596,6 +3947,45 @@
    6
   ],
   "speed": 40,
+  "mega": false
+ },
+ {
+  "id": 768,
+  "key": "golisopod",
+  "dex": 768,
+  "name": "갑주무사",
+  "nameEn": "Golisopod",
+  "types": [
+   7,
+   11
+  ],
+  "speed": 40,
+  "mega": false
+ },
+ {
+  "id": 10316,
+  "key": "golisopod-mega",
+  "dex": 768,
+  "name": "메가갑주무사",
+  "nameEn": "Mega Golisopod",
+  "types": [
+   7,
+   9
+  ],
+  "speed": 40,
+  "mega": true
+ },
+ {
+  "id": 930,
+  "key": "arboliva",
+  "dex": 930,
+  "name": "올리르바",
+  "nameEn": "Arboliva",
+  "types": [
+   12,
+   1
+  ],
+  "speed": 39,
   "mega": false
  },
  {
@@ -3990,6 +4380,18 @@
    10
   ],
   "speed": 20,
+  "mega": false
+ },
+ {
+  "id": 871,
+  "key": "pincurchin",
+  "dex": 871,
+  "name": "찌르성게",
+  "nameEn": "Pincurchin",
+  "types": [
+   13
+  ],
+  "speed": 15,
   "mega": false
  }
 ]

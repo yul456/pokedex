@@ -39,8 +39,11 @@ export function artworkUrl(id: number) {
   return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`
 }
 
+// 띄어쓰기·따옴표·마침표 차이는 무시하고 비교 (예: "메가 리자몽", "farfetch'd" 도 찾히도록)
+const normalize = (s: string) => s.toLowerCase().replace(/[\s'’.\-()]/g, '')
+
 export function matches(p: Pokemon, query: string) {
-  const q = query.trim().toLowerCase()
+  const q = normalize(query)
   if (!q) return true
-  return p.name.toLowerCase().includes(q) || p.nameEn.toLowerCase().includes(q)
+  return normalize(p.name).includes(q) || normalize(p.nameEn).includes(q)
 }

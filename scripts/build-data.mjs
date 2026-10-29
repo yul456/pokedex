@@ -69,7 +69,7 @@ const REGION_KO = { alola: '알로라', galar: '가라르', hisui: '히스이' }
 
 function koreanName(p, speciesKo, formKo, repeated) {
   const id = p.identifier
-  const mega = id.match(/-mega(?:-([xy]))?$/)
+  const mega = id.match(/-mega(?:-([xyz]))?$/)
   if (mega) {
     const gender = id.includes('-male-') ? ' (수컷)' : id.includes('-female-') ? ' (암컷)' : ''
     return `메가${speciesKo}${mega[1] ? ` ${mega[1].toUpperCase()}` : ''}${gender}`

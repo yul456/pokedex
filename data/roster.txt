@@ -1,8 +1,12 @@
 # 포켓몬 챔피언스 참전 목록 (PokéAPI pokemon identifier, 한 줄에 하나)
-# 출처: Game8 "List of All Pokemon by Speed Stat" (2026-06-30 업데이트 기준, 315개)
-#   https://game8.co/games/Pokemon-Champions/archives/594190
 # 참전 포켓몬이 추가/변경되면 이 파일을 고치고 npm run data 를 실행
+# 패치로 추가된 포켓몬은 아래처럼 버전별 구역을 새로 만들어 적는다
+#
+# 현재 반영: 버전 1.2.0 (2026-09-09, 레귤레이션 M-C) — 347개
 
+# --- 출시 ~ 버전 1.1.0: 315개 ---
+# 출처: Game8 "List of All Pokemon by Speed Stat" (2026-06-30 기준)
+#   https://game8.co/games/Pokemon-Champions/archives/594190
 venusaur
 charizard
 blastoise
@@ -318,3 +322,41 @@ crabominable-mega
 scovillain-mega
 glimmora-mega
 meowstic-female-mega
+
+# --- 버전 1.2.0 (2026-09-09, 레귤레이션 M-C): 26개 + 메가진화 6개 ---
+# 출처: Serebii 패치 노트, Game8 "List of New Pokemon in Regulation M-C"
+#   https://www.serebii.net/pokemonchampions/patch.shtml
+#   https://game8.co/games/Pokemon-Champions/archives/605517
+wigglytuff
+persian
+persian-alola
+farfetchd
+mr-mime
+swalot
+salamence
+gogoat
+golisopod
+rillaboom
+cinderace
+inteleon
+thievul
+toxtricity-amped
+toxtricity-low-key
+grapploct
+perrserker
+sirfetchd
+pincurchin
+indeedee-male
+indeedee-female
+pawmot
+arboliva
+# 시비꼬는 깃털 색 4종의 능력치가 같아서 기본형만 넣는다
+squawkabilly-green-plumage
+mabosstiff
+baxcalibur
+absol-mega-z
+salamence-mega
+garchomp-mega-z
+lucario-mega-z
+golisopod-mega
+baxcalibur-mega
