@@ -217,25 +217,34 @@ const cleanText = (text) =>
     .replace(/\s+/g, ' ')
     .trim()
 
+// PokéAPI 에 한글이 없는 특성은 직접 관리하는 보충 파일(data/ability-ko.json)로 채운다
+const abilityKo = JSON.parse(await readFile(new URL('../data/ability-ko.json', import.meta.url), 'utf8')).abilities
+
 const abilityByIdentifier = new Map(abilities.map((a) => [a.identifier, a.id]))
 const usedAbilities = [...new Set(result.flatMap((p) => p.abilities.map((a) => a.id)))].sort()
 const abilityDict = Object.fromEntries(
   usedAbilities.map((identifier) => {
     const id = abilityByIdentifier.get(identifier)
-    const nameKo = abilityName.get(`${id}:${LANG_KO}`)
+    const supplement = abilityKo[identifier] ?? {}
+    const nameKo = abilityName.get(`${id}:${LANG_KO}`) ?? supplement.name
     const textKo = latestFlavorText.get(`${id}:${LANG_KO}`)?.flavor_text
     const textEn = latestFlavorText.get(`${id}:${LANG_EN}`)?.flavor_text ?? shortEffectEn.get(id)
+    const written = !textKo && supplement.description
     return [
       identifier,
       {
         name: nameKo ?? abilityName.get(`${id}:${LANG_EN}`) ?? identifier,
-        description: cleanText(textKo ?? textEn ?? ''),
+        description: cleanText(textKo ?? supplement.description ?? textEn ?? ''),
         ...(nameKo ? {} : { englishName: true }),
-        ...(textKo || !textEn ? {} : { englishDescription: true }),
+        ...(written ? { writtenDescription: true } : {}),
+        ...(textKo || written || !textEn ? {} : { englishDescription: true }),
       },
     ]
   }),
 )
+const unusedSupplement = Object.keys(abilityKo).filter((k) => !usedAbilities.includes(k))
+if (unusedSupplement.length) console.log(`참고: ability-ko.json 에만 있고 쓰이지 않는 특성 ${unusedSupplement.join(', ')}`)
 await writeFile(new URL('../src/data/abilities.json', import.meta.url), JSON.stringify(abilityDict, null, 1) + '\n')
 const englishOnly = Object.values(abilityDict).filter((a) => a.englishName || a.englishDescription).length
-console.log(`src/data/abilities.json: ${usedAbilities.length}개 (영문으로 대신한 것 ${englishOnly}개)`)
+const written = Object.values(abilityDict).filter((a) => a.writtenDescription).length
+console.log(`src/data/abilities.json: ${usedAbilities.length}개 (직접 쓴 설명 ${written}개, 영문으로 대신한 것 ${englishOnly}개)`)

@@ -66,6 +66,11 @@ export function PokemonInfoDialog({ pokemon, onClose }: Props) {
                     {(ability.englishName || ability.englishDescription) && (
                       <span className="ability-tag">한글 정보 없음</span>
                     )}
+                    {ability.writtenDescription && (
+                      <span className="ability-tag" title="게임 속 공식 문구가 아니라 효과를 보고 직접 쓴 설명이에요">
+                        직접 작성
+                      </span>
+                    )}
                     <p className="ability-desc">{ability.description}</p>
                   </li>
                 )
