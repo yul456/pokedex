@@ -45,7 +45,7 @@ export function parseParty(data: unknown, version: number): PartyMember[] | null
     .slice(0, MAX_PARTY)
 }
 
-// version 1: 상대마다 scarf 값이 있었다 → version 2 부터는 스카프가 표 전체 옵션이라 scarf 는 버린다
+// version 1: 상대마다 scarf 값이 있었다 → version 2 부터는 스카프를 포켓몬별로 따로 저장하므로(SCARF_STORAGE) scarf 는 버린다
 export function parseOpponents(data: unknown, version: number): Opponent[] | null {
   if ((version !== 1 && version !== OPPONENT_STORAGE.version) || !Array.isArray(data)) return null
   return data
