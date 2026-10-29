@@ -3,6 +3,7 @@ import { Matchup } from './components/Matchup'
 import { PartyEditor } from './components/PartyEditor'
 import { SpeedCompare } from './components/SpeedCompare'
 import { SpeedTable } from './components/SpeedTable'
+import { TypeChart } from './components/TypeChart'
 import { PARTY_STORAGE, parseParty, type PartyMember } from './party'
 import { DEFAULT_SETTINGS, parseSettings, SETTINGS_STORAGE, SettingsContext, type Settings } from './settings'
 import { useStoredState } from './storage'
@@ -13,6 +14,7 @@ const TABS = [
   { id: 'compare', label: '1:1 비교' },
   { id: 'party', label: '내 파티' },
   { id: 'matchup', label: '매치업' },
+  { id: 'types', label: '상성표' },
 ] as const
 
 type TabId = (typeof TABS)[number]['id']
@@ -66,6 +68,7 @@ function App() {
           {tab === 'compare' && <SpeedCompare />}
           {tab === 'party' && <PartyEditor party={party} onChange={setParty} />}
           {tab === 'matchup' && <Matchup party={party} onEditParty={() => setTab('party')} />}
+          {tab === 'types' && <TypeChart />}
         </main>
 
         <footer>

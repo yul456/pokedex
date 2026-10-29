@@ -96,10 +96,16 @@ const roster = (await readFile(new URL('../data/roster.txt', import.meta.url), '
   .map((line) => line.trim())
   .filter((line) => line && !line.startsWith('#'))
 
-const [pokemon, stats, speciesNames, forms, formNames, pokemonTypes] = await Promise.all(
-  ['pokemon', 'pokemon_stats', 'pokemon_species_names', 'pokemon_forms', 'pokemon_form_names', 'pokemon_types'].map(
-    loadCsv,
-  ),
+const [pokemon, stats, speciesNames, forms, formNames, pokemonTypes, typeEfficacy] = await Promise.all(
+  [
+    'pokemon',
+    'pokemon_stats',
+    'pokemon_species_names',
+    'pokemon_forms',
+    'pokemon_form_names',
+    'pokemon_types',
+    'type_efficacy',
+  ].map(loadCsv),
 )
 
 const byIdentifier = new Map(pokemon.map((p) => [p.identifier, p]))
@@ -149,3 +155,18 @@ const result = roster.map((identifier) => {
 result.sort((a, b) => b.speed - a.speed || a.dex - b.dex)
 await writeFile(new URL('../src/data/pokemon.json', import.meta.url), JSON.stringify(result, null, 1) + '\n')
 console.log(`src/data/pokemon.json: ${result.length}마리`)
+
+// 타입 상성표: chart[공격 타입 id - 1][방어 타입 id - 1] = 피해 배율 (0, 0.5, 1, 2)
+// 기본 18타입만 쓴다 (19번 스텔라, 10001번대 특수 타입 제외)
+const TYPE_COUNT = 18
+const chart = Array.from({ length: TYPE_COUNT }, () => Array(TYPE_COUNT).fill(1))
+for (const e of typeEfficacy) {
+  const attack = Number(e.damage_type_id)
+  const defend = Number(e.target_type_id)
+  if (attack <= TYPE_COUNT && defend <= TYPE_COUNT) chart[attack - 1][defend - 1] = Number(e.damage_factor) / 100
+}
+await writeFile(
+  new URL('../src/data/type-chart.json', import.meta.url),
+  `[\n${chart.map((row) => `  ${JSON.stringify(row)}`).join(',\n')}\n]\n`,
+)
+console.log('src/data/type-chart.json: 18 × 18')

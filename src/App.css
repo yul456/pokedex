@@ -743,6 +743,165 @@ select {
   color: var(--tie);
 }
 
+/* 타입 상성표 */
+.chart-wrap {
+  overflow-x: auto;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.type-chart {
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 2px;
+  font-variant-numeric: tabular-nums;
+}
+
+.type-chart th,
+.type-chart td {
+  padding: 0;
+}
+
+.type-chart td {
+  width: 32px;
+  height: 26px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.type-chart td.eff-2 {
+  background: var(--win-bg);
+  color: var(--win);
+}
+
+.type-chart td.eff-half {
+  background: var(--lose-bg);
+  color: var(--lose);
+}
+
+.type-chart td.eff-0 {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.type-chart td.dim {
+  opacity: 0.2;
+}
+
+.type-chart .corner,
+.type-chart .row-head {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--card);
+}
+
+.type-chart .corner {
+  padding: 0 4px;
+  font-size: 0.62rem;
+  font-weight: 500;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.type-head {
+  display: block;
+  width: 100%;
+  padding: 3px 4px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.type-chart thead .type-head {
+  padding: 3px 1px;
+}
+
+.type-head.active {
+  border-color: var(--text);
+}
+
+.type-short {
+  display: none;
+}
+
+/* 배율 목록 (상성표 요약, 포켓몬 방어 상성) */
+.multiplier-list {
+  display: grid;
+  gap: 6px;
+  margin: 8px 0 0;
+}
+
+.multiplier-row {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  align-items: center;
+  gap: 8px;
+}
+
+.multiplier-row dt {
+  font-weight: 800;
+}
+
+.multiplier-row dd {
+  margin: 0;
+}
+
+.multiplier-row dd .types {
+  flex-wrap: wrap;
+}
+
+.multiplier-row.attack .m-2,
+.multiplier-row.defend .m-0_5,
+.multiplier-row.defend .m-0_25 {
+  color: var(--win);
+}
+
+.multiplier-row.attack .m-0_5,
+.multiplier-row.attack .m-0,
+.multiplier-row.defend .m-4,
+.multiplier-row.defend .m-2 {
+  color: var(--lose);
+}
+
+.multiplier-row.defend .m-0 {
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .type-chart {
+    border-spacing: 1px;
+  }
+
+  .type-chart td {
+    width: 15px;
+    height: 22px;
+    font-size: 0.68rem;
+  }
+
+  .type-chart .type-full {
+    display: none;
+  }
+
+  .type-chart .type-short {
+    display: inline;
+  }
+
+  .type-chart .type-head {
+    min-width: 15px;
+    padding: 3px 0;
+    border-width: 1px;
+  }
+}
+
 @media (max-width: 600px) {
   .tabs button {
     padding: 8px 2px;
