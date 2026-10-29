@@ -534,7 +534,8 @@ select {
   cursor: pointer;
 }
 
-.check.disabled {
+.check.disabled,
+.toggles label.disabled {
   color: var(--muted);
   cursor: default;
 }

@@ -43,7 +43,8 @@ function SidePanel({ title, side, onChange }: { title: string; side: Side; onCha
   const pick = (value: string) => {
     setQuery(value)
     const found = POKEMON.find((p) => p.name === value || p.nameEn.toLowerCase() === value.toLowerCase())
-    if (found) onChange({ ...side, pokemon: found })
+    // 메가진화한 모습은 메가스톤을 지녀야 해서 스카프를 못 지니므로 메가를 고르면 스카프를 끈다
+    if (found) onChange({ ...side, pokemon: found, mods: found.mega ? { ...side.mods, scarf: false } : side.mods })
   }
 
   return (
@@ -97,9 +98,15 @@ function SidePanel({ title, side, onChange }: { title: string; side: Side; onCha
       </label>
 
       <div className="toggles">
-        <label>
-          <input type="checkbox" checked={side.mods.scarf} onChange={(e) => setMods({ scarf: e.target.checked })} />
+        <label className={side.pokemon.mega ? 'disabled' : undefined}>
+          <input
+            type="checkbox"
+            checked={side.mods.scarf}
+            disabled={side.pokemon.mega}
+            onChange={(e) => setMods({ scarf: e.target.checked })}
+          />
           스카프
+          {side.pokemon.mega && <span className="muted">(메가스톤을 지니면 못 씀)</span>}
         </label>
         <label>
           <input
