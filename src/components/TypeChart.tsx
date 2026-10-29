@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { TYPES } from '../pokemon'
-import { defensiveMatchups, MULTIPLIER_LABEL, offensiveMatchups, TYPE_IDS, typeFactor } from '../typeChart'
-import { TypeChips } from './PokemonBadge'
+import { defensiveMatchups, offensiveMatchups, TYPE_IDS, typeFactor } from '../typeChart'
+import { MultiplierList } from './MultiplierList'
 
 type Selection = { axis: 'attack' | 'defend'; type: number } | null
 
@@ -92,16 +92,7 @@ function Summary({ selection }: { selection: NonNullable<Selection> }) {
       <p>
         <b>{TYPES[type].name}</b> {axis === 'attack' ? '공격 (주는 피해)' : '방어 (받는 피해)'}
       </p>
-      <dl className="multiplier-list">
-        {groups.map((g) => (
-          <div key={g.multiplier} className={`multiplier-row ${axis}`}>
-            <dt className={`m-${String(g.multiplier).replace('.', '_')}`}>{MULTIPLIER_LABEL[g.multiplier]}</dt>
-            <dd>
-              <TypeChips types={g.types} />
-            </dd>
-          </div>
-        ))}
-      </dl>
+      <MultiplierList groups={groups} axis={axis} />
     </div>
   )
 }

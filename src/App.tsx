@@ -1,10 +1,13 @@
 import { useState } from 'react'
 import { Matchup } from './components/Matchup'
 import { PartyEditor } from './components/PartyEditor'
+import { PokemonInfoDialog } from './components/PokemonInfoDialog'
 import { SpeedCompare } from './components/SpeedCompare'
 import { SpeedTable } from './components/SpeedTable'
 import { TypeChart } from './components/TypeChart'
 import { PARTY_STORAGE, parseParty, type PartyMember } from './party'
+import type { Pokemon } from './pokemon'
+import { PokemonInfoContext } from './pokemonInfo'
 import { DEFAULT_SETTINGS, parseSettings, SETTINGS_STORAGE, SettingsContext, type Settings } from './settings'
 import { useStoredState } from './storage'
 import './App.css'
@@ -33,50 +36,55 @@ function App() {
     parseSettings,
     DEFAULT_SETTINGS,
   )
+  // 사진을 눌러 방어 상성 창에 보여 줄 포켓몬 (없으면 창이 닫혀 있음)
+  const [infoPokemon, setInfoPokemon] = useState<Pokemon | null>(null)
 
   return (
     <SettingsContext value={settings}>
-      <div className="app">
-        <header>
-          <div className="header-top">
-            <h1>챔피언스 스피드 도감</h1>
-            <label className="switch">
-              <input
-                type="checkbox"
-                checked={settings.showImages}
-                onChange={(e) => setSettings({ ...settings, showImages: e.target.checked })}
-              />
-              포켓몬 사진
-            </label>
-          </div>
-          <nav className="tabs">
-            {TABS.map((t) => (
-              <button
-                key={t.id}
-                type="button"
-                className={tab === t.id ? 'active' : undefined}
-                onClick={() => setTab(t.id)}
-              >
-                {t.label}
-              </button>
-            ))}
-          </nav>
-        </header>
+      <PokemonInfoContext value={setInfoPokemon}>
+        <div className="app">
+          <header>
+            <div className="header-top">
+              <h1>챔피언스 스피드 도감</h1>
+              <label className="switch">
+                <input
+                  type="checkbox"
+                  checked={settings.showImages}
+                  onChange={(e) => setSettings({ ...settings, showImages: e.target.checked })}
+                />
+                포켓몬 사진
+              </label>
+            </div>
+            <nav className="tabs">
+              {TABS.map((t) => (
+                <button
+                  key={t.id}
+                  type="button"
+                  className={tab === t.id ? 'active' : undefined}
+                  onClick={() => setTab(t.id)}
+                >
+                  {t.label}
+                </button>
+              ))}
+            </nav>
+          </header>
 
-        <main>
-          {tab === 'table' && <SpeedTable />}
-          {tab === 'compare' && <SpeedCompare />}
-          {tab === 'party' && <PartyEditor party={party} onChange={setParty} />}
-          {tab === 'matchup' && <Matchup party={party} onEditParty={() => setTab('party')} />}
-          {tab === 'types' && <TypeChart />}
-        </main>
+          <main>
+            {tab === 'table' && <SpeedTable />}
+            {tab === 'compare' && <SpeedCompare />}
+            {tab === 'party' && <PartyEditor party={party} onChange={setParty} />}
+            {tab === 'matchup' && <Matchup party={party} onEditParty={() => setTab('party')} />}
+            {tab === 'types' && <TypeChart />}
+          </main>
 
-        <footer>
-          데이터: <a href="https://pokeapi.co">PokéAPI</a> · 참전 목록: 버전 1.2.0 (2026-09-09, 레귤레이션 M-C) 기준
-          ·{' '}
-          <a href="https://github.com/yul456/pokedex">GitHub</a>
-        </footer>
-      </div>
+          <footer>
+            데이터: <a href="https://pokeapi.co">PokéAPI</a> · 참전 목록: 버전 1.2.0 (2026-09-09, 레귤레이션 M-C)
+            기준 · <a href="https://github.com/yul456/pokedex">GitHub</a>
+          </footer>
+        </div>
+
+        <PokemonInfoDialog pokemon={infoPokemon} onClose={() => setInfoPokemon(null)} />
+      </PokemonInfoContext>
     </SettingsContext>
   )
 }

@@ -13,10 +13,16 @@ export function TypeChips({ types }: { types: number[] }) {
   )
 }
 
-export function PokemonBadge({ pokemon, size = 40 }: { pokemon: Pokemon; size?: number }) {
+type BadgeProps = {
+  pokemon: Pokemon
+  size?: number
+  interactive?: boolean // false 면 사진을 눌러도 방어 상성 창을 열지 않는다
+}
+
+export function PokemonBadge({ pokemon, size = 40, interactive = true }: BadgeProps) {
   return (
     <span className="badge">
-      <PokemonImage pokemon={pokemon} size={size} />
+      <PokemonImage pokemon={pokemon} size={size} interactive={interactive} />
       <span className="badge-text">
         <span className="badge-name">
           {pokemon.name}

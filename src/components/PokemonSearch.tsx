@@ -38,7 +38,8 @@ export function PokemonSearch({ options, onPick, placeholder, disabled }: Props)
           {results.map((p) => (
             <li key={p.key}>
               <button type="button" onClick={() => pick(p)}>
-                <PokemonBadge pokemon={p} size={32} />
+                {/* 후보 줄 전체가 버튼이라 사진은 따로 누를 수 없게 한다 */}
+                <PokemonBadge pokemon={p} size={32} interactive={false} />
                 <span className="search-speed">종족값 {p.speed}</span>
               </button>
             </li>

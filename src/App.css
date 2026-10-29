@@ -135,6 +135,84 @@ select {
   object-fit: contain;
 }
 
+/* 사진(또는 도감 번호)을 누르면 방어 상성 창 */
+.poke-img-button {
+  display: inline-flex;
+  flex: none;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  cursor: pointer;
+}
+
+.poke-img-button:hover .poke-img {
+  filter: brightness(1.08) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+.poke-img-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.info-dialog {
+  width: min(420px, calc(100vw - 32px));
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--card);
+  color: var(--text);
+}
+
+.info-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.info-body {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+}
+
+.info-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.info-head .poke-img {
+  object-fit: contain;
+}
+
+.info-title-block {
+  display: grid;
+  flex: 1;
+  gap: 4px;
+  min-width: 0;
+}
+
+.info-name {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.info-title-block .muted,
+.info-body .hint {
+  margin: 0;
+}
+
+.info-section {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.info-dialog .type {
+  padding: 1px 8px;
+  font-size: 0.78rem;
+}
+
 .badge-text {
   display: flex;
   flex-direction: column;
@@ -607,9 +685,15 @@ select {
   overflow-wrap: anywhere;
 }
 
+.matrix thead .poke-img-button {
+  display: flex;
+  width: fit-content;
+  margin: 0 auto 2px;
+}
+
 .matrix thead .poke-img {
   display: block;
-  margin: 0 auto 2px;
+  margin: 0 auto;
   object-fit: contain;
 }
 
@@ -677,8 +761,11 @@ select {
   align-items: center;
 }
 
-.row-head-inner .poke-img {
+.row-head-inner .poke-img-button {
   grid-row: span 2;
+}
+
+.row-head-inner .poke-img {
   object-fit: contain;
 }
 
