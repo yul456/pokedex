@@ -71,7 +71,7 @@ function App() {
         <footer>
           데이터: <a href="https://pokeapi.co">PokéAPI</a> · 참전 목록: 버전 1.2.0 (2026-09-09, 레귤레이션 M-C) 기준
           ·{' '}
-          <a href="https://github.com/yul456/MySample">GitHub</a>
+          <a href="https://github.com/yul456/pokedex">GitHub</a>
         </footer>
       </div>
     </SettingsContext>
