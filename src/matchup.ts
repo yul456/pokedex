@@ -1,16 +1,4 @@
-import type { Pokemon } from './pokemon'
-import { effectiveSpeed, NO_MODIFIERS, PRESETS, speedStat } from './speed'
-
-// 상대 투자는 알 수 없으니 PRESETS 순서(최속 → 준속 → 무투자 → 최저속)대로 스피드를 모두 구한다
-export function opponentSpeeds(form: Pokemon, scarf: boolean, tailwind: boolean) {
-  return PRESETS.map((preset) =>
-    effectiveSpeed(speedStat(form.speed, preset.sp, preset.nature), {
-      ...NO_MODIFIERS,
-      scarf: scarf && !form.mega,
-      tailwind,
-    }),
-  )
-}
+import { PRESETS } from './speed'
 
 export type Judgement = {
   outcome: 'first' | 'last' | 'mixed'
@@ -18,6 +6,7 @@ export type Judgement = {
   wins: boolean[] // 상대 투자별로 내가 먼저 움직이는지
 }
 
+// 내 스피드를 상대의 투자별 스피드(presetSpeeds 결과, 최속 → 최저속 순)와 비교한다
 // 트릭룸이면 느린 쪽이 먼저 움직인다
 export function judge(mine: number, theirs: number[], trickRoom: boolean): Judgement {
   const wins = theirs.map((s) => (trickRoom ? mine < s : mine > s))

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { judge, opponentSpeeds } from '../matchup'
+import { judge } from '../matchup'
 import {
   MAX_PARTY,
   memberSpeed,
@@ -11,7 +11,7 @@ import {
   type PartyMember,
 } from '../party'
 import { BASE_POKEMON, BY_KEY, megaFormsOf, type Pokemon } from '../pokemon'
-import { PRESETS } from '../speed'
+import { presetSpeeds, PRESETS } from '../speed'
 import { useStoredState } from '../storage'
 import { PokemonImage } from './PokemonImage'
 import { PokemonSearch } from './PokemonSearch'
@@ -86,7 +86,7 @@ export function Matchup({ party, onEditParty }: Props) {
   const hasSubHeader = groups.some((g) => g.variants.length > 1)
 
   const mySpeed = (row: Row) => memberSpeed(row.member, row.form, myTailwind)
-  const theirSpeeds = (col: Col) => opponentSpeeds(col.form, col.scarf, theirTailwind)
+  const theirSpeeds = (col: Col) => presetSpeeds(col.form, col.scarf, theirTailwind)
   const selectedRow = rows.find((r) => r.id === selected?.row)
   const selectedCol = cols.find((c) => c.id === selected?.col)
 

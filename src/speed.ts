@@ -1,3 +1,5 @@
+import type { Pokemon } from './pokemon'
+
 // 포켓몬 챔피언스 스피드 계산 (레벨 50, 개체값 최대 고정)
 // 실수치 = floor((종족값 + 20 + 스탯포인트) × 성격 보정)
 // 스탯포인트(SP)는 한 능력치에 0~32, 성격 보정은 +10% / 없음 / -10%
@@ -45,3 +47,15 @@ export const PRESETS = [
   { label: '무투자', short: '무투자', sp: 0, nature: 0 },
   { label: '최저속', short: '최저', sp: 0, nature: -1 },
 ] as const satisfies readonly { label: string; short: string; sp: number; nature: Nature }[]
+
+// 투자를 모를 때 PRESETS 순서(최속 → 준속 → 무투자 → 최저속)대로 스피드를 모두 구한다 (순위표, 매치업의 상대)
+// 메가진화한 모습은 메가스톤을 지녀야 해서 스카프를 못 지닌다
+export function presetSpeeds(form: Pokemon, scarf: boolean, tailwind: boolean) {
+  return PRESETS.map((preset) =>
+    effectiveSpeed(speedStat(form.speed, preset.sp, preset.nature), {
+      ...NO_MODIFIERS,
+      scarf: scarf && !form.mega,
+      tailwind,
+    }),
+  )
+}

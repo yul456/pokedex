@@ -51,7 +51,7 @@ src/data/                   생성 결과 (손으로 고치지 않는다. 커밋
   abilities.json            특성 215개
   type-chart.json           18×18 타입 상성
 src/
-  speed.ts                  스피드 계산식, 보정, 투자 프리셋(최속/준속/무투자/최저속)
+  speed.ts                  스피드 계산식, 보정, 투자 프리셋(최속/준속/무투자/최저속)과 프리셋별 스피드
   matchup.ts                매치업 칸 판정 (먼저/나중/○○까지/○○ 동속 …)
   party.ts                  내 파티·상대·스카프 목록 타입, 저장 키, 저장값 검사(parse)
   pokemon.ts                포켓몬 목록, 메가진화 연결, 타입 이름·색, 이미지 주소, 검색
@@ -84,10 +84,11 @@ src/
 2. `npm run dev`로 띄워 브라우저에서 바뀐 화면을 본다. 데스크톱과 375px 폭을 둘 다 보고, 가로 스크롤이 생기지 않는지 확인한다. 창 크기를 줄일 수 없으면 개발자 도구의 기기 모드나 375px 폭 iframe을 쓴다.
 3. 계산 로직은 dev 서버를 연 브라우저 콘솔에서 모듈을 바로 불러 확인할 수 있다. Vite가 `.ts` 파일을 그대로 내려 주기 때문이다.
    ```js
-   const { judge, opponentSpeeds } = await import('/src/matchup.ts')
+   const { judge } = await import('/src/matchup.ts')
+   const { presetSpeeds } = await import('/src/speed.ts')
    const { BY_KEY } = await import('/src/pokemon.ts')
    // 내 최속 한카리아스(169) vs 상대 한카리아스 → label: '최속 동속'
-   judge(169, opponentSpeeds(BY_KEY.get('garchomp'), false, false), false)
+   judge(169, presetSpeeds(BY_KEY.get('garchomp'), false, false), false)
    ```
 4. 데이터를 다시 만들었으면 `npm run data`가 출력하는 개수(포켓몬 347, 특성 215, 직접 쓴 설명 23, 영문으로 대신한 것 0)와 `git diff src/data`를 보고, 의도한 변화만 있는지 확인한다.
 

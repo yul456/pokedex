@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { matches, POKEMON } from '../pokemon'
-import { effectiveSpeed, NO_MODIFIERS, PRESETS, speedStat } from '../speed'
+import { presetSpeeds, PRESETS } from '../speed'
 import { PokemonBadge } from './PokemonBadge'
 
 export function SpeedTable() {
@@ -9,11 +9,15 @@ export function SpeedTable() {
   const [scarf, setScarf] = useState(false)
   const [tailwind, setTailwind] = useState(false)
 
-  const list = useMemo(
-    () => POKEMON.filter((p) => (showMega || !p.mega) && matches(p, query)),
-    [query, showMega],
+  // 최속 실수치(speeds[0]) 순으로 정렬한다. 보정이 없으면 종족값 순서와 같고,
+  // 스카프를 켜면 메가진화한 포켓몬만 스카프가 빠지므로 순서가 바뀐다. 최속이 같으면 원래 순서(종족값 → 도감 번호)대로
+  const rows = useMemo(
+    () =>
+      POKEMON.filter((p) => (showMega || !p.mega) && matches(p, query))
+        .map((p) => ({ pokemon: p, speeds: presetSpeeds(p, scarf, tailwind) }))
+        .sort((a, b) => b.speeds[0] - a.speeds[0]),
+    [query, showMega, scarf, tailwind],
   )
-  const mods = { ...NO_MODIFIERS, scarf, tailwind }
 
   return (
     <section>
@@ -41,8 +45,13 @@ export function SpeedTable() {
       </div>
 
       <p className="hint">
-        Lv.50 기준 실수치 · 최속 = SP 32 + 성격↑ · 준속 = SP 32 · 무투자 = SP 0 · 최저 = SP 0 + 성격↓ ({list.length}마리)
+        Lv.50 기준 실수치, 최속 순 · 최속 = SP 32 + 성격↑ · 준속 = SP 32 · 무투자 = SP 0 · 최저 = SP 0 + 성격↓ ({rows.length}마리)
       </p>
+      {scarf && (
+        <p className="hint">
+          메가진화 포켓몬은 메가스톤을 지녀서 스카프를 쓸 수 없어요. 스카프 없이 계산해서 순위를 다시 매겼어요.
+        </p>
+      )}
 
       <div className="table-wrap">
         <table className="speed-table">
@@ -56,22 +65,22 @@ export function SpeedTable() {
             </tr>
           </thead>
           <tbody>
-            {list.map((p) => (
+            {rows.map(({ pokemon: p, speeds }) => (
               <tr key={p.key}>
                 <td className="col-name">
                   <PokemonBadge pokemon={p} />
                 </td>
                 <td className="base">{p.speed}</td>
-                {PRESETS.map((preset) => (
+                {PRESETS.map((preset, i) => (
                   <td key={preset.label} className={preset.nature === 1 ? 'fastest' : undefined}>
-                    {effectiveSpeed(speedStat(p.speed, preset.sp, preset.nature), mods)}
+                    {speeds[i]}
                   </td>
                 ))}
               </tr>
             ))}
           </tbody>
         </table>
-        {list.length === 0 && <p className="empty">검색 결과가 없어요.</p>}
+        {rows.length === 0 && <p className="empty">검색 결과가 없어요.</p>}
       </div>
     </section>
   )
