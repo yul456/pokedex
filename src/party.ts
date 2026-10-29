@@ -5,7 +5,7 @@ export const MAX_PARTY = 6
 
 // 저장 형식을 바꾸면 version 을 올리고 parse 함수에서 옛 형식을 변환한다
 export const PARTY_STORAGE = { key: 'champions-speed/party', version: 1 }
-export const OPPONENT_STORAGE = { key: 'champions-speed/opponents', version: 1 }
+export const OPPONENT_STORAGE = { key: 'champions-speed/opponents', version: 2 }
 
 // 포켓몬은 숫자 id 가 아니라 식별자(key)로 저장한다 (PokéAPI 번호가 바뀌어도 그대로 쓸 수 있도록)
 export type PartyMember = {
@@ -18,7 +18,6 @@ export type PartyMember = {
 
 export type Opponent = {
   key: string
-  scarf: boolean
 }
 
 const isRecord = (v: unknown): v is Record<string, unknown> => typeof v === 'object' && v !== null
@@ -45,13 +44,14 @@ export function parseParty(data: unknown, version: number): PartyMember[] | null
     .slice(0, MAX_PARTY)
 }
 
+// version 1: 상대마다 scarf 값이 있었다 → version 2 부터는 스카프가 표 전체 옵션이라 scarf 는 버린다
 export function parseOpponents(data: unknown, version: number): Opponent[] | null {
-  if (version !== OPPONENT_STORAGE.version || !Array.isArray(data)) return null
+  if ((version !== 1 && version !== OPPONENT_STORAGE.version) || !Array.isArray(data)) return null
   return data
     .filter(isRecord)
     .flatMap((o): Opponent[] => {
       const base = basePokemon(o.key)
-      return base ? [{ key: base.key, scarf: o.scarf === true }] : []
+      return base ? [{ key: base.key }] : []
     })
     .slice(0, MAX_PARTY)
 }

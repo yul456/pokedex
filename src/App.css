@@ -474,22 +474,6 @@ select {
   object-fit: contain;
 }
 
-.chip-toggle {
-  padding: 0 8px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: transparent;
-  color: var(--muted);
-  font-size: 0.72rem;
-  cursor: pointer;
-}
-
-.chip-toggle.active {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
-}
-
 .chip-remove {
   padding: 0 6px;
   border: 0;
@@ -576,8 +560,19 @@ select {
   object-fit: contain;
 }
 
-.scarf-mark {
-  display: block;
+/* 상대 포켓몬 사이를 조금 띄워서 기본/스카프 두 칸이 한 묶음으로 보이게 */
+.matrix .group-start {
+  padding-left: 8px;
+}
+
+.matrix .sub-head th {
+  padding-top: 0;
+  font-size: 0.66rem;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.matrix .sub-head th.scarf {
   color: var(--accent);
 }
 

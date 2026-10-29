@@ -14,7 +14,9 @@ import { useStoredState } from '../storage'
 import { PokemonSearch } from './PokemonSearch'
 
 type Row = { id: string; form: Pokemon; member: PartyMember }
-type Col = { id: string; form: Pokemon; opponent: Opponent }
+// 상대 모습 하나(기본·메가)가 머리글 한 칸이고, 그 아래에 기본/스카프 칸이 붙는다
+type Group = { form: Pokemon; variants: boolean[] } // variants: 칸마다 스카프를 지녔는지
+type Col = { id: string; form: Pokemon; scarf: boolean; groupStart: boolean }
 
 type Props = {
   party: PartyMember[]
@@ -32,6 +34,7 @@ export function Matchup({ party, onEditParty }: Props) {
   const [theirTailwind, setTheirTailwind] = useState(false)
   const [trickRoom, setTrickRoom] = useState(false)
   const [withMegas, setWithMegas] = useState(true)
+  const [withScarf, setWithScarf] = useState(true)
   const [selected, setSelected] = useState<{ row: string; col: string } | null>(null)
 
   if (party.length === 0) {
@@ -47,25 +50,33 @@ export function Matchup({ party, onEditParty }: Props) {
 
   const full = opponents.length >= MAX_PARTY
   const addOpponent = (p: Pokemon) => {
-    if (!full && !opponents.some((o) => o.key === p.key)) setOpponents([...opponents, { key: p.key, scarf: false }])
+    if (!full && !opponents.some((o) => o.key === p.key)) setOpponents([...opponents, { key: p.key }])
   }
 
-  // 내 파티: 메가진화할 포켓몬은 진화 전·후를 각각 한 줄씩
-  const rows: Row[] = party.flatMap((member) => {
-    const mega = member.mega ? BY_KEY.get(member.mega) : undefined
-    return [BY_KEY.get(member.key)!, ...(mega ? [mega] : [])].map((form) => ({ id: form.key, form, member }))
+  // 내 파티: 메가진화하는 포켓몬은 메가진화한 모습만 보여 준다
+  const rows: Row[] = party.map((member) => {
+    const form = BY_KEY.get(member.mega ?? member.key)!
+    return { id: form.key, form, member }
   })
-  // 상대: 아이템은 미리 알 수 없으니 메가진화 가능한 모습도 함께 비교
-  const cols: Col[] = opponents.flatMap((opponent) =>
-    [BY_KEY.get(opponent.key)!, ...(withMegas ? megaFormsOf(opponent.key) : [])].map((form) => ({
-      id: form.key,
-      form,
-      opponent,
+
+  // 상대: 아이템은 미리 알 수 없으니 메가진화한 모습도 함께 비교하고,
+  // 메가가 아닌 모습은 구애스카프를 지닌 경우도 옆 칸에 함께 보여 준다 (메가스톤과 스카프는 같이 못 지님)
+  const groups: Group[] = opponents.flatMap((o) => [
+    { form: BY_KEY.get(o.key)!, variants: withScarf ? [false, true] : [false] },
+    ...(withMegas ? megaFormsOf(o.key) : []).map((form) => ({ form, variants: [false] })),
+  ])
+  const cols: Col[] = groups.flatMap((g, gi) =>
+    g.variants.map((scarf, vi) => ({
+      id: scarf ? `${g.form.key}:scarf` : g.form.key,
+      form: g.form,
+      scarf,
+      groupStart: gi > 0 && vi === 0,
     })),
   )
+  const hasSubHeader = groups.some((g) => g.variants.length > 1)
 
   const mySpeed = (row: Row) => memberSpeed(row.member, row.form, myTailwind)
-  const theirSpeeds = (col: Col) => opponentSpeeds(col.form, col.opponent.scarf, theirTailwind)
+  const theirSpeeds = (col: Col) => opponentSpeeds(col.form, col.scarf, theirTailwind)
   const selectedRow = rows.find((r) => r.id === selected?.row)
   const selectedCol = cols.find((c) => c.id === selected?.col)
 
@@ -89,14 +100,6 @@ export function Matchup({ party, onEditParty }: Props) {
                 <img src={artworkUrl(p.id)} alt="" width={24} height={24} />
                 {p.name}
                 <span className="chip-base">{p.speed}족</span>
-                <button
-                  type="button"
-                  className={o.scarf ? 'chip-toggle active' : 'chip-toggle'}
-                  aria-pressed={o.scarf}
-                  onClick={() => setOpponents(opponents.map((x) => (x.key === o.key ? { ...x, scarf: !x.scarf } : x)))}
-                >
-                  스카프
-                </button>
                 <button
                   type="button"
                   className="chip-remove"
@@ -131,6 +134,10 @@ export function Matchup({ party, onEditParty }: Props) {
           <input type="checkbox" checked={withMegas} onChange={(e) => setWithMegas(e.target.checked)} />
           상대 메가 포함
         </label>
+        <label>
+          <input type="checkbox" checked={withScarf} onChange={(e) => setWithScarf(e.target.checked)} />
+          상대 스카프 포함
+        </label>
       </div>
 
       <p className="hint legend">
@@ -150,16 +157,38 @@ export function Matchup({ party, onEditParty }: Props) {
           <table className="matrix">
             <thead>
               <tr>
-                <th className="corner">내 포켓몬</th>
-                {cols.map((c) => (
-                  <th key={c.id} scope="col">
-                    <img src={artworkUrl(c.form.id)} alt="" width={32} height={32} />
-                    {c.form.name}
-                    <span className="base-speed">{c.form.speed}족</span>
-                    {c.opponent.scarf && !c.form.mega && <span className="scarf-mark">스카프</span>}
+                <th className="corner" rowSpan={hasSubHeader ? 2 : 1}>
+                  내 포켓몬
+                </th>
+                {groups.map((g, gi) => (
+                  <th
+                    key={g.form.key}
+                    scope="colgroup"
+                    colSpan={g.variants.length}
+                    rowSpan={hasSubHeader && g.variants.length === 1 ? 2 : 1}
+                    className={gi > 0 ? 'group-start' : undefined}
+                  >
+                    <img src={artworkUrl(g.form.id)} alt="" width={32} height={32} />
+                    {g.form.name}
+                    <span className="base-speed">{g.form.speed}족</span>
                   </th>
                 ))}
               </tr>
+              {hasSubHeader && (
+                <tr className="sub-head">
+                  {cols
+                    .filter((c) => groups.find((g) => g.form.key === c.form.key)!.variants.length > 1)
+                    .map((c) => (
+                      <th
+                        key={c.id}
+                        scope="col"
+                        className={[c.scarf ? 'scarf' : '', c.groupStart ? 'group-start' : ''].join(' ').trim() || undefined}
+                      >
+                        {c.scarf ? '스카프' : '기본'}
+                      </th>
+                    ))}
+                </tr>
+              )}
             </thead>
             <tbody>
               {rows.map((r) => {
@@ -179,7 +208,7 @@ export function Matchup({ party, onEditParty }: Props) {
                       const result = judge(speed, theirSpeeds(c), trickRoom)
                       const isSelected = selected?.row === r.id && selected?.col === c.id
                       return (
-                        <td key={c.id}>
+                        <td key={c.id} className={c.groupStart ? 'group-start' : undefined}>
                           <button
                             type="button"
                             className={`cell ${result.outcome}${isSelected ? ' selected' : ''}`}
@@ -220,7 +249,7 @@ function Detail({ row, col, mine, theirs, trickRoom }: DetailProps) {
       <p>
         내 <b>{row.form.name}</b> {mine} <span className="muted">(종족값 {row.form.speed})</span> vs 상대{' '}
         <b>{col.form.name}</b> <span className="muted">(종족값 {col.form.speed})</span>
-        {col.opponent.scarf && !col.form.mega && ' · 스카프'}
+        {col.scarf && ' · 스카프'}
         {trickRoom && ' · 트릭룸'}
       </p>
       <ul>
