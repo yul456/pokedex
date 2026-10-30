@@ -18,6 +18,7 @@ npm run dev    # http://localhost:5173/
 
 - `data/roster.txt`: 챔피언스 참전 목록 (PokéAPI identifier). 참전 포켓몬이 바뀌면 여기를 고친다.
 - `data/ability-ko.json`: PokéAPI 에 한글이 없는 특성의 한글 이름·설명 보충 (설명은 직접 쓴 것이라 화면에 "직접 작성"으로 표시).
+- `data/sprite-memory.json`: 스크린샷 인식용으로 시험하며 고른 그림 지문. 사이트 주소에 `?dev` 를 붙이면 나오는 "기억한 그림 내보내기"로 받은 파일을 `npm run memory -- <파일>` 로 합친다.
 - `npm run data`: PokéAPI CSV 에서 다시 만든다.
   - `src/data/pokemon.json`: 참전 포켓몬의 이름·타입·스피드 종족값·특성
   - `src/data/abilities.json`: 특성 이름·게임 안 설명 (한글이 없으면 영어)

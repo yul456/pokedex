@@ -18,6 +18,9 @@ type Review = {
 const GENDER_LABEL = { male: '♂', female: '♀', none: '성별 없음' } as const
 // 후보는 처음에 이만큼만 보여 주고 나머지는 "더 보기"로
 const SHOWN_CANDIDATES = 4
+// 시험하며 모은 그림 기억을 파일로 내보내는 버튼. 만든 사람만 쓰므로 개발 서버이거나 주소에 ?dev 를 붙였을 때만 보인다
+// 받은 파일은 npm run memory 로 소스(data/sprite-memory.json)에 합친다
+const SHOW_EXPORT = import.meta.env.DEV || new URLSearchParams(location.search).has('dev')
 
 // 스크린샷에서 그림 부분만 잘라 정사각형 작은 그림으로 만든다
 function cropSprite(source: HTMLCanvasElement, box: Box) {
@@ -39,12 +42,14 @@ export function ScreenshotImport({ onApply }: Props) {
   const [review, setReview] = useState<Review | null>(null)
   const [expanded, setExpanded] = useState<number | null>(null)
   const [searching, setSearching] = useState<number | null>(null)
+  const [exported, setExported] = useState<number | null>(null)
 
   const read = async (file: File) => {
     setStatus('reading')
     setReview(null)
     setExpanded(null)
     setSearching(null)
+    setExported(null)
     try {
       // 분석 코드와 인식용 데이터는 이 기능을 쓸 때만 내려받는다
       const [{ analyzeTeamPreview }, { loadSpriteMemory }] = await Promise.all([
@@ -86,6 +91,19 @@ export function ScreenshotImport({ onApply }: Props) {
     rememberSprites(review.slots.map((s, i) => ({ key: review.picks[i], print: s.print })))
   }
 
+  const exportMemory = async () => {
+    const { exportSpriteMemory } = await import('../spriteMemory')
+    const { count, json } = exportSpriteMemory()
+    setExported(count)
+    if (count === 0) return
+    const link = document.createElement('a')
+    link.href = URL.createObjectURL(new Blob([json], { type: 'application/json' }))
+    link.download = 'sprite-memory.json'
+    link.click()
+    // iOS Safari 는 바로 해제하면 파일을 받지 못할 수 있어 조금 뒤에 해제한다
+    setTimeout(() => URL.revokeObjectURL(link.href), 1000)
+  }
+
   return (
     <div className="shot-import">
       <div className="shot-actions">
@@ -98,6 +116,11 @@ export function ScreenshotImport({ onApply }: Props) {
           {status === 'reading' ? '읽는 중…' : '스크린샷으로 입력'}
         </button>
         <span className="hint">팀 미리보기에서 상대 칸이 보이게 잘라서 올려 주세요. 이 기기 안에서만 읽어요.</span>
+        {SHOW_EXPORT && (
+          <button type="button" className="text-button" onClick={exportMemory}>
+            기억한 그림 내보내기
+          </button>
+        )}
         <input
           ref={fileRef}
           type="file"
@@ -113,6 +136,11 @@ export function ScreenshotImport({ onApply }: Props) {
       </div>
       {status === 'failed' && (
         <p className="notice">상대 칸을 찾지 못했어요. 빨간 칸이 보이게 잘라서 다시 올려 주세요.</p>
+      )}
+      {exported !== null && (
+        <p className="hint">
+          {exported ? `기억한 그림 ${exported}개를 파일로 내보냈어요.` : '이 기기에 기억한 그림이 없어요.'}
+        </p>
       )}
 
       {review && (
@@ -132,7 +160,9 @@ export function ScreenshotImport({ onApply }: Props) {
                     <div className="shot-read">
                       <TypeChips types={slot.types} />
                       <span className="muted">{GENDER_LABEL[slot.gender]}</span>
-                      {slot.remembered && <span className="ability-tag">기억한 그림</span>}
+                      {slot.remembered && (
+                        <span className="ability-tag">{slot.remembered.shared ? '등록된 그림' : '기억한 그림'}</span>
+                      )}
                     </div>
                     <div className="shot-options">
                       {options.map((p) => (

@@ -38,6 +38,7 @@ npm run dev     # http://localhost:5173/
 npm run build   # tsc -b && vite build (타입 검사 포함)
 npm run lint    # oxlint
 npm run data    # PokéAPI CSV를 받아 src/data/*.json을 다시 만든다 (인터넷 필요)
+npm run memory -- <파일>   # 사이트에서 내보낸 그림 기억을 data/sprite-memory.json 에 합친다
 ```
 
 `npm run data`는 처음 실행할 때 스크린샷 인식용 HOME 그림 530장(67MB 정도)을 `.cache/home/`에 받아 둔다. 이 폴더는 git에 올리지 않고, 그다음부터는 새 포켓몬의 그림만 받는다.
@@ -48,7 +49,9 @@ npm run data    # PokéAPI CSV를 받아 src/data/*.json을 다시 만든다 (�
 data/                       직접 관리하는 원본
   roster.txt                챔피언스 참전 목록 (PokéAPI identifier, 패치 버전별 구역)
   ability-ko.json           PokéAPI에 한글이 없는 특성의 이름·설명 보충
+  sprite-memory.json        스크린샷 인식용: 시험하며 고른 그림 지문 (npm run memory 로 늘린다. 앱이 바로 읽는다)
 scripts/build-data.mjs      npm run data: PokéAPI CSV → src/data/*.json
+scripts/merge-memory.mjs    npm run memory: 사이트에서 내보낸 그림 기억 → data/sprite-memory.json
 scripts/png.mjs             HOME 그림을 읽는 최소 PNG 디코더 (build-data.mjs 가 씀)
 src/data/                   생성 결과 (손으로 고치지 않는다. 커밋은 한다)
   pokemon.json              참전 포켓몬 347개, 스피드 종족값 내림차순
@@ -66,8 +69,8 @@ src/
   pokemonInfo.ts            "사진을 누르면 정보 창 열기" Context
   storage.ts                useStoredState: localStorage에 {version, data}로 저장하는 useState (readStored/writeStored)
   teamPreview.ts            팀 미리보기 스크린샷 분석: 칸 찾기, 타입 아이콘·성별 읽기, 후보 순위
-  spriteFeature.ts          그림 색 특징 (브라우저와 build-data.mjs 가 함께 씀, 다른 파일을 import 하지 않음)
-  spriteMemory.ts           한 번 고른 그림의 지문을 기억 (localStorage)
+  spriteFeature.ts          그림 색 특징과 지문 비교 (브라우저와 scripts/*.mjs 가 함께 씀, 다른 파일을 import 하지 않음)
+  spriteMemory.ts           그림 지문 기억: 이 기기(localStorage) → 소스(data/sprite-memory.json) 순으로 찾기, 저장, 내보내기
   App.tsx                   탭 5개, 헤더(사진 스위치), 하단 문구, 정보 창
   components/               탭 화면과 공용 부품
   index.css / App.css       색 변수(라이트·다크) / 컴포넌트 스타일
@@ -104,6 +107,7 @@ src/
 ## 주의할 점
 
 - `src/data/*.json`은 생성 파일이다. 고칠 일이 있으면 `data/`의 원본이나 `scripts/build-data.mjs`를 고친 뒤 `npm run data`를 실행한다.
+- `data/sprite-memory.json`은 사이트와 함께 모든 사람에게 배포되는 그림 기억이다. `npm run memory`로만 늘리고, 출력에 "바꿈"이 있으면 맞는지 확인한다. 방법은 docs/screenshot-recognition.md의 4절에 있다.
 - 포켓몬은 숫자 id가 아니라 **identifier(key, 예: `garchomp-mega`)로 저장하고 비교**한다. 숫자 id는 PokéAPI가 바꿀 수 있어서 이미지 주소를 만들 때만 쓴다.
 - localStorage는 출처(origin) 단위라서 `yul456.github.io` 아래의 모든 프로젝트 사이트가 같은 저장 공간을 쓴다. 그래서 키 앞에 `champions-speed/`를 붙였다. 저장소 이름이 바뀌어도 이 키는 그대로 둔다. 바꾸면 사용자가 저장해 둔 파티가 사라진다.
 - 저장 형식을 바꿀 때는 version을 올리고, parse 함수에서 옛 형식을 새 형식으로 바꿔 준다. 자세한 내용은 docs/features.md의 "저장 데이터"에 있다.

@@ -101,6 +101,7 @@ src/data/pokemon.json · abilities.json · type-chart.json · recognition.json  
   - 받은 그림은 `.cache/home/`에 저장해 두고 다시 받지 않는다. 처음 한 번은 530장, 67MB 정도를 받는다. `.cache`는 `.gitignore`에 들어 있다.
   - PNG는 `scripts/png.mjs`(8비트, 인터레이스 없는 PNG만 지원)로 읽는다. 지원하지 않는 형식이면 오류를 내고 멈춘다.
 - 게임 속 그림은 HOME 그림과 자세가 달라서 모양은 비교하지 않고 색 분포만 비교한다.
+- 시험하며 고른 그림 지문은 `data/sprite-memory.json`에 따로 모은다. `npm run data`와 상관없이 `npm run memory`로 늘린다. 방법은 [screenshot-recognition.md](screenshot-recognition.md)의 4절에 있다.
 
 ## 이미지
 
@@ -125,6 +126,7 @@ src/data/pokemon.json · abilities.json · type-chart.json · recognition.json  
 3. `roster.txt`에 새 버전 구역을 만들어 추가하고, 맨 위 "현재 반영" 줄을 고친다. 메가를 넣을 때는 진화 전 모습이 이미 있는지 확인한다.
 4. `npm run data`를 실행한다.
    - `PokéAPI에 없는 identifier` 오류가 나면 PokéAPI에 아직 들어오지 않은 것이다. 커뮤니티가 관리해서 늦을 수 있다. 지금은 기다리는 수밖에 없다 (보충 파일 기능은 아직 없다. docs/features.md의 다음에 할 만한 일 참고).
+   - 참전 목록에서 빠진 포켓몬이 있으면 `npm run memory`도 실행한다. 그 포켓몬의 그림 기억이 `data/sprite-memory.json`에서 지워진다 (남겨 둬도 앱은 무시한다).
 5. 새 포켓몬의 스피드 종족값을 Serebii 챔피언스 도감 등과 대조한다.
 6. 출력에 "영문으로 대신한 것 N개"가 생기면 그 특성을 `ability-ko.json`에 보충한다. 새 포켓몬의 HOME 그림이 아직 없으면 `HOME 그림 다운로드 실패` 오류가 난다.
 7. `src/App.tsx` 하단 문구("참전 목록: 버전 … 기준")와 README를 고친다.

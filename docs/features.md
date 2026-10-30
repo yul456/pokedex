@@ -57,6 +57,7 @@
   - 포켓몬별 스카프 표시와 "상대 메가 포함"은 지금 매치업 규칙 그대로 적용된다.
 - 챔피언스의 팀 미리보기에는 **이름이 나오지 않는다.** 칸마다 그림, 타입 아이콘 1~2개(왼쪽이 첫 번째 타입), 성별 표시(♂ 파랑, ♀ 빨강)만 있다. 성별이 없는 포켓몬은 표시가 없다.
 - 그래서 타입과 성별로 후보를 거르고, 그림 색이 HOME 그림과 비슷한 순서로 후보를 늘어놓는다. 고른 결과는 그림 지문으로 기억해서, 같은 그림이 다시 나오면 바로 맞춘다.
+- 만든 사람이 시험하며 고른 지문은 소스(`data/sprite-memory.json`)에 넣어서, 처음 쓰는 사람도 그 그림은 바로 맞춘다 (사용자 요청. 실제 사용자에게서 받지는 않는다). 이 기기에서 고친 기억이 소스의 기억보다 먼저다. 주소에 `?dev`를 붙이면 매치업 탭에 "기억한 그림 내보내기"가 나오고, 받은 파일을 `npm run memory`로 소스에 합친다.
 - 서버 없이 브라우저 안에서만 계산해서 스크린샷이 밖으로 나가지 않는다.
 - 읽는 방법, 숫자를 정한 근거, 시험 결과, 한계, 확인 방법은 [screenshot-recognition.md](screenshot-recognition.md)에 있다.
 
@@ -76,7 +77,7 @@
 | `champions-speed/opponents` | 2 | `{ key }[]` (v1에는 상대마다 scarf가 있었다. 읽을 때 버린다) |
 | `champions-speed/scarf-users` | 1 | 스카프로 표시한 상대 포켓몬 key 목록 |
 | `champions-speed/settings` | 1 | `{ showImages }` |
-| `champions-speed/sprite-memory` | 1 | `{ key, print }[]`: 스크린샷에서 고른 그림의 지문(576바이트를 base64로). 최대 300개이고, 거의 같은 그림은 새로 고른 포켓몬으로 덮어쓴다 |
+| `champions-speed/sprite-memory` | 1 | `{ key, print }[]`: 스크린샷에서 고른 그림의 지문(576바이트를 base64로). 최대 300개이고, 거의 같은 그림은 새로 고른 포켓몬으로 덮어쓴다. 소스의 기억(`data/sprite-memory.json`)이 같은 답을 주는 그림은 저장하지 않는다 |
 
 - 형식을 바꿀 때는 version을 올리고 parse에서 옛 version을 새 형식으로 바꿔 준다. `parseOpponents`가 그 예다.
 - 키 접두어 `champions-speed/`는 바꾸지 않는다 (AGENTS.md의 주의할 점 참고).
@@ -113,7 +114,7 @@
 - GitHub Actions 버전 올리기. 배포할 때 Node 20 지원 중단 경고가 나온다.
 - 정보 창의 방어 상성에 특성(부유 등) 반영하기
 - 데이터에 폼·지역 구분 필드 넣기. 지금은 이름 문자열과 key로만 구분한다.
-- 스크린샷 인식 개선: 실제 아이콘 색 표, 오프라인 안내, 그림 기억 옮기기, 붙여넣기로 올리기 등. 자세한 내용은 [screenshot-recognition.md](screenshot-recognition.md)의 9절에 있다.
+- 스크린샷 인식 개선: 실제 아이콘 색 표, 오프라인 안내, 그림 기억 가져오기, 붙여넣기로 올리기 등. 자세한 내용은 [screenshot-recognition.md](screenshot-recognition.md)의 9절에 있다.
 
 ## 작업 기록 (인계 문서를 만들 때까지, 오래된 순)
 

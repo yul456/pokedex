@@ -1,6 +1,6 @@
 // 포켓몬 그림의 색 특징. 스크린샷 속 그림과 HOME 3D 그림(scripts/build-data.mjs)을 같은 방식으로 계산해서 비교한다
 // 게임 그림은 HOME 그림과 자세가 달라서 모양 대신 "어떤 색이 얼마나 있는지"만 본다
-// 이 파일은 Node 가 build-data.mjs 에서 바로 불러 쓰므로 다른 파일을 import 하지 않는다
+// 이 파일은 Node 가 build-data.mjs·merge-memory.mjs 에서 바로 불러 쓰므로 다른 파일을 import 하지 않는다
 
 // 색상 12칸 × 채도 2칸 + 무채색 밝기 3칸 = 27칸. 값의 합이 255 가 되도록 맞춘다
 export const FEATURE_SIZE = 27
@@ -43,4 +43,18 @@ export function colorSimilarity(a: ArrayLike<number>, b: ArrayLike<number>) {
   let sum = 0
   for (let i = 0; i < FEATURE_SIZE; i++) sum += Math.min(a[i], b[i])
   return sum / 255
+}
+
+// 그림 지문: 그림 사각형을 12×12 칸으로 나눠 칸마다 평균 RGB 와 그림이 차지하는 비율(× 255)을 담는다
+// 게임 그림끼리 비교할 때 쓴다 (한 번 고른 그림 기억하기, spriteMemory.ts)
+export const PRINT_GRID = 12
+export const PRINT_SIZE = PRINT_GRID * PRINT_GRID * 4
+
+// 지문 차이(칸마다 0~255 차이의 평균)가 이보다 작으면 같은 그림으로 본다
+export const SAME_SPRITE = 20
+
+export function printDistance(a: ArrayLike<number>, b: ArrayLike<number>) {
+  let sum = 0
+  for (let i = 0; i < PRINT_SIZE; i++) sum += Math.abs(a[i] - b[i])
+  return sum / PRINT_SIZE
 }

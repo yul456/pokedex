@@ -1,7 +1,7 @@
 import recognition from './data/recognition.json'
 import { BASE_POKEMON, BY_KEY, TYPES, type Pokemon } from './pokemon'
-import { colorFeature, colorSimilarity, isCrimson } from './spriteFeature'
-import { PRINT_GRID, PRINT_SIZE, printDistance, SAME_SPRITE, type MemoryEntry } from './spriteMemory'
+import { colorFeature, colorSimilarity, isCrimson, PRINT_GRID, PRINT_SIZE } from './spriteFeature'
+import { recallSprite, type MemoryEntry } from './spriteMemory'
 
 // 팀 미리보기 스크린샷에서 상대 포켓몬 칸을 찾아 타입·성별·그림을 읽는다. 브라우저 안에서만 계산하고 밖으로 보내지 않는다
 // 칸 하나: 빨간 칸 왼쪽에 포켓몬 그림, 오른쪽 위에 타입 아이콘 1~2개(왼쪽이 첫 번째 타입), 오른쪽 아래에 성별 표시(♂ 파랑, ♀ 빨강)
@@ -19,7 +19,7 @@ export type PreviewSlot = {
   types: number[]
   gender: Gender
   candidates: Pokemon[] // 맞을 가능성이 높은 순서
-  remembered: Pokemon | null // 기억해 둔 그림과 같으면 그 포켓몬
+  remembered: { pokemon: Pokemon; shared: boolean } | null // 기억해 둔 그림과 같으면 그 포켓몬 (shared: 소스에 넣어 둔 기억)
   print: Uint8Array // 기억용 그림 지문
 }
 
@@ -274,17 +274,15 @@ export function analyzeTeamPreview(img: ImageLike, memory: MemoryEntry[]): Previ
       .map(({ p }) => p)
 
     // 기억해 둔 그림은 타입을 잘못 읽어도 그대로 믿는다 (게임 그림끼리 비교라 정확하다)
-    const nearest = memory
-      .map((m) => ({ key: m.key, d: printDistance(m.print, sprite.print) }))
-      .sort((a, b) => a.d - b.d)[0]
-    const remembered = nearest && nearest.d < SAME_SPRITE ? BY_KEY.get(nearest.key)! : null
+    const remembered = recallSprite(sprite.print, memory)
+    const first = remembered?.pokemon
 
     return [
       {
         sprite: sprite.box,
         types,
         gender,
-        candidates: (remembered ? [remembered, ...ranked.filter((p) => p !== remembered)] : ranked).slice(0, 12),
+        candidates: (first ? [first, ...ranked.filter((p) => p !== first)] : ranked).slice(0, 12),
         remembered,
         print: sprite.print,
       },
