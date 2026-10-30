@@ -6,9 +6,10 @@
 data/roster.txt (참전 목록) + data/ability-ko.json (특성 한글 보충)
         │
         │  npm run data  (scripts/build-data.mjs)
-        │  ← PokéAPI CSV 12개를 GitHub에서 한 번에 받는다
+        │  ← PokéAPI CSV 13개를 GitHub에서 한 번에 받는다
+        │  ← 스크린샷 인식용 HOME 그림 530장 (.cache/home 에 받아 두고 다시 쓴다)
         ▼
-src/data/pokemon.json · abilities.json · type-chart.json   ← 커밋한다
+src/data/pokemon.json · abilities.json · type-chart.json · recognition.json   ← 커밋한다
         │
         │  npm run build: JSON이 JS 번들 안에 들어간다
         ▼
@@ -22,7 +23,7 @@ src/data/pokemon.json · abilities.json · type-chart.json   ← 커밋한다
 
 ## PokéAPI CSV에서 알아 둘 것
 
-- 쓰는 CSV: pokemon, pokemon_stats, pokemon_species_names, pokemon_forms, pokemon_form_names, pokemon_types, type_efficacy, pokemon_abilities, abilities, ability_names, ability_flavor_text, ability_prose
+- 쓰는 CSV: pokemon, pokemon_stats, pokemon_species_names, pokemon_forms, pokemon_form_names, pokemon_types, type_efficacy, pokemon_abilities, abilities, ability_names, ability_flavor_text, ability_prose, pokemon_species (성별 비율 gender_rate)
 - 언어 id는 한국어 `3`, 영어 `9`다. 스피드 stat_id는 `6`이다.
 - **pokemon.id**: 기본 모습은 도감 번호와 같다 (한카리아스 445). 메가진화나 지역 폼처럼 기본이 아닌 모습은 10001번부터 따로 번호가 붙는다 (메가한카리아스 10058, 메가한카리아스 Z 10309). `species_id`가 도감 번호다.
 - **identifier**: roster.txt에 쓰는 값이고, 앱에서는 `key`라고 부른다.
@@ -84,6 +85,23 @@ src/data/pokemon.json · abilities.json · type-chart.json   ← 커밋한다
 - 기본 18타입만 쓴다. 19번 스텔라와 10001번대 특수 타입은 뺀다.
 - 두 타입 포켓몬이 받는 배율은 두 값을 곱한 값이다 (4, 2, 1, 0.5, 0.25, 0).
 
+## 스크린샷 인식용 데이터 (`recognition.json`)
+
+팀 미리보기 스크린샷을 읽을 때 쓰는 데이터다 (기능 설명은 docs/features.md의 "스크린샷으로 상대 입력").
+
+```json
+"kangaskhan": { "gender": 8, "normal": [152, 1, 74, …], "shiny": [0, 0, 68, …] }
+```
+
+- 기본 모습 265개만 넣는다. 상대는 진화 전 모습으로 고르기 때문이다.
+- `gender`: PokéAPI `pokemon_species.gender_rate` 값이다. -1은 성별 없음, 0은 수컷만, 8은 암컷만이고, 1~7은 둘 다 있다.
+- `normal`, `shiny`: Pokémon HOME 3D 그림(일반·이로치)의 색 특징 27칸이다. 계산은 `src/spriteFeature.ts`의 `colorFeature`로 하고, 투명하지 않은 픽셀만 센다.
+  - 같은 함수를 브라우저가 스크린샷에도 쓴다. `build-data.mjs`는 이 `.ts` 파일을 Node 22에서 바로 import 한다. 그래서 `spriteFeature.ts`는 다른 파일을 import 하지 않게 둔다.
+  - HOME 그림 주소: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/<id>.png` (이로치는 `home/shiny/<id>.png`). 참전 기본 모습 265개 모두 일반·이로치 그림이 있다.
+  - 받은 그림은 `.cache/home/`에 저장해 두고 다시 받지 않는다. 처음 한 번은 530장, 67MB 정도를 받는다. `.cache`는 `.gitignore`에 들어 있다.
+  - PNG는 `scripts/png.mjs`(8비트, 인터레이스 없는 PNG만 지원)로 읽는다. 지원하지 않는 형식이면 오류를 내고 멈춘다.
+- 게임 속 그림은 HOME 그림과 자세가 달라서 모양은 비교하지 않고 색 분포만 비교한다.
+
 ## 이미지
 
 - `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/<pokemon.id>.png`를 바로 불러온다(핫링크). 그래서 저장소에는 이미지가 없고, 이미지 트래픽은 우리 사이트 사용량에 포함되지 않는다.
@@ -108,7 +126,7 @@ src/data/pokemon.json · abilities.json · type-chart.json   ← 커밋한다
 4. `npm run data`를 실행한다.
    - `PokéAPI에 없는 identifier` 오류가 나면 PokéAPI에 아직 들어오지 않은 것이다. 커뮤니티가 관리해서 늦을 수 있다. 지금은 기다리는 수밖에 없다 (보충 파일 기능은 아직 없다. docs/features.md의 다음에 할 만한 일 참고).
 5. 새 포켓몬의 스피드 종족값을 Serebii 챔피언스 도감 등과 대조한다.
-6. 출력에 "영문으로 대신한 것 N개"가 생기면 그 특성을 `ability-ko.json`에 보충한다.
+6. 출력에 "영문으로 대신한 것 N개"가 생기면 그 특성을 `ability-ko.json`에 보충한다. 새 포켓몬의 HOME 그림이 아직 없으면 `HOME 그림 다운로드 실패` 오류가 난다.
 7. `src/App.tsx` 하단 문구("참전 목록: 버전 … 기준")와 README를 고친다.
 8. 빌드, 린트, 화면을 확인한 뒤 커밋한다.
 
@@ -117,6 +135,7 @@ src/data/pokemon.json · abilities.json · type-chart.json   ← 커밋한다
 ## 출처
 
 - PokéAPI CSV: https://github.com/PokeAPI/pokeapi/tree/master/data/v2/csv
+- PokéAPI 그림 (공식 일러스트, HOME 3D 그림): https://github.com/PokeAPI/sprites
 - Game8 스피드 목록 (출시 ~ 1.1.0 참전 목록, 계산식 검증): https://game8.co/games/Pokemon-Champions/archives/594190
 - Game8 레귤레이션 M-C 새 포켓몬: https://game8.co/games/Pokemon-Champions/archives/605517
 - Serebii 패치 노트: https://www.serebii.net/pokemonchampions/patch.shtml

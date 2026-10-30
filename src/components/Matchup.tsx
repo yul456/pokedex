@@ -15,6 +15,7 @@ import { presetSpeeds, PRESETS } from '../speed'
 import { useStoredState } from '../storage'
 import { PokemonImage } from './PokemonImage'
 import { PokemonSearch } from './PokemonSearch'
+import { ScreenshotImport } from './ScreenshotImport'
 
 type Row = { id: string; form: Pokemon; member: PartyMember }
 // 상대 모습 하나(기본·메가)가 머리글 한 칸이고, 그 아래에 기본/스카프 칸이 붙는다
@@ -100,6 +101,13 @@ export function Matchup({ party, onEditParty }: Props) {
           placeholder={full ? `상대는 ${MAX_PARTY}마리까지예요` : '상대 포켓몬 입력 (팀 미리보기를 보고 하나씩)'}
         />
       </div>
+      {/* 스크린샷으로 읽은 상대로 목록을 통째로 바꾼다 (스카프 표시는 포켓몬별로 따로 저장돼서 그대로 적용) */}
+      <ScreenshotImport
+        onApply={(keys) => {
+          setOpponents(keys.map((key) => ({ key })))
+          setSelected(null)
+        }}
+      />
 
       {opponents.length > 0 && (
         <div className="chips">

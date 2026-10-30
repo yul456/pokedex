@@ -2,7 +2,7 @@
 
 포켓몬 챔피언스 스피드 도감 — 참전 포켓몬의 Lv.50 스피드 실수치 순위표, 1:1 스피드 비교기,
 내 파티 저장(브라우저 localStorage)과 상대 6마리와의 스피드 매치업 표, 타입 상성표,
-포켓몬 사진을 누르면 나오는 방어 상성·특성 창.
+포켓몬 사진을 누르면 나오는 방어 상성·특성 창, 팀 미리보기 스크린샷으로 상대 6마리 입력.
 
 https://yul456.github.io/pokedex/
 
@@ -22,6 +22,7 @@ npm run dev    # http://localhost:5173/
   - `src/data/pokemon.json`: 참전 포켓몬의 이름·타입·스피드 종족값·특성
   - `src/data/abilities.json`: 특성 이름·게임 안 설명 (한글이 없으면 영어)
   - `src/data/type-chart.json`: 18×18 타입 상성표
+  - `src/data/recognition.json`: 스크린샷 인식용 성별 비율·그림 색 (HOME 그림은 `.cache/home`에 받아 둔다)
 
 스피드 실수치 = `floor((종족값 + 20 + 스탯포인트) × 성격 보정)` (스탯포인트 0~32, 성격 ±10%)
 

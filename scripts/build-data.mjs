@@ -1,6 +1,8 @@
-// PokéAPI CSV 데이터에서 챔피언스 참전 포켓몬만 골라 src/data/pokemon.json 을 만든다.
+// PokéAPI CSV 데이터에서 챔피언스 참전 포켓몬만 골라 src/data/*.json 을 만든다.
 // 실행: npm run data
-import { readFile, writeFile } from 'node:fs/promises'
+import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import { colorFeature } from '../src/spriteFeature.ts'
+import { decodePng } from './png.mjs'
 
 const CSV_BASE = 'https://raw.githubusercontent.com/PokeAPI/pokeapi/master/data/v2/csv'
 const LANG_KO = '3'
@@ -109,6 +111,7 @@ const [
   abilityNames,
   abilityFlavorTexts,
   abilityProse,
+  species,
 ] = await Promise.all(
   [
     'pokemon',
@@ -123,6 +126,7 @@ const [
     'ability_names',
     'ability_flavor_text',
     'ability_prose',
+    'pokemon_species',
   ].map(loadCsv),
 )
 
@@ -248,3 +252,52 @@ await writeFile(new URL('../src/data/abilities.json', import.meta.url), JSON.str
 const englishOnly = Object.values(abilityDict).filter((a) => a.englishName || a.englishDescription).length
 const written = Object.values(abilityDict).filter((a) => a.writtenDescription).length
 console.log(`src/data/abilities.json: ${usedAbilities.length}개 (직접 쓴 설명 ${written}개, 영문으로 대신한 것 ${englishOnly}개)`)
+
+// 스크린샷 인식용 데이터: 기본 모습마다 성별 비율과 HOME 3D 그림(일반·이로치)의 색 특징
+// gender: PokéAPI gender_rate (-1 성별 없음, 0 수컷만, 8 암컷만, 그 사이는 둘 다)
+// 그림은 .cache/home 에 받아 두고 다시 받지 않는다 (처음 한 번은 500장 넘게, 60MB 정도 받는다)
+const HOME_BASE = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home'
+const homeCache = new URL('../.cache/home/', import.meta.url)
+await mkdir(homeCache, { recursive: true })
+
+async function homeImage(id, shiny) {
+  const file = new URL(`${shiny ? 'shiny-' : ''}${id}.png`, homeCache)
+  try {
+    return await readFile(file)
+  } catch {
+    const res = await fetch(`${HOME_BASE}/${shiny ? 'shiny/' : ''}${id}.png`)
+    if (!res.ok) throw new Error(`HOME 그림 다운로드 실패: ${id}${shiny ? ' (이로치)' : ''} ${res.status}`)
+    const png = Buffer.from(await res.arrayBuffer())
+    await writeFile(file, png)
+    return png
+  }
+}
+
+// 투명하지 않은 픽셀만 센다
+async function homeColors(id, shiny) {
+  const { width, height, data } = decodePng(await homeImage(id, shiny))
+  const pixels = []
+  for (let i = 0; i < width * height; i++) if (data[i * 4 + 3] >= 128) pixels.push(data.subarray(i * 4, i * 4 + 3))
+  return colorFeature(pixels).map(Math.round)
+}
+
+const genderRate = new Map(species.map((s) => [Number(s.id), Number(s.gender_rate)]))
+const recognition = []
+const bases = result.filter((p) => !p.mega)
+// 한꺼번에 너무 많이 받으면 실패해서 6개씩 나눠 받는다
+for (let i = 0; i < bases.length; i += 6) {
+  recognition.push(
+    ...(await Promise.all(
+      bases.slice(i, i + 6).map(async (p) => [
+        p.key,
+        { gender: genderRate.get(p.dex), normal: await homeColors(p.id, false), shiny: await homeColors(p.id, true) },
+      ]),
+    )),
+  )
+}
+recognition.sort(([a], [b]) => a.localeCompare(b))
+await writeFile(
+  new URL('../src/data/recognition.json', import.meta.url),
+  `{\n${recognition.map(([key, value]) => `  ${JSON.stringify(key)}: ${JSON.stringify(value)}`).join(',\n')}\n}\n`,
+)
+console.log(`src/data/recognition.json: ${recognition.length}개 (스크린샷 인식용 성별·그림 색)`)

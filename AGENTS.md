@@ -39,6 +39,8 @@ npm run lint    # oxlint
 npm run data    # PokéAPI CSV를 받아 src/data/*.json을 다시 만든다 (인터넷 필요)
 ```
 
+`npm run data`는 처음 실행할 때 스크린샷 인식용 HOME 그림 530장(67MB 정도)을 `.cache/home/`에 받아 둔다. 이 폴더는 git에 올리지 않고, 그다음부터는 새 포켓몬의 그림만 받는다.
+
 ## 파일 구조
 
 ```
@@ -46,10 +48,12 @@ data/                       직접 관리하는 원본
   roster.txt                챔피언스 참전 목록 (PokéAPI identifier, 패치 버전별 구역)
   ability-ko.json           PokéAPI에 한글이 없는 특성의 이름·설명 보충
 scripts/build-data.mjs      npm run data: PokéAPI CSV → src/data/*.json
+scripts/png.mjs             HOME 그림을 읽는 최소 PNG 디코더 (build-data.mjs 가 씀)
 src/data/                   생성 결과 (손으로 고치지 않는다. 커밋은 한다)
   pokemon.json              참전 포켓몬 347개, 스피드 종족값 내림차순
   abilities.json            특성 215개
   type-chart.json           18×18 타입 상성
+  recognition.json          스크린샷 인식용: 기본 모습 265개의 성별 비율과 HOME 그림 색 특징
 src/
   speed.ts                  스피드 계산식, 보정, 투자 프리셋(최속/준속/무투자/최저속)과 프리셋별 스피드
   matchup.ts                매치업 칸 판정 (먼저/나중/○○까지/○○ 동속 …)
@@ -59,7 +63,10 @@ src/
   abilities.ts              특성 사전
   settings.ts               보기 설정 (사진 켜기/끄기)과 Context
   pokemonInfo.ts            "사진을 누르면 정보 창 열기" Context
-  storage.ts                useStoredState: localStorage에 {version, data}로 저장하는 useState
+  storage.ts                useStoredState: localStorage에 {version, data}로 저장하는 useState (readStored/writeStored)
+  teamPreview.ts            팀 미리보기 스크린샷 분석: 칸 찾기, 타입 아이콘·성별 읽기, 후보 순위
+  spriteFeature.ts          그림 색 특징 (브라우저와 build-data.mjs 가 함께 씀, 다른 파일을 import 하지 않음)
+  spriteMemory.ts           한 번 고른 그림의 지문을 기억 (localStorage)
   App.tsx                   탭 5개, 헤더(사진 스위치), 하단 문구, 정보 창
   components/               탭 화면과 공용 부품
   index.css / App.css       색 변수(라이트·다크) / 컴포넌트 스타일
@@ -90,7 +97,8 @@ src/
    // 내 최속 한카리아스(169) vs 상대 한카리아스 → label: '최속 동속'
    judge(169, presetSpeeds(BY_KEY.get('garchomp'), false, false), false)
    ```
-4. 데이터를 다시 만들었으면 `npm run data`가 출력하는 개수(포켓몬 347, 특성 215, 직접 쓴 설명 23, 영문으로 대신한 것 0)와 `git diff src/data`를 보고, 의도한 변화만 있는지 확인한다.
+4. 데이터를 다시 만들었으면 `npm run data`가 출력하는 개수(포켓몬 347, 특성 215, 직접 쓴 설명 23, 영문으로 대신한 것 0, 인식용 265)와 `git diff src/data`를 보고, 의도한 변화만 있는지 확인한다.
+5. 스크린샷 인식을 고쳤으면 실제 팀 미리보기 스크린샷으로 확인한다. 방법은 docs/features.md의 "스크린샷으로 상대 입력"에 있다.
 
 ## 주의할 점
 
@@ -99,5 +107,6 @@ src/
 - localStorage는 출처(origin) 단위라서 `yul456.github.io` 아래의 모든 프로젝트 사이트가 같은 저장 공간을 쓴다. 그래서 키 앞에 `champions-speed/`를 붙였다. 저장소 이름이 바뀌어도 이 키는 그대로 둔다. 바꾸면 사용자가 저장해 둔 파티가 사라진다.
 - 저장 형식을 바꿀 때는 version을 올리고, parse 함수에서 옛 형식을 새 형식으로 바꿔 준다. 자세한 내용은 docs/features.md의 "저장 데이터"에 있다.
 - Vite의 `base`는 빌드할 때 `GITHUB_REPOSITORY`(예: `yul456/pokedex`)로 정해진다. 그래서 배포 사이트는 `/pokedex/`, 로컬은 `/`이고, 저장소 이름을 바꿔도 설정을 고칠 필요가 없다.
+- 스크린샷은 브라우저 안에서만 분석하고 밖으로 보내지 않는다. 프론트 코드는 누구나 볼 수 있으므로 AI API 키 같은 비밀값은 넣지 않는다.
 - 사이트는 SPA이고 탭은 주소에 반영되지 않는다. GitHub Pages는 없는 경로에 404를 준다 (`/pokedex/matchup`은 404, `/pokedex/#matchup`은 정상).
 - dev 서버의 HMR로 화면이 바뀌어도 이미 열린 탭의 localStorage에는 옛 형식 값이 남을 수 있다. parse가 검사하므로 문제는 없지만, 저장값을 확인할 때는 이 점을 감안한다.

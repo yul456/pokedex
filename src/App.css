@@ -650,6 +650,123 @@ select {
   cursor: pointer;
 }
 
+/* 스크린샷으로 상대 입력 */
+.secondary-button {
+  flex: none;
+  padding: 6px 12px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--accent);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.secondary-button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.shot-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  margin-top: 8px;
+}
+
+.shot-actions .hint {
+  margin: 0;
+}
+
+.shot-review {
+  margin-top: 10px;
+  padding: 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.shot-title {
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+
+.shot-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.shot-slot {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* 스크린샷에서 잘라 낸 그림 (정사각형에 맞추고 남는 곳은 투명) */
+.shot-crop {
+  flex: none;
+  border-radius: 8px;
+  background: var(--row-alt);
+}
+
+.shot-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.shot-read {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+}
+
+.shot-options {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+
+.shot-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px 2px 4px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.shot-option.active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.shot-option.active .chip-base {
+  color: inherit;
+  opacity: 0.85;
+}
+
+.shot-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
 .matchup-options {
   margin-top: 10px;
 }
