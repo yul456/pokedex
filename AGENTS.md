@@ -20,6 +20,7 @@
 | [docs/speed-rules.md](docs/speed-rules.md) | **계산 방법**: 스피드 계산식, 투자 프리셋, 스카프·순풍·마비·랭크 보정, 동속과 트릭룸, 매치업 칸 판정 |
 | [docs/data.md](docs/data.md) | **데이터 노하우**: PokéAPI에서 데이터 만드는 법, 참전 목록 관리와 패치 대응 순서, 이름·폼·메가 규칙, 특성 한글 보충, 출처 |
 | [docs/features.md](docs/features.md) | **지금까지 만든 것**: 탭별 기능과 그렇게 만든 이유, 저장 데이터 형식, 알려진 한계, 다음에 할 만한 일 |
+| [docs/screenshot-recognition.md](docs/screenshot-recognition.md) | **스크린샷 인식 방법**: 팀 미리보기에서 상대 6마리를 읽는 순서, 색 특징과 그림 지문, 숫자를 정한 근거, 시험 결과, 한계, 확인 방법 |
 | [README.md](README.md) | 사람용 짧은 소개 |
 
 ## 개발 환경
@@ -98,7 +99,7 @@ src/
    judge(169, presetSpeeds(BY_KEY.get('garchomp'), false, false), false)
    ```
 4. 데이터를 다시 만들었으면 `npm run data`가 출력하는 개수(포켓몬 347, 특성 215, 직접 쓴 설명 23, 영문으로 대신한 것 0, 인식용 265)와 `git diff src/data`를 보고, 의도한 변화만 있는지 확인한다.
-5. 스크린샷 인식을 고쳤으면 실제 팀 미리보기 스크린샷으로 확인한다. 방법은 docs/features.md의 "스크린샷으로 상대 입력"에 있다.
+5. 스크린샷 인식을 고쳤으면 실제 팀 미리보기 스크린샷으로 확인한다. 방법은 docs/screenshot-recognition.md의 "확인하는 방법"에 있다.
 
 ## 주의할 점
 

@@ -87,7 +87,7 @@ src/data/pokemon.json · abilities.json · type-chart.json · recognition.json  
 
 ## 스크린샷 인식용 데이터 (`recognition.json`)
 
-팀 미리보기 스크린샷을 읽을 때 쓰는 데이터다 (기능 설명은 docs/features.md의 "스크린샷으로 상대 입력").
+팀 미리보기 스크린샷을 읽을 때 쓰는 데이터다. 읽는 방법은 [screenshot-recognition.md](screenshot-recognition.md)에 있다.
 
 ```json
 "kangaskhan": { "gender": 8, "normal": [152, 1, 74, …], "shiny": [0, 0, 68, …] }
